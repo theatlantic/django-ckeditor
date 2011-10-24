@@ -33,3 +33,24 @@ img, input, textarea
 {
 	cursor: default;
 }
+
+
+blockquote {
+	padding: 20px;
+	background-color: #E9E2E2;
+	margin: 15px auto;
+}
+p {
+	margin: 0 0 20px;
+}
+blockquote p { margin: 20px 0 0 0 }
+
+blockquote p:first-child { margin: 0 }
+
+aside {
+	float:left;
+	width:200px;
+	padding: 20px;
+	background-color: #E9E2E2;
+	margin: 15px 15px 15px 0;
+}
