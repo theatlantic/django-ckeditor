@@ -1,11 +1,13 @@
 from django import forms
 from django.conf import settings
 from django.core.urlresolvers import reverse
+from django.utils.functional import lazy
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 from django.utils.html import conditional_escape
 from django.utils.encoding import force_unicode
 from django.utils import simplejson
+
 
 from django.core.exceptions import ImproperlyConfigured
 from django.forms.util import flatatt
@@ -21,6 +23,7 @@ DEFAULT_CONFIG = {
     'filebrowserWindowHeight': 747,
 }
 
+reverse_lazy = lazy(reverse, str)
 
 class CKEditorWidget(forms.Textarea):
     """
@@ -28,17 +31,10 @@ class CKEditorWidget(forms.Textarea):
     Supports direct image uploads and embed.
     """
     class Media:
-        try:
-            js = (
-                settings.CKEDITOR_MEDIA_PREFIX + 'ckeditor/ckeditor.js',
-            )
-        except AttributeError:
-            raise ImproperlyConfigured("django-ckeditor requires \
-                    CKEDITOR_MEDIA_PREFIX setting. This setting specifies a \
-                    URL prefix to the ckeditor JS and CSS media (not \
-                    uploaded media). Make sure to use a trailing slash: \
-                    CKEDITOR_MEDIA_PREFIX = '/media/ckeditor/'")
-
+       js = (
+                reverse_lazy("ckeditor_static", args=("ckeditor.js",)),
+        )
+       
     def __init__(self, config_name='default', *args, **kwargs):
         super(CKEditorWidget, self).__init__(*args, **kwargs)
         # Setup config from defaults.
