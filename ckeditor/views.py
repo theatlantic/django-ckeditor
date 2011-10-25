@@ -56,10 +56,25 @@ def create_thumbnail(filename):
     # http://www.djangosnippets.org/snippets/20/
     if image.mode not in ('L', 'RGB'):
         image = image.convert('RGB')
-
+        
     # scale and crop to thumbnail
     imagefit = ImageOps.fit(image, THUMBNAIL_SIZE, Image.ANTIALIAS)
     imagefit.save(get_thumb_filename(filename))
+    
+    return get_thumb_filename(filename)
+    
+    
+def rescale(filename, width=None):
+
+    image = Image.open(filename)
+    
+    (w, h) = image.size
+    new_w = width
+    resize_ratio = float(new_w) / float(w)
+    new_h = int(round(float(h) * resize_ratio))
+    
+    imagefit = ImageOps.fit(image, (new_w, new_h), Image.ANTIALIAS)
+    imagefit.save(filename)
 
 
 def get_media_url(path):
@@ -118,8 +133,20 @@ def upload(request):
     for chunk in upload.chunks():
         out.write(chunk)
     out.close()
+    
+    
+    # scale image based on MAX_WIDTH
+    if getattr(settings, "CKEDITOR_MAX_WIDTH"):
+        rescale(upload_filename, width=settings.CKEDITOR_MAX_WIDTH)
+    
 
-    create_thumbnail(upload_filename)
+    thumb_filename = create_thumbnail(upload_filename)
+
+    # Respond with Javascript sending ckeditor upload url.
+    if thumb_filename and len(thumb_filename) > 0:
+        url = get_media_url(thumb_filename)
+    else:
+        url = get_media_url(upload_filename)
 
     # Respond with Javascript sending ckeditor upload url.
     url = get_media_url(upload_filename)
