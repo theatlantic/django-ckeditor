@@ -5,8 +5,8 @@ function getState( editor, path )
 	if ( !firstBlock || firstBlock.getName() == 'body' )
 		return CKEDITOR.TRISTATE_OFF;
 
-	// See if the first block has a aside parent.
-	if ( firstBlock.getAscendant( 'aside', true ) )
+	// See if the first block has a asideRight parent.
+	if ( firstBlock.getAscendant( 'asideRight', true ) )
 		return CKEDITOR.TRISTATE_ON;
 
 	return CKEDITOR.TRISTATE_OFF;
@@ -15,7 +15,7 @@ function getState( editor, path )
 function onSelectionChange( evt )
 {
 	var editor = evt.editor,
-	command = editor.getCommand( 'aside' );
+	command = editor.getCommand( 'asideRight' );
 	command.state = getState( editor, evt.data.path );
 	command.fire( 'state' );
 }
@@ -35,7 +35,7 @@ var commandObject =
 {
 	exec : function( editor )
 	{
-		var state = editor.getCommand( 'aside' ).state,
+		var state = editor.getCommand( 'asideRight' ).state,
 			selection = editor.getSelection(),
 			range = selection && selection.getRanges( true )[0];
 
@@ -45,15 +45,15 @@ var commandObject =
 		var bookmarks = selection.createBookmarks();
 
 		// Kludge for #1592: if the bookmark nodes are in the beginning of
-		// aside, then move them to the nearest block element in the
-		// aside.
+		// asideRight, then move them to the nearest block element in the
+		// asideRight.
 		if ( CKEDITOR.env.ie )
 		{
 			var bookmarkStart = bookmarks[0].startNode,
 				bookmarkEnd = bookmarks[0].endNode,
 				cursor;
 
-			if ( bookmarkStart && bookmarkStart.getParent().getName() == 'aside' )
+			if ( bookmarkStart && bookmarkStart.getParent().getName() == 'asideRight' )
 			{
 				cursor = bookmarkStart;
 				while ( ( cursor = cursor.getNext() ) )
@@ -68,7 +68,7 @@ var commandObject =
 			}
 
 			if ( bookmarkEnd
-					&& bookmarkEnd.getParent().getName() == 'aside' )
+					&& bookmarkEnd.getParent().getName() == 'asideRight' )
 			{
 				cursor = bookmarkEnd;
 				while ( ( cursor = cursor.getPrevious() ) )
@@ -135,12 +135,12 @@ var commandObject =
 				lastBlock = block;
 			}
 
-			// If any of the selected blocks is a aside, remove it to prevent
-			// nested asides.
+			// If any of the selected blocks is a asideRight, remove it to prevent
+			// nested asideRights.
 			while ( tmp.length > 0 )
 			{
 				block = tmp.shift();
-				if ( block.getName() == 'aside' )
+				if ( block.getName() == 'asideRight' )
 				{
 					var docFrag = new CKEDITOR.dom.documentFragment( editor.document );
 					while ( block.getFirst() )
@@ -155,8 +155,10 @@ var commandObject =
 					paragraphs.push( block );
 			}
 
-			// Now we have all the blocks to be included in a new aside node.
+			// Now we have all the blocks to be included in a new asideRight node.
 			var bqBlock = editor.document.createElement( 'aside' );
+
+			bqBlock.setAttribute('style', 'float:right');
 			
 			bqBlock.insertBefore( paragraphs[0] );
 			while ( paragraphs.length > 0 )
@@ -176,7 +178,7 @@ var commandObject =
 					bqChild = null;
 				while ( block.getParent() )
 				{
-					if ( block.getParent().getName() == 'aside' )
+					if ( block.getParent().getName() == 'asideRight' )
 					{
 						bqParent = block.getParent();
 						bqChild = block;
@@ -187,17 +189,17 @@ var commandObject =
 
 				// Remember the blocks that were recorded down in the moveOutNodes array
 				// to prevent duplicates.
-				if ( bqParent && bqChild && !bqChild.getCustomData( 'aside_moveout' ) )
+				if ( bqParent && bqChild && !bqChild.getCustomData( 'asideRight_moveout' ) )
 				{
 					moveOutNodes.push( bqChild );
-					CKEDITOR.dom.element.setMarker( database, bqChild, 'aside_moveout', true );
+					CKEDITOR.dom.element.setMarker( database, bqChild, 'asideRight_moveout', true );
 				}
 			}
 
 			CKEDITOR.dom.element.clearAllMarkers( database );
 
 			var movedNodes = [],
-				processedasideBlocks = [];
+				processedasideRightBlocks = [];
 
 			database = {};
 			while ( moveOutNodes.length > 0 )
@@ -206,8 +208,8 @@ var commandObject =
 				bqBlock = node.getParent();
 
 				// If the node is located at the beginning or the end, just take it out
-				// without splitting. Otherwise, split the aside node and move the
-				// paragraph in between the two aside nodes.
+				// without splitting. Otherwise, split the asideRight node and move the
+				// paragraph in between the two asideRight nodes.
 				if ( !node.getPrevious() )
 					node.remove().insertBefore( bqBlock );
 				else if ( !node.getNext() )
@@ -215,14 +217,14 @@ var commandObject =
 				else
 				{
 					node.breakParent( node.getParent() );
-					processedasideBlocks.push( node.getNext() );
+					processedasideRightBlocks.push( node.getNext() );
 				}
 
-				// Remember the aside node so we can clear it later (if it becomes empty).
-				if ( !bqBlock.getCustomData( 'aside_processed' ) )
+				// Remember the asideRight node so we can clear it later (if it becomes empty).
+				if ( !bqBlock.getCustomData( 'asideRight_processed' ) )
 				{
-					processedasideBlocks.push( bqBlock );
-					CKEDITOR.dom.element.setMarker( database, bqBlock, 'aside_processed', true );
+					processedasideRightBlocks.push( bqBlock );
+					CKEDITOR.dom.element.setMarker( database, bqBlock, 'asideRight_processed', true );
 				}
 
 				movedNodes.push( node );
@@ -230,10 +232,10 @@ var commandObject =
 
 			CKEDITOR.dom.element.clearAllMarkers( database );
 
-			// Clear aside nodes that have become empty.
-			for ( i = processedasideBlocks.length - 1 ; i >= 0 ; i-- )
+			// Clear asideRight nodes that have become empty.
+			for ( i = processedasideRightBlocks.length - 1 ; i >= 0 ; i-- )
 			{
-				bqBlock = processedasideBlocks[i];
+				bqBlock = processedasideRightBlocks[i];
 				if ( noBlockLeft( bqBlock ) )
 					bqBlock.remove();
 			}
@@ -274,19 +276,19 @@ var commandObject =
 };
 
 
-CKEDITOR.plugins.add('aside',
+CKEDITOR.plugins.add('asideRight',
 {
     init: function(editor)
     {
-        var pluginName = 'aside';
+        var pluginName = 'asideRight';
         
         editor.addCommand(pluginName, commandObject);
-        editor.ui.addButton('Aside',{
-			label: 'Aside',
+        editor.ui.addButton('Aside Right',{
+			label: 'Aside Right',
 			command: pluginName
 		});
 
-		//CKEDITOR.dialog.add(pluginName, this.path + 'dialogs/aside.js');
+		//CKEDITOR.dialog.add(pluginName, this.path + 'dialogs/asideRight.js');
         
         editor.on( 'selectionChange', onSelectionChange );
     },
