@@ -23,6 +23,8 @@ DEFAULT_CONFIG = {
     'filebrowserWindowHeight': 747,
     'filebrowserBrowsePatternName': 'ckeditor_browse',
 	'filebrowserUploadPatternName': 'ckeditor_upload',
+	'filebrowserBrowseParams' : '',
+	'filebrowserUploadParams' : ''
 }
 
 reverse_lazy = lazy(reverse, str)
@@ -68,8 +70,11 @@ class CKEditorWidget(forms.Textarea):
         if value is None:
             value = ''
         final_attrs = self.build_attrs(attrs, name=name)
-        self.config['filebrowserUploadUrl'] = reverse(self.config['filebrowserUploadPatternName'])
-        self.config['filebrowserBrowseUrl'] = reverse(self.config['filebrowserBrowsePatternName'])
+        
+        self.config['filebrowserUploadUrl'] = reverse(self.config['filebrowserUploadPatternName']) + self.config['filebrowserUploadParams']
+        
+        self.config['filebrowserBrowseUrl'] = reverse(self.config['filebrowserBrowsePatternName']) + self.config['filebrowserBrowseParams']
+        
         return mark_safe(render_to_string('ckeditor/widget.html', {
             'final_attrs': flatatt(final_attrs),
             'value': conditional_escape(force_unicode(value)),
