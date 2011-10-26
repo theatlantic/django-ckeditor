@@ -157,7 +157,7 @@ function commandObject(editor, side){
 			var bqBlock = editor.document.createElement( 'aside' );
 			
 			
-			if (side == "right") bqBlock.setAttribute('style', 'float:right');
+			if (side == "right") bqBlock.setAttribute('class', 'aside-right');
 			
 			bqBlock.insertBefore( paragraphs[0] );
 			while ( paragraphs.length > 0 )

@@ -54,3 +54,8 @@ aside {
 	background-color: #E9E2E2;
 	margin: 15px 15px 15px 0;
 }
+
+aside.aside-right {
+	float:right;
+	margin: 15px 0px 15px 15px;
+}
