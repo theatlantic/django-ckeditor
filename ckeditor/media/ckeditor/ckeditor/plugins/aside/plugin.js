@@ -31,10 +31,8 @@ function noBlockLeft( bqBlock )
 }
 
 
-var commandObject =
-{
-	exec : function( editor )
-	{
+function commandObject(editor, side){
+
 		var state = editor.getCommand( 'aside' ).state,
 			selection = editor.getSelection(),
 			range = selection && selection.getRanges( true )[0];
@@ -158,6 +156,9 @@ var commandObject =
 			// Now we have all the blocks to be included in a new aside node.
 			var bqBlock = editor.document.createElement( 'aside' );
 			
+			
+			if (side == "right") bqBlock.setAttribute('style', 'float:right');
+			
 			bqBlock.insertBefore( paragraphs[0] );
 			while ( paragraphs.length > 0 )
 			{
@@ -270,6 +271,21 @@ var commandObject =
 
 		selection.selectBookmarks( bookmarks );
 		editor.focus();
+
+}
+
+
+var commandObjectRight =
+{
+	exec : function(editor){
+		commandObject(editor, "right")
+	}
+};
+
+var commandObjectLeft =
+{
+	exec : function(editor){
+		commandObject(editor, "left")
 	}
 };
 
@@ -280,13 +296,17 @@ CKEDITOR.plugins.add('aside',
     {
         var pluginName = 'aside';
         
-        editor.addCommand(pluginName, commandObject);
+        editor.addCommand(pluginName, commandObjectLeft);
         editor.ui.addButton('Aside',{
 			label: 'Aside',
 			command: pluginName
 		});
-
-		//CKEDITOR.dialog.add(pluginName, this.path + 'dialogs/aside.js');
+		
+		editor.addCommand('asideRight', commandObjectRight);
+        editor.ui.addButton('Aside Right',{
+			label: 'Aside Right',
+			command: 'asideRight'
+		});
         
         editor.on( 'selectionChange', onSelectionChange );
     },
