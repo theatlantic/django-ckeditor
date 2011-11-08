@@ -88,7 +88,7 @@ def get_media_url(path):
         url = settings.MEDIA_URL + path.replace(settings.MEDIA_ROOT, '')
 
     # Remove any double slashes.
-    return url.replace('//', '/')
+    return url
 
 
 def get_upload_filename(upload_name, user):
