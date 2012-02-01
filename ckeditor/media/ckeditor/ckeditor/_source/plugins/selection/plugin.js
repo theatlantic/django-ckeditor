@@ -182,6 +182,14 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 				editor.on( 'beforeSetMode', function() { removeFillingChar( editor.document ); } );
 				editor.on( 'key', function( e )
 					{
+						// Create a bookmark for the cursor so we can restore its position
+						// after removing the filling character.
+						//
+						// See #8617 Cursor jumps on Backspace in Chrome
+						// http://dev.ckeditor.com/ticket/8617
+						var selection = editor.getSelection();
+						var bookmark = ( selection ) ? selection.createBookmarks() : null;
+
 						// Remove the filling char before some keys get
 						// executed, so they'll not get blocked by it.
 						switch ( e.data.keyCode )
@@ -193,6 +201,9 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 							case 8 :	// BACKSPACE
 								removeFillingChar( editor.document );
 						}
+
+						if ( bookmark ) 
+							selection.selectBookmarks( bookmark );
 					}, null, null, 10 );
 
 				var fillingCharBefore,
