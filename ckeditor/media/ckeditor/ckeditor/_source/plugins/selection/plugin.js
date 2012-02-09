@@ -127,9 +127,9 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 		canUndo : false
 	};
 
-	function createFillingChar( doc )
+	function createFillingChar( doc, selection )
 	{
-		removeFillingChar( doc );
+		removeFillingChar( doc, selection );
 
 		var fillingChar = doc.createText( '\u200B' );
 		doc.setCustomData( 'cke-fillingChar', fillingChar );
@@ -143,7 +143,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 	}
 
 	// Checks if a filling char has been used, eventualy removing it (#1272).
-	function checkFillingChar( doc )
+	function checkFillingChar( doc, selection )
 	{
 		var fillingChar = doc && getFillingChar( doc );
 		if ( fillingChar )
@@ -151,22 +151,32 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 			// Use this flag to avoid removing the filling char right after
 			// creating it.
 			if ( fillingChar.getCustomData( 'ready' ) )
-				removeFillingChar( doc );
+				removeFillingChar( doc, selection );
 			else
 				fillingChar.setCustomData( 'ready', 1 );
 		}
 	}
 
-	function removeFillingChar( doc )
+	function removeFillingChar( doc, selection )
 	{
 		var fillingChar = doc && doc.removeCustomData( 'cke-fillingChar' );
+
 		if ( fillingChar )
 		{
+			// Create a bookmark for the cursor so we can restore its position
+			// after removing the filling character.
+			//
+			// See #8617 Cursor jumps on Backspace in Chrome
+			// http://dev.ckeditor.com/ticket/8617
+			var bookmark = ( selection ) ? selection.createBookmarks() : null;
+
 			// We can't simply remove the filling node because the user
 			// will actually enlarge it when typing, so we just remove the
 			// invisible char from it.
 			fillingChar.setText( fillingChar.getText().replace( /\u200B/g, '' ) );
-			fillingChar = 0;
+
+			if ( bookmark ) 
+				selection.selectBookmarks( bookmark );			
 		}
 	}
 
@@ -178,18 +188,10 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 			// (#1272). Here we set the events that should invalidate that char.
 			if ( CKEDITOR.env.webkit )
 			{
-				editor.on( 'selectionChange', function() { checkFillingChar( editor.document ); } );
-				editor.on( 'beforeSetMode', function() { removeFillingChar( editor.document ); } );
+				editor.on( 'selectionChange', function() { checkFillingChar( editor.document, editor.getSelection() ); } );
+				editor.on( 'beforeSetMode', function() { removeFillingChar( editor.document, editor.getSelection() ); } );
 				editor.on( 'key', function( e )
 					{
-						// Create a bookmark for the cursor so we can restore its position
-						// after removing the filling character.
-						//
-						// See #8617 Cursor jumps on Backspace in Chrome
-						// http://dev.ckeditor.com/ticket/8617
-						var selection = editor.getSelection();
-						var bookmark = ( selection ) ? selection.createBookmarks() : null;
-
 						// Remove the filling char before some keys get
 						// executed, so they'll not get blocked by it.
 						switch ( e.data.keyCode )
@@ -199,11 +201,8 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 							case 37 :	// LEFT-ARROW
 							case 39 :	// RIGHT-ARROW
 							case 8 :	// BACKSPACE
-								removeFillingChar( editor.document );
+								removeFillingChar( editor.document, editor.getSelection() );
 						}
-
-						if ( bookmark ) 
-							selection.selectBookmarks( bookmark );
 					}, null, null, 10 );
 
 				var fillingCharBefore,
@@ -1426,7 +1425,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 				{
 					sel.removeAllRanges();
 					// Remove any existing filling char first.
-					CKEDITOR.env.webkit && removeFillingChar( this.document );
+					CKEDITOR.env.webkit && removeFillingChar( this.document, this );
 				}
 
 				for ( var i = 0 ; i < ranges.length ; i++ )
@@ -1483,7 +1482,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 					{
 						// Append a zero-width space so WebKit will not try to
 						// move the selection by itself (#1272).
-						var fillingChar = createFillingChar( this.document );
+						var fillingChar = createFillingChar( this.document, this );
 						range.insertNode( fillingChar ) ;
 
 						var next = fillingChar.getNext();
@@ -1493,7 +1492,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 						// Let's remove it in this case.
 						if ( next && !fillingChar.getPrevious() && next.type == CKEDITOR.NODE_ELEMENT && next.getName() == 'br' )
 						{
-							removeFillingChar( this.document );
+							removeFillingChar( this.document, this );
 							range.moveToPosition( next, CKEDITOR.POSITION_BEFORE_START );
 						}
 						else
