@@ -1226,6 +1226,13 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 						walker.guard = guard( walker );
 
+						// CKEDITOR.dom.walker.checkBackward can modify the dom,
+						// and this has the effect of removing the selection in webkit.
+						// Here we bookmark the selection for this contingency.
+						var bm;
+						if ( CKEDITOR.env.webkit )
+							bm = self.createBookmarks()[ 0 ];
+
 						if ( walker.checkBackward() && !walker.halted )
 						{
 							walker = new CKEDITOR.dom.walker( testRange );
@@ -1235,6 +1242,8 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 							if ( walker.checkForward() && !walker.halted )
 								retval = root.$;
 						}
+
+						bm && self.selectBookmarks( [ bm ] );
 					}
 
 					if ( !retval )
