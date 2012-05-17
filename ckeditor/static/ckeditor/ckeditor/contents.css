@@ -23,3 +23,18 @@ ol,ul,dl
 	/* preserved spaces for list items with text direction other than the list. (#6249,#8049)*/
     padding:0 40px;
 }
+
+/*
+  To add styles to a CKEditor instance in a Django project, update the CKEDITOR_CONFIGS in 
+  your settings.py
+
+  # settings.py example:
+
+  CKEDITOR_CONFIGS = {
+	"default": {
+		"contentsCss": "/path/to/ckeditor_styles.css",
+
+		# other settings...
+	}
+
+*/
