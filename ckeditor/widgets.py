@@ -30,7 +30,7 @@ class CKEditorWidget(forms.Textarea):
     class Media:
         try:
             js = (
-                settings.STATIC_URL + 'ckeditor/ckeditor/ckeditor.js',
+                settings.STATIC_URL + 'ckeditor/ckeditor/ckeditor.js?timestamp=C4HG5RM',
             )
         except AttributeError:
             raise ImproperlyConfigured("django-ckeditor requires \
