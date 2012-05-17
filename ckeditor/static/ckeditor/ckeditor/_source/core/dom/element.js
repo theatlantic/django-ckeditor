@@ -1,5 +1,5 @@
 ﻿/*
-Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
@@ -580,7 +580,7 @@ CKEDITOR.tools.extend( CKEDITOR.dom.element.prototype,
 		 * in the future.
 		 * @returns {String} The text value.
 		 * @example
-		 * var element = CKEDITOR.dom.element.createFromHtml( '&lt;div&gt;Same &lt;i&gt;text&lt;/i&gt;.&lt;/div&gt;' );
+		 * var element = CKEDITOR.dom.element.createFromHtml( '&lt;div&gt;Sample &lt;i&gt;text&lt;/i&gt;.&lt;/div&gt;' );
 		 * alert( <b>element.getText()</b> );  // "Sample text."
 		 */
 		getText : function()
@@ -730,6 +730,7 @@ CKEDITOR.tools.extend( CKEDITOR.dom.element.prototype,
 			if ( this.isReadOnly()
 					|| this.getComputedStyle( 'display' ) == 'none'
 					|| this.getComputedStyle( 'visibility' ) == 'hidden'
+				 	|| this.is( 'a' ) && this.data( 'cke-saved-name' ) && !this.getChildCount()
 					|| CKEDITOR.dtd.$nonEditable[ name ] )
 			{
 				return false;
@@ -1261,12 +1262,13 @@ CKEDITOR.tools.extend( CKEDITOR.dom.element.prototype,
 					if ( CKEDITOR.env.ie || CKEDITOR.env.opera )
 					{
 						var element = this.$,
+							elements = element.getElementsByTagName("*"),
 							e,
 							i = 0;
 
 						element.unselectable = 'on';
 
-						while ( ( e = element.all[ i++ ] ) )
+						while ( ( e = elements[ i++ ] ) )
 						{
 							switch ( e.tagName.toLowerCase() )
 							{
@@ -1396,6 +1398,10 @@ CKEDITOR.tools.extend( CKEDITOR.dom.element.prototype,
 			return { x : x, y : y };
 		},
 
+		/**
+		 * Make any page element visible inside the browser viewport.
+		 * @param {Boolean} [alignToTop]
+		 */
 		scrollIntoView : function( alignTop )
 		{
 			// Get the element window.
