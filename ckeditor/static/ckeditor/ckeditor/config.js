@@ -8,5 +8,10 @@ CKEDITOR.editorConfig = function( config )
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
-	// CKEDITOR.config.contentsCss = '/static/admin/blog/css/ckeditor_content.css';
+	
+	// Disable the CKEditor right-click menu and 
+	// the SCAYT dictionary plugin.
+	// This will allow the native spell-checker to work
+	config.removePlugins = 'scayt,menubutton,contextmenu';
+	config.disableNativeSpellChecker = false;
 };
