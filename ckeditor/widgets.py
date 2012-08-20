@@ -30,11 +30,11 @@ class CKEditorWidget(forms.Textarea):
     class Media:
         try:
             js = (
-                settings.CKEDITOR_MEDIA_PREFIX + 'ckeditor/ckeditor/ckeditor.js?timestamp=C4HG5RM',
+                settings.CKEDITOR_MEDIA_PREFIX + 'ckeditor/ckeditor/ckeditor.js?timestamp=c8ke',
             )
         except AttributeError:
             js = (
-                settings.STATIC_URL + 'ckeditor/ckeditor/ckeditor.js?timestamp=C4HG5RM',
+                settings.STATIC_URL + 'ckeditor/ckeditor/ckeditor.js?timestamp=c8ke',
             )
 
     def __init__(self, config_name='default', *args, **kwargs):

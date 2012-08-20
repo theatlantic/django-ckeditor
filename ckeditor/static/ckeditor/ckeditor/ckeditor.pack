@@ -131,7 +131,8 @@ packages :
 					'_source/core/dom/rangelist.js',
 					'_source/core/_bootstrap.js',
 					'_source/skins/kama/skin.js',
-//					'_source/lang/en.js',
+					'_source/skins/django/skin.js',
+					'_source/lang/en.js',
 					'_source/plugins/about/plugin.js',
 					'_source/plugins/a11yhelp/plugin.js',
 					'_source/plugins/basicstyles/plugin.js',
@@ -191,6 +192,8 @@ packages :
 					'_source/plugins/wsc/plugin.js',
 					'_source/plugins/dialog/plugin.js',
 					'_source/plugins/styles/plugin.js',
+					'_source/plugins/styles/styles/default.js',
+					'_source/plugins/styles/styles/atlantic.js',
 					'_source/plugins/domiterator/plugin.js',
 					'_source/plugins/panelbutton/plugin.js',
 					'_source/plugins/floatpanel/plugin.js',
@@ -204,6 +207,7 @@ packages :
 					'_source/plugins/dialogui/plugin.js',
 					'_source/plugins/panel/plugin.js',
 					'_source/plugins/listblock/plugin.js',
+					'_source/plugins/smartcopy/plugin.js',
 					'_source/themes/default/theme.js'
 				]
 		}
