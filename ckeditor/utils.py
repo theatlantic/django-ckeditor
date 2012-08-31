@@ -125,8 +125,12 @@ def re_render(path, width, height):
     @return: Path to the 'rendered' image.
     @rtype:  "/path/to/image"
     """
+    try:
+        image = Image.open(path)
+    except IOError:
+        # Probably doesn't exist or isn't an image
+        return path
 
-    image = Image.open(path)
     if image.size <= (width, height):
         return path
     if width is None and height is None:
@@ -199,5 +203,6 @@ def swap_in_originals(content):
     tree = get_html_tree(content)
     for img in tree.xpath('//img[@data-original]'):
         img.attrib['src'] = img.attrib['data-original']
+        del img.attrib['data-original']
     
     return render_html_tree(tree)
