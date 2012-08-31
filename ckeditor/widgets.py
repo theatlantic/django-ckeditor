@@ -10,6 +10,8 @@ from django.utils import simplejson
 from django.core.exceptions import ImproperlyConfigured
 from django.forms.util import flatatt
 
+import ckeditor.utils as u
+
 json_encode = simplejson.JSONEncoder().encode
 
 DEFAULT_CONFIG = {
@@ -67,6 +69,8 @@ class CKEditorWidget(forms.Textarea):
     def render(self, name, value, attrs={}):
         if value is None:
             value = ''
+        value = u.swap_in_originals(value)
+
         final_attrs = self.build_attrs(attrs, name=name)
         self.config['filebrowserUploadUrl'] = reverse('ckeditor_upload')
         self.config['filebrowserBrowseUrl'] = reverse('ckeditor_browse')
