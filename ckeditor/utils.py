@@ -67,7 +67,8 @@ def get_local_path(url):
     @return: Local path of the url
     @rtype:  basestring
     """
-    local_path = settings.STATIC_ROOT + url[len(settings.STATIC_URL):]
+    url = urlparse.unquote(url)
+    local_path = settings.STATIC_ROOT + os.path.normpath(url[len(settings.STATIC_URL):])
     return local_path
 
 hexhash = lambda s: hashlib.md5(s).hexdigest()

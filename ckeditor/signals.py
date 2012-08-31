@@ -9,7 +9,6 @@ def add_dynamic_resize(cls, field_name):
         
         setattr(instance, field_name, u.resize_images(field))
         
-    print "Binding dynamic resize"
     pre_save.connect(_pre_signal, sender=cls, weak=False)
 
     
