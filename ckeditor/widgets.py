@@ -27,15 +27,16 @@ class CKEditorWidget(forms.Textarea):
     Widget providing CKEditor for Rich Text Editing.
     Supports direct image uploads and embed.
     """
-    class Media:
-        try:
-            js = (
-                settings.CKEDITOR_MEDIA_PREFIX + 'ckeditor/ckeditor/ckeditor.js?timestamp=c8ke',
-            )
-        except AttributeError:
-            js = (
-                settings.STATIC_URL + 'ckeditor/ckeditor/ckeditor.js?timestamp=c8ke',
-            )
+
+    @property
+    def media(self):
+        media_prefix = getattr(settings, 'CKEDITOR_MEDIA_PREFIX', settings.STATIC_URL)
+        if len(media_prefix) and media_prefix[-1] != '/':
+            media_prefix += '/'
+
+        media = super(CKEditorWidget, self).media
+        media.add_js([media_prefix + 'ckeditor/ckeditor/ckeditor.js?timestamp=C83I'])
+        return media
 
     def __init__(self, config_name='default', *args, **kwargs):
         super(CKEditorWidget, self).__init__(*args, **kwargs)
