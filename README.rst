@@ -75,6 +75,7 @@ The quickest way to add rich text editing capabilities to your models is to use 
     class Post(models.Model):
         content = RichTextField()
 
+RichTextField takes an optional kwarg, ``dynamic_resize``, which attempts to optimize embeded images.  The default value is ``False``.
 
 Widget
 ~~~~~~
