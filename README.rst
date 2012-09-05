@@ -62,7 +62,7 @@ Optional
            },
        }
 
-#. Add CKEDITOR_PNG_TO_JPEG setting to project's ``settings.py`` file.  This will convert all non-transparent PNG files to JPEG images instead, when ``dynamic_resizing`` is set to ``True``.  This can save a large amount of bandwidth by reducing potentially large PNGs  to a more conservatively sized jpeg.
+#. Add CKEDITOR_PNG_TO_JPEG setting to project's ``settings.py`` file.  This will convert all non-transparent PNG files to JPEG images instead, when ``dynamic_resize`` is set to ``True``.  This can save a large amount of bandwidth by reducing potentially large PNGs  to a more conservatively sized jpeg.
 
 
 Usage
