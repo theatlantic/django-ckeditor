@@ -73,7 +73,7 @@ def get_local_path(url):
 
 hexhash = lambda s: hashlib.md5(s).hexdigest()
 
-def new_rendered_path(orig_path, width, height):
+def new_rendered_path(orig_path, width, height, ext=None):
     """
     Builds a new rendered path based on the original path, width, and height.
     It takes a hash of the original path to prevent users from accidentally 
@@ -93,6 +93,10 @@ def new_rendered_path(orig_path, width, height):
     @param height: Desired height of the rendered image.
     @type  height: int or None
 
+    @param ext: Desired extension of the new image.  If None, uses 
+                the original extension.
+    @type  ext: basestring or None
+
     @return: Absolute path to where the rendered image should live.
     @rtype:  "/path/to/rendered/image"
     """
@@ -103,9 +107,67 @@ def new_rendered_path(orig_path, width, height):
 
     hash_path = hexhash(orig_path)
 
-    ext = os.path.splitext(os.path.basename(orig_path))[1]
+    if ext is None:
+        ext = os.path.splitext(os.path.basename(orig_path))[1]
+    if ext and ext[0] != u'.':
+        ext = u'.' + ext
+
     name = '%s_%sx%s' % (hash_path, width, height)
     return os.path.join(rendered_path, name) + ext
+
+def is_rendered(path, width, height):
+    """
+    Checks whether or not an image has been rendered to the given path
+    with the given dimensions
+
+    @param path: path to check
+    @type  path: u"/path/to/image"
+    
+    @param width: Desired width
+    @type  width: int
+    
+    @param height: Desired height
+    @type  height: int
+
+    @return: Whether or not the image is correct
+    @rtype: bool
+    """
+    if os.path.exists(path):
+        old_width, old_height = Image.open(path).size
+        return old_width == width and old_height == height
+    return False
+
+def transcode_to_jpeg(image, path, width, height):
+    """
+    Transcodes an image to JPEG.
+
+    @param image: Opened image to transcode to jpeg.
+    @type  image: PIL.Image
+    
+    @param path: Path to the opened image.
+    @type  path: u"/path/to/image"
+    
+    @param width: Desired width of the transcoded image.
+    @type  width: int
+    
+    @param height: Desired height of the transcoded image.
+    @type  height: int
+
+    @return: Path to the new transcoded image.
+    @rtype: "/path/to/image"
+    """
+
+    i_width, i_height = image.size
+    new_width = i_width if width is None else width
+    new_height = i_height if height is None else height
+
+    new_path = new_rendered_path(path, width, height, ext='jpg')
+    if is_rendered(new_path, new_width, new_height):
+        return new_path
+
+    new_image = image.resize((new_width, new_height), Image.ANTIALIAS)
+    new_image.save(new_path, quality=80, optimize=1)
+    return new_path
 
 def re_render(path, width, height):
     """
@@ -132,16 +194,18 @@ def re_render(path, width, height):
         # Probably doesn't exist or isn't an image
         return path
 
+    if image.format == 'PNG' and getattr(settings, 'CKEDITOR_PNG_TO_JPEG', False):
+        pixels = reduce(lambda a,b: a*b, image.size)
+        # check that our entire alpha channel is set to full opaque
+        # We have to call image.load first due to a PIL 1.1.7 bug 
+        image.load()
+        if image.mode == 'RGB' or image.split()[-1].histogram()[-1] == pixels:
+            return transcode_to_jpeg(image, path, width, height)
+            
     if image.size <= (width, height):
         return path
     if width is None and height is None:
         return path
-
-    new_path = new_rendered_path(path, width, height)
-    if os.path.exists(new_path):
-        old_width, old_height = Image.open(new_path).size
-        if old_width == width and old_height == height:
-            return new_path
 
     # We can't resize animated gifs
     if image.format == 'GIF':
@@ -151,7 +215,11 @@ def re_render(path, width, height):
         except EOFError:
             # Static GIFs should throw an EOF on seek
             pass
-    
+
+    new_path = new_rendered_path(path, width, height)
+    if is_rendered(new_path, width, height):
+        return new_path
+
     # Re-render the image, optimizing for filesize
     new_image = image.resize((width, height), Image.ANTIALIAS)
     new_image.save(new_path, quality=80, optimize=1)
