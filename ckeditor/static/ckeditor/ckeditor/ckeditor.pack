@@ -208,6 +208,7 @@ packages :
 					'_source/plugins/panel/plugin.js',
 					'_source/plugins/listblock/plugin.js',
 					'_source/plugins/smartcopy/plugin.js',
+					'_source/plugins/codemirror/plugin.js',
 					'_source/themes/default/theme.js'
 				]
 		}
