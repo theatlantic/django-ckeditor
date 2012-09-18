@@ -194,11 +194,11 @@ def re_render(path, width, height):
         # Probably doesn't exist or isn't an image
         return path
 
+    # We have to call image.load first due to a PIL 1.1.7 bug 
+    image.load()
     if image.format == 'PNG' and getattr(settings, 'CKEDITOR_PNG_TO_JPEG', False):
         pixels = reduce(lambda a,b: a*b, image.size)
         # check that our entire alpha channel is set to full opaque
-        # We have to call image.load first due to a PIL 1.1.7 bug 
-        image.load()
         if image.mode == 'RGB' or image.split()[-1].histogram()[-1] == pixels:
             return transcode_to_jpeg(image, path, width, height)
             
