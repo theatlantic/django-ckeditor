@@ -71,7 +71,8 @@ def get_local_path(url):
     local_path = settings.STATIC_ROOT + os.path.normpath(url[len(settings.STATIC_URL):])
     return local_path
 
-hexhash = lambda s: hashlib.md5(s).hexdigest()
+# `buffer` is needed since hashlib apparently isn't unicode safe
+hexhash = lambda s: hashlib.md5(buffer(s)).hexdigest()
 
 def new_rendered_path(orig_path, width, height, ext=None):
     """
