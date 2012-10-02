@@ -53,16 +53,18 @@ CKEDITOR.plugins.add( 'atlanticpagebreak',
 				attributes : {
 					'class' : function( value, element )
 					{
-						var span = CKEDITOR.htmlParser.fragment.fromHtml( '&nbsp;' );
-						element.children.length = 0;
-						element.add( span );
-						var attrs = element.attributes;
-						delete attrs[ 'aria-label' ];
-						delete attrs.contenteditable;
-						delete attrs.title;
-						delete attrs.style;
+						if ( value == 'pagebreak' ) {
+							var span = CKEDITOR.htmlParser.fragment.fromHtml( '&nbsp;' );
+							element.children.length = 0;
+							element.add( span );
+							var attrs = element.attributes;
+							delete attrs[ 'aria-label' ];
+							delete attrs.contenteditable;
+							delete attrs.title;
+							delete attrs.style;
 
-						return value;
+							return value;
+						}
 					}
 				}
 			}, 5 );
