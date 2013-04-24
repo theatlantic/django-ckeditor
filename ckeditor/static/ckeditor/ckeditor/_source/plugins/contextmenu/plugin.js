@@ -154,7 +154,14 @@ CKEDITOR.plugins.add( 'contextmenu',
 
 	beforeInit : function( editor )
 	{
-		editor.contextMenu = new CKEDITOR.plugins.contextMenu( editor );
+		if (editor.container) {
+			editor.container.disableContextMenu();
+		} else {
+			editor.on( 'themeLoaded', function( evt )
+			{
+				editor.container.disableContextMenu();
+			});
+		}
 
 		editor.addCommand( 'contextMenu',
 			{
