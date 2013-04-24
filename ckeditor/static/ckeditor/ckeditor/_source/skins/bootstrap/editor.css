@@ -124,6 +124,9 @@ font-size:small;
 background-color:#fff;
 white-space:pre;
 padding: 8px;
+border:1px solid #B9B9B9;
+-webkit-box-sizing:border-box;
+box-sizing:border-box;
 }
 .cke_skin_bootstrap .cke_browser_iequirks textarea.cke_source{
 _white-space:normal;
