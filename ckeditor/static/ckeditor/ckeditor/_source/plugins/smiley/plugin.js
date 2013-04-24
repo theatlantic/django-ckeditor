@@ -1,4 +1,4 @@
-﻿/*
+/*
 Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
@@ -41,16 +41,16 @@ CKEDITOR.plugins.add( 'smiley',
  * @example
  * // This is actually the default value.
  * config.smiley_images = [
+ *     'smiley.png', 'sad.png', 'wink.png', 'teeth.png', 'grin.png', 'tongue.png', 'surprised.png', 'evilgrin.png',
+ *     'waii.png', 'lightbulb.png', 'thumbs_up.png', 'thumbs_down.png', 'heart.png', 'envelope.png'];
  *     'regular_smile.gif','sad_smile.gif','wink_smile.gif','teeth_smile.gif','confused_smile.gif','tounge_smile.gif',
  *     'embaressed_smile.gif','omg_smile.gif','whatchutalkingabout_smile.gif','angry_smile.gif','angel_smile.gif','shades_smile.gif',
  *     'devil_smile.gif','cry_smile.gif','lightbulb.gif','thumbs_down.gif','thumbs_up.gif','heart.gif',
  *     'broken_heart.gif','kiss.gif','envelope.gif'];
  */
 CKEDITOR.config.smiley_images = [
-	'regular_smile.gif','sad_smile.gif','wink_smile.gif','teeth_smile.gif','confused_smile.gif','tounge_smile.gif',
-	'embaressed_smile.gif','omg_smile.gif','whatchutalkingabout_smile.gif','angry_smile.gif','angel_smile.gif','shades_smile.gif',
-	'devil_smile.gif','cry_smile.gif','lightbulb.gif','thumbs_down.gif','thumbs_up.gif','heart.gif',
-	'broken_heart.gif','kiss.gif','envelope.gif'];
+	'smiley.png', 'sad.png', 'wink.png', 'teeth.png', 'grin.png', 'tongue.png', 'surprised.png', 'evilgrin.png',
+	'waii.png', 'lightbulb.png', 'thumbs_up.png', 'thumbs_down.png', 'heart.png', 'envelope.png'];
 
 /**
  * The description to be used for each of the smileys defined in the
@@ -63,9 +63,8 @@ CKEDITOR.config.smiley_images = [
  * // Default settings.
  * config.smiley_descriptions =
  *     [
- *         'smiley', 'sad', 'wink', 'laugh', 'frown', 'cheeky', 'blush', 'surprise',
- *         'indecision', 'angry', 'angel', 'cool', 'devil', 'crying', 'enlightened', 'no',
- *         'yes', 'heart', 'broken heart', 'kiss', 'mail'
+ *         'smiley', 'sad', 'wink', 'teeth', 'grin', 'cheeky', 'surprise', 'evil',
+ *         'waii', 'lightbulb', 'thumbs up', 'thumbs down', 'heart', 'mail'
  *     ];
  * @example
  * // Use textual emoticons as description.
@@ -78,9 +77,8 @@ CKEDITOR.config.smiley_images = [
  */
 CKEDITOR.config.smiley_descriptions =
 	[
-		'smiley', 'sad', 'wink', 'laugh', 'frown', 'cheeky', 'blush', 'surprise',
-		'indecision', 'angry', 'angel', 'cool', 'devil', 'crying', 'enlightened', 'no',
-		'yes', 'heart', 'broken heart', 'kiss', 'mail'
+		'smiley', 'sad', 'wink', 'teeth', 'grin', 'cheeky', 'surprise', 'evil',
+        'waii', 'lightbulb', 'thumbs up', 'thumbs down', 'heart', 'mail'
 	];
 
 /**

@@ -1,4 +1,4 @@
-﻿/*
+/*
 Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
@@ -576,7 +576,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 											id : 'browse',
 											// v-align with the 'txtUrl' field.
 											// TODO: We need something better than a fixed size here.
-											style : 'display:inline-block;margin-top:10px;',
+											style : 'display:inline-block;margin-top:17px;',
 											align : 'center',
 											label : editor.lang.common.browseServer,
 											hidden : true,
