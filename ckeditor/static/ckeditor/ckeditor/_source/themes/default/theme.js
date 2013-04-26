@@ -173,9 +173,6 @@ CKEDITOR.themes.add( 'default', (function()
 			 */
 			editor.container = container;
 
-			// Disable browser context menu for editor's chrome.
-			container.disableContextMenu();
-
 			// Use a class to indicate that the current selection is in different direction than the UI.
 			editor.on( 'contentDirChanged', function( evt )
 			{

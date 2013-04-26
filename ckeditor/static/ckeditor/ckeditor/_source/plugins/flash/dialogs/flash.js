@@ -1,4 +1,4 @@
-﻿/*
+/*
 Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
@@ -352,7 +352,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 											hidden : true,
 											// v-align with the 'src' field.
 											// TODO: We need something better than a fixed size here.
-											style : 'display:inline-block;margin-top:10px;',
+											style : 'display:inline-block;margin-top:17px;',
 											label : editor.lang.common.browseServer
 										}
 									]

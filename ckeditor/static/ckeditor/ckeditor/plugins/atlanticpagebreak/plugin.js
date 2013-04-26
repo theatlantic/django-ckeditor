@@ -1,10 +1,5 @@
 (function($) {
 
-/*
-Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.html or http://ckeditor.com/license
-*/
-
 /**
  * @file Horizontal Page Break
  */
@@ -112,7 +107,11 @@ CKEDITOR.plugins.pagebreakCmd =
 			'title="'+ label + '" ' +
 			'aria-label="'+ label + '" ' +
 			'data-cke-display-name="pagebreak" ' +
-			'style="clear:both;border-top:dotted 1px #D8D8D8;border-bottom:dotted 1px #D8D8D8;" ' +
+
+			/* This was the default style, but is removed because it was causing specificity
+			escalation, and isn't used anywhere. */
+			// 'style="clear:both;border-top:dotted 1px #D8D8D8;border-bottom:dotted 1px #D8D8D8;" ' +
+
 			'class="pagebreak">&nbsp;' +
 			'</div>', editor.document );
 

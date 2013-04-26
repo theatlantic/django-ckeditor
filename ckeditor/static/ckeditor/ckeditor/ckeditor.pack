@@ -132,6 +132,7 @@ packages :
 					'_source/core/_bootstrap.js',
 					'_source/skins/kama/skin.js',
 					'_source/skins/django/skin.js',
+					'_source/skins/bootstrap/skin.js',
 					'_source/lang/en.js',
 					'_source/plugins/about/plugin.js',
 					'_source/plugins/a11yhelp/plugin.js',
