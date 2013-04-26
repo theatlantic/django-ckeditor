@@ -194,9 +194,9 @@ def re_render(path, width, height):
     except IOError:
         # Probably doesn't exist or isn't an image
         return path
-
     # We have to call image.load first due to a PIL 1.1.7 bug 
     image.load()
+
     if image.format == 'PNG' and getattr(settings, 'CKEDITOR_PNG_TO_JPEG', False):
         pixels = reduce(lambda a,b: a*b, image.size)
         # check that our entire alpha channel is set to full opaque
@@ -217,13 +217,24 @@ def re_render(path, width, height):
             # Static GIFs should throw an EOF on seek
             pass
 
+    # We can't resize gifs with transparency either
+    if image.format == 'GIF' and image.info.get('transparency'):
+        return path
+
     new_path = new_rendered_path(path, width, height)
     if is_rendered(new_path, width, height):
         return new_path
 
     # Re-render the image, optimizing for filesize
     new_image = image.resize((width, height), Image.ANTIALIAS)
-    new_image.save(new_path, quality=80, optimize=1)
+
+    image_params = {}
+    if image.format != "GIF":
+        image_params = dict(
+            quality = 80,
+            optimize = 1,
+        )
+    new_image.save(new_path, **image_params)
     return new_path
 
 def get_html_tree(content):
