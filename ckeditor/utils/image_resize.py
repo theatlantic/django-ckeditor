@@ -10,8 +10,11 @@ from PIL import Image, ImageFile
 
 from django.conf import settings
 
-from ckeditor import views
+from .common import get_media_url
+
+
 ImageFile.MAXBLOCKS = 10000000
+
 
 def match_or_none(string, rx):
     """
@@ -272,7 +275,7 @@ def resize_images(post_content):
 
         # Flip to the rendered
         img.attrib['data-original'] = orig_url
-        img.attrib['src'] = views.get_media_url(rendered_path)
+        img.attrib['src'] = get_media_url(rendered_path)
 
     # Strip of wrapping div tag
     return render_html_tree(tree)
