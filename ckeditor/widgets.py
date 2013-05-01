@@ -1,5 +1,4 @@
 from django import forms
-from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.utils.safestring import mark_safe
 from django.utils.encoding import force_unicode
@@ -7,10 +6,7 @@ from django.utils.html import conditional_escape
 
 from django.forms.util import flatatt
 
-from . import utils
-
-
-TIMESTAMP = 'D41I'
+from . import settings as ck_settings, utils
 
 
 class CKEditorWidget(forms.Textarea):
@@ -31,17 +27,19 @@ class CKEditorWidget(forms.Textarea):
 
     @property
     def media(self):
-        media_prefix = getattr(settings, 'CKEDITOR_MEDIA_PREFIX', settings.STATIC_URL)
+        media_prefix = ck_settings.MEDIA_PREFIX
         if len(media_prefix) and media_prefix[-1] != '/':
             media_prefix += '/'
         ckeditor_root = '%sckeditor/ckeditor' % media_prefix
 
+        timestamp = ck_settings.TIMESTAMP
+
         media = super(CKEditorWidget, self).media
         media.add_js([
-            '%s/ckeditor.js?timestamp=%s' % (ckeditor_root, TIMESTAMP),
+            '%s/ckeditor.js?timestamp=%s' % (ckeditor_root, timestamp),
             reverse('ckeditor_configs'),
-            '%s/adapters/jquery.js?timestamp=%s' % (ckeditor_root, TIMESTAMP),
-            '%s/ckeditor_widget.js?timestamp=%s' % (ckeditor_root, TIMESTAMP),
+            '%s/adapters/jquery.js?timestamp=%s' % (ckeditor_root, timestamp),
+            '%s/ckeditor_widget.js?timestamp=%s' % (ckeditor_root, timestamp),
         ])
         return media
 

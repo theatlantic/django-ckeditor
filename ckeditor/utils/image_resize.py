@@ -10,6 +10,7 @@ from PIL import Image, ImageFile
 
 from django.conf import settings
 
+from ckeditor import settings as ck_settings
 from .common import get_media_url
 
 
@@ -200,7 +201,7 @@ def re_render(path, width, height):
     # We have to call image.load first due to a PIL 1.1.7 bug 
     image.load()
 
-    if image.format == 'PNG' and getattr(settings, 'CKEDITOR_PNG_TO_JPEG', False):
+    if image.format == 'PNG' and ck_settings.PNG_TO_JPEG:
         pixels = reduce(lambda a,b: a*b, image.size)
         # check that our entire alpha channel is set to full opaque
         if image.mode == 'RGB' or image.split()[-1].histogram()[-1] == pixels:

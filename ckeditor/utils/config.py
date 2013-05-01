@@ -6,9 +6,8 @@ from django.utils.encoding import force_unicode
 from django.utils.functional import Promise
 
 from django.core.exceptions import ImproperlyConfigured
-from django.conf import settings
 
-from ckeditor.settings import DEFAULT_CONFIG
+from ckeditor import settings as ck_settings
 
 
 MISSING_KWARGS = 'missing-kwargs'
@@ -34,22 +33,21 @@ error_msgs = {
 
 
 def validate_config(config_name=None, config=None, instance=None):
-    new_config = copy.deepcopy(DEFAULT_CONFIG)
+    new_config = copy.deepcopy(ck_settings.DEFAULT_CONFIG)
 
     # Try to get valid config from settings.
     if config_name is None and config is None and instance:
         raise TypeError(error_msgs[MISSING_KWARGS].format(
                 cls_name=instance.__class__.__name__))
 
-    configs = getattr(settings, 'CKEDITOR_CONFIGS', None)
     if config_name:
-        if not configs:
+        if not ck_settings.CONFIGS:
             raise ImproperlyConfigured(error_msgs[UNDEFINED_CONF])
-        if not isinstance(configs, collections.Mapping):
+        if not isinstance(ck_settings.CONFIGS, collections.Mapping):
             raise ImproperlyConfigured(error_msgs[INVALID_CONF_TYPE].format(
-                    type=type(configs).__name__))
+                    type=type(ck_settings.CONFIGS).__name__))
 
-        named_config = configs.get(config_name, None)
+        named_config = ck_settings.CONFIGS.get(config_name, None)
 
         if not named_config:
             raise ImproperlyConfigured(
@@ -76,3 +74,4 @@ class LazyEncoder(json.JSONEncoder):
 
 
 json_encode = LazyEncoder().encode
+pretty_json_encode = LazyEncoder(indent=4).encode

@@ -1,18 +1,14 @@
 import os
 import datetime
 
-from django.conf import settings
-
 try:
     from PIL import Image, ImageOps
 except ImportError:
     import Image
     import ImageOps
 
+from ckeditor import settings as ck_settings
 from .common import get_media_url
-
-
-THUMBNAIL_SIZE = (75, 75)
 
 
 def get_available_name(name):
@@ -50,14 +46,14 @@ def create_thumbnail(filename):
         image = image.convert('RGB')
 
     # scale and crop to thumbnail
-    imagefit = ImageOps.fit(image, THUMBNAIL_SIZE, Image.ANTIALIAS)
+    imagefit = ImageOps.fit(image, ck_settings.THUMBNAIL_SIZE, Image.ANTIALIAS)
     imagefit.save(get_thumb_filename(filename))
     return get_media_url(filename)
 
 
 def get_upload_filename(upload_name, user):
     # If CKEDITOR_RESTRICT_BY_USER is True upload file to user specific path.
-    if getattr(settings, 'CKEDITOR_RESTRICT_BY_USER', False):
+    if ck_settings.RESTRICT_BY_USER:
         user_path = user.username
     else:
         user_path = ''
@@ -66,7 +62,7 @@ def get_upload_filename(upload_name, user):
     date_path = datetime.datetime.now().strftime('%Y/%m/%d')
 
     # Complete upload path (upload_path + date_path).
-    upload_path = os.path.join(settings.CKEDITOR_UPLOAD_PATH, user_path, \
+    upload_path = os.path.join(ck_settings.UPLOAD_PATH, user_path, \
             date_path)
 
     # Make sure upload_path exists.

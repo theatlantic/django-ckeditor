@@ -1,15 +1,10 @@
-from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
-from django.utils.safestring import mark_safe
 
 from . import utils
-from .settings import JQUERY_OVERRIDE_VAL
-
-
-pretty_json_encode = utils.LazyEncoder(indent=4).encode
+from . import settings as ck_settings
 
 
 @csrf_exempt
@@ -42,20 +37,18 @@ def upload(request):
 
 
 def browse(request):
-    context = RequestContext(request, {
+    return render_to_response('browse.html', RequestContext(request, {
         'images': utils.get_image_browse_urls(request.user),
-    })
-    return render_to_response('browse.html', context)
+    }))
 
 
 def configs(request):
-    configs = getattr(settings, 'CKEDITOR_CONFIGS', None)
     merged_configs = {}
-    if configs is not None:
-        for config_name, config in configs.iteritems():
+    if ck_settings.CONFIGS is not None:
+        for config_name, config in ck_settings.CONFIGS.iteritems():
             merged_configs[config_name] = utils.validate_config(config_name)
 
-    return render_to_response('ckeditor/configs.js', {
-        'merged_configs': pretty_json_encode(merged_configs),
-        'jquery_override_val': utils.json_encode(JQUERY_OVERRIDE_VAL),
-    }, mimetype="application/x-javascript")
+    return render_to_response('ckeditor/configs.js', RequestContext(request, {
+        'merged_configs': utils.pretty_json_encode(merged_configs),
+        'jquery_override_val': utils.json_encode(ck_settings.JQUERY_OVERRIDE_VAL),
+    }), mimetype="application/x-javascript")
