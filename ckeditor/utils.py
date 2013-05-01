@@ -10,7 +10,7 @@ from PIL import Image, ImageFile
 
 from django.conf import settings
 
-import views
+from ckeditor import views
 ImageFile.MAXBLOCKS = 10000000
 
 def match_or_none(string, rx):
