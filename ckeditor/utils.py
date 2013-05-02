@@ -1,3 +1,4 @@
+import logging
 import uuid
 import os
 import shutil
@@ -9,6 +10,8 @@ from lxml import html
 from PIL import Image, ImageFile
 
 from django.conf import settings
+
+logger = logging.getLogger(__name__)
 
 import views
 ImageFile.MAXBLOCKS = 10000000
@@ -264,7 +267,15 @@ def resize_images(post_content):
         orig_path = get_local_path(orig_url)
 
         width, height = get_dimensions(img)
-        rendered_path = re_render(orig_path, width, height)
+        try:
+            rendered_path = re_render(orig_path, width, height)
+        except Exception as e:
+            # If something goes wrong, just use the original path so as not to
+            # interrupt the user. However, log it, because it's still a real problem.
+            logger.error(e, exc_info=True, extra={
+                'stack': True,
+            })
+            rendered_path = orig_path
 
         # If we haven't changed the image, move along.
         if rendered_path == orig_path:
