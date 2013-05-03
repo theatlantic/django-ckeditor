@@ -24,3 +24,33 @@ if 'ckeditor' in settings.INSTALLED_APPS:
             raise ImproperlyConfigured("django-ckeditor CKEDITOR_UPLOAD_PATH \
                     setting error, no such file or directory: '%s'" % \
                     settings.CKEDITOR_UPLOAD_PATH)
+
+
+# Connect to django-filebrowser's filebrowser_post_upload signal.
+# This is the only way to get the uploaded file's location into
+# ckeditor.views.fb_upload when wrapping a call to the filebrowser's
+# file upload view function.
+
+filebrowser_post_upload = None
+
+try:
+    # django-filebrowser >= 3.5.0
+    from filebrowser.signals import filebrowser_post_upload
+except ImportError:
+    try:
+        # django-filebrowser <= 3.4.x
+        from filebrowser.views import filebrowser_post_upload
+    except ImportError:
+        pass
+
+if filebrowser_post_upload:
+    def post_upload_callback(sender, **kwargs):
+        request = sender
+        upload_file = kwargs.get('file')
+        if not upload_file:
+            return
+        fb_data = getattr(request, '_fb_data', None)
+        if not isinstance(fb_data, dict):
+            return
+        fb_data['upload_file'] = upload_file
+    filebrowser_post_upload.connect(post_upload_callback)

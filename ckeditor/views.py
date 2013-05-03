@@ -52,3 +52,54 @@ def configs(request):
         'merged_configs': utils.pretty_json_encode(merged_configs),
         'jquery_override_val': utils.json_encode(ck_settings.JQUERY_OVERRIDE_VAL),
     }), mimetype="application/x-javascript")
+
+
+@csrf_exempt
+def fb_upload(request):
+    """
+    A wrapper around django-filebrowser's file upload view. It returns a
+    javascript function call to CKEDITOR.tools.callFunction(), which
+    CKEDITOR expects.
+    """
+    try:
+        import filebrowser
+    except ImportError:
+        raise Exception("Filebrowser not installed")
+
+    upload_file_view = None
+
+    try:
+        from filebrowser.sites import site
+    except ImportError:
+        pass
+    else:
+        upload_file_view = site._upload_file
+
+    if upload_file_view is None:
+        try:
+            from filebrowser.views import _upload_file
+        except ImportError:
+            raise Exception(
+                "django-filebrowser must be version 3.3.0 or greater; "
+                "currently at version %s" % filebrowser.VERSION)
+        else:
+            upload_file_view = _upload_file
+
+    # Create a dict on the request object that will be modified by the
+    # filebrowser_post_upload signal receiver in ckeditor/models.py
+    fb_data = request._fb_data = {}
+
+    # Call original view function.
+    # Within this function, the filebrowser_post_upload signal will be sent,
+    # and our signal receiver will add the filebrowser.base.FileObject
+    # instance to request._fb_data["upload_file"]
+    upload_file_view(request)
+
+    upload_file = fb_data.get('upload_file')
+    if not upload_file:
+        return HttpResponse("Error uploading file")
+
+    return HttpResponse("""
+    <script type='text/javascript'>
+        window.parent.CKEDITOR.tools.callFunction(%s, '%s');
+    </script>""" % (request.GET['CKEditorFuncNum'], upload_file.url))
