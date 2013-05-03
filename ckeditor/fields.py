@@ -1,33 +1,43 @@
 from django.db import models
 from django import forms
 
-import ckeditor.signals as signals
 from ckeditor.widgets import CKEditorWidget
+from ckeditor.utils.image_resize import resize_images
 
 
 class RichTextField(models.TextField):
+
     def __init__(self, *args, **kwargs):
         self.config_name = kwargs.pop("config_name", "default")
-        self.dynamic_resize = kwargs.pop("dynamic_resize",False)
+        self.dynamic_resize = kwargs.pop("dynamic_resize", False)
         super(RichTextField, self).__init__(*args, **kwargs)
 
     def formfield(self, **kwargs):
         defaults = {
             'form_class': RichTextFormField,
             'config_name': self.config_name,
+            'dynamic_resize': self.dynamic_resize,
         }
-        defaults.update(kwargs)
+        defaults.update(kwargs) # Adds request if it's there too
         return super(RichTextField, self).formfield(**defaults)
 
-    def contribute_to_class(self, cls, name):
-        super(RichTextField, self).contribute_to_class(cls, name)
-        if self.dynamic_resize:
-            signals.add_dynamic_resize(cls, name)
 
 class RichTextFormField(forms.fields.Field):
+
     def __init__(self, config_name='default', *args, **kwargs):
-        kwargs.update({'widget': CKEditorWidget(config_name=config_name)})
+        self.dynamic_resize = kwargs.pop("dynamic_resize", False)
+        kwargs.update({
+            'widget': CKEditorWidget(config_name=config_name),
+        })
+        self.request = kwargs.pop('request', None)
         super(RichTextFormField, self).__init__(*args, **kwargs)
+
+    def to_python(self, value):
+        value = super(RichTextFormField, self).to_python(value)
+        if self.dynamic_resize:
+            resize_images(value, request=self.request)
+        return value
+
 
 try:
     from south.modelsinspector import add_introspection_rules
