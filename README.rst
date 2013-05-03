@@ -80,6 +80,20 @@ The quickest way to add rich text editing capabilities to your models is to use 
 
 RichTextField takes an optional kwarg, ``dynamic_resize``, which attempts to optimize embeded images.  The default value is ``False``.
 
+Admin
+~~~~~
+
+Our version of Django-CKEditor will create thumbnails of resized images on save. By default, if something goes wrong, it raises an exception. We prefer to pass a warning to the user (using messages), log the error, rather than stock saving and validation dead in its tracks.
+
+To use this feature in the admin, add this to your ModelAdmin to ensure the form can access the request:
+
+    def formfield_for_dbfield(self, db_field, request=None, **kwargs):
+        if isinstance(db_field, RichTextField):
+          return db_field.formfield(request=request, **kwargs)
+        return super(PostAdmin, self).formfield_for_dbfield(db_field, request=request, **kwargs)
+
+
+
 Widget
 ~~~~~~
 Alernatively you can use the included ``CKEditorWidget`` as the widget for a formfield. For example::

@@ -1,21 +1,25 @@
-import uuid
 import os
-import shutil
+import sys
 import urlparse
 import re
 import hashlib
+import logging
 
 from lxml import html
 from PIL import Image, ImageFile
 
 from django.conf import settings
-
+from django.contrib import messages
 from ckeditor import settings as ck_settings
 from .common import get_media_url
 
 
 ImageFile.MAXBLOCKS = 10000000
 
+logger = logging.getLogger(__name__)
+
+class ImageResizeError(Exception):
+    pass
 
 def match_or_none(string, rx):
     """
@@ -174,6 +178,7 @@ def transcode_to_jpeg(image, path, width, height):
     new_image.save(new_path, quality=80, optimize=1)
     return new_path
 
+
 def re_render(path, width, height):
     """
     Given an original image, width, and height, creates a thumbnailed image
@@ -193,6 +198,7 @@ def re_render(path, width, height):
     @return: Path to the 'rendered' image.
     @rtype:  "/path/to/image"
     """
+
     try:
         image = Image.open(path)
     except IOError:
@@ -247,7 +253,7 @@ def get_html_tree(content):
 def render_html_tree(tree):
     return html.tostring(tree)[5:-6]
 
-def resize_images(post_content):
+def resize_images(post_content, request=None):
     """
     Goes through all images, resizing those that we know to be local to the
     correct image size.
@@ -258,9 +264,9 @@ def resize_images(post_content):
     @return: Modified contents.
     @rtype:  basestring
     """
+
     # Get tree
     tree = get_html_tree(post_content)
-
     # Get images
     imgs = tree.xpath('//img[starts-with(@src, "%s")]' % settings.STATIC_URL)
     for img in imgs:
@@ -268,11 +274,29 @@ def resize_images(post_content):
         orig_path = get_local_path(orig_url)
 
         width, height = get_dimensions(img)
-        rendered_path = re_render(orig_path, width, height)
+        try:
+            rendered_path = re_render(orig_path, width, height)
+        except Exception as e:
+            if not request: # Outside the admin, or not have a way to do this as a warning? Let it explode.
+                raise
+
+            # If something goes wrong, just use the original path so as not to
+            # interrupt the user. However, log it and give them a warning.
+            logger.warning(e, exc_info=True, extra={
+                'stack': True,
+            })
+            msg = "We had a problem resizing {img}: {error}".format(
+                    img=os.path.split(orig_path)[1],
+                    error=unicode(e),
+                )
+            messages.add_message(request, messages.WARNING, msg)
+            continue  # Nevermind for now
 
         # If we haven't changed the image, move along.
         if rendered_path == orig_path:
             continue
+
+
 
         # Flip to the rendered
         img.attrib['data-original'] = orig_url
