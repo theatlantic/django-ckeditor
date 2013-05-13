@@ -274,28 +274,24 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 								$element.trigger( 'destroy.ckeditor', [ editor ] );
 							});
 
+							var $form = $element.parents( 'form' );
+
 							// Integrate with form submit.
-							if ( editor.config.autoUpdateElementJquery && $element.is( 'textarea' ) && $element.parents( 'form' ).length )
+							if ( editor.config.autoUpdateElementJquery && $element.is( 'textarea' ) && $form.length )
 							{
-								var onSubmit = function()
-								{
-									$element.ckeditor( function()
-									{
-										editor.updateElement();
-									});
-								};
+								var onSubmit = function() { editor.updateElement(); };
 
 								// Bind to submit event.
-								$element.parents( 'form' ).submit( onSubmit );
+								$form.bind( 'submit.ckeditor', onSubmit );
 
 								// Bind to form-pre-serialize from jQuery Forms plugin.
-								$element.parents( 'form' ).bind( 'form-pre-serialize', onSubmit );
+								$form.bind( 'form-pre-serialize.ckeditor', onSubmit );
 
 								// Unbind when editor destroyed.
 								$element.bind( 'destroy.ckeditor', function()
 								{
-									$element.parents( 'form' ).unbind( 'submit', onSubmit );
-									$element.parents( 'form' ).unbind( 'form-pre-serialize', onSubmit );
+									$form.unbind( 'submit.ckeditor', onSubmit );
+									$form.unbind( 'form-pre-serialize.ckeditor', onSubmit );
 								});
 							}
 
@@ -378,7 +374,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 						{
 							result = editor.getData();
 							// break;
-							return null;
+							return false;
 						}
 					}
 					else
@@ -389,7 +385,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 						{
 							result = oldValMethod.call( $this );
 							// break;
-							return null;
+							return false;
 						}
 					}
 

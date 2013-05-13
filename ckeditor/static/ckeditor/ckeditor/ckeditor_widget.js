@@ -29,7 +29,14 @@
             var $this = this;
 
             return $this.filter('textarea, div, p').each(function(i, element) {
-                var $element = $(element);
+                var $element = $(element),
+                    editor = $element.data('ckeditorInstance'),
+                    instanceLock = $element.data('_ckeditorInstanceLock');
+
+                if (editor && !instanceLock && callback) {
+                    callback.apply(editor, [this]);
+                    return this;
+                }
                 var elementConfig = $.extend({}, config || {});
                 if (!config) {
                     var configName = $element.attr('data-config-name');
@@ -49,31 +56,11 @@
                 }
 
             });
-            //
-            // if (!config) {
-            //     return $this.filter('textarea, div, p').each(function(i, element) {
-            //
-            //         oldFn.apply()
-            //         $element.ckeditor(config);
-            //     });
-            // }
         };
     }
 
     $(document).ready(function() {
         $('.django-ckeditor-textarea').ckeditor();
-        // $('.django-ckeditor-textarea').each(function(i, textarea) {
-        //     var $textarea = $(textarea);
-        //     var configName = $textarea.attr('data-config-name');
-        //     var config = $.parseJSON($textarea.attr('data-config')) || {};
-        //     var baseConfig = {};
-        //     if (typeof DJCKEDITOR == 'object' && typeof DJCKEDITOR.configs == 'object') {
-        //         baseConfig = $.extend({}, baseConfig,
-        //             DJCKEDITOR.configs[configName] || {});
-        //     }
-        //     config = $.extend({}, baseConfig, config);
-        //     $textarea.ckeditor(config);
-        // });
     });
 
 })();
