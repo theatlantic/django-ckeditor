@@ -35,7 +35,7 @@ class RichTextFormField(forms.fields.Field):
     def to_python(self, value):
         value = super(RichTextFormField, self).to_python(value)
         if self.dynamic_resize:
-            resize_images(value, request=self.request)
+            value = resize_images(value, request=self.request)
         return value
 
 
