@@ -25,6 +25,9 @@ DEFAULT_CONFIG = {
     'filebrowserBrowseUrl': lazy_reverse('ckeditor_browse'),
 }
 
+
+#: If CKEDITOR_DEBUG=True, uses the unminified version of files
+CKEDITOR_DEBUG = getattr(settings, 'CKEDITOR_DEBUG', False)
 MEDIA_ROOT = getattr(settings, 'CKEDITOR_MEDIA_ROOT', getattr(settings, 'MEDIA_ROOT', ''))
 
 CONFIGS = getattr(settings, 'CKEDITOR_CONFIGS', None)
