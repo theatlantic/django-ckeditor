@@ -41,6 +41,16 @@ CKEDITOR.plugins.add( 'atlanticpagebreak',
 			dataFilter = dataProcessor && dataProcessor.dataFilter,
 			htmlFilter = dataProcessor && dataProcessor.htmlFilter;
 
+		if ( dataProcessor ) {
+			dataProcessor.writer.setRules( 'div', {
+				indent : false,
+				breakBeforeOpen : true,
+				breakAfterOpen : false,
+				breakBeforeClose : false,
+				breakAfterClose : true
+			});
+		}
+
 		if ( htmlFilter )
 		{
 			htmlFilter.addRules(
@@ -49,9 +59,7 @@ CKEDITOR.plugins.add( 'atlanticpagebreak',
 					'class' : function( value, element )
 					{
 						if ( value == 'pagebreak' ) {
-							var span = CKEDITOR.htmlParser.fragment.fromHtml( '&nbsp;' );
 							element.children.length = 0;
-							element.add( span );
 							var attrs = element.attributes;
 							delete attrs[ 'aria-label' ];
 							delete attrs.contenteditable;
@@ -75,7 +83,7 @@ CKEDITOR.plugins.add( 'atlanticpagebreak',
 						{
 							var attributes = element.attributes;
 
-							if ( attributes.class == 'pagebreak' )
+							if ( attributes['class'] == 'pagebreak' )
 							{
 								attributes.contenteditable = "false";
 								attributes[ 'data-cke-display-name' ] = "pagebreak";
