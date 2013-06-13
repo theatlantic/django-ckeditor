@@ -14,7 +14,7 @@ TIMESTAMP = 'D4DF'
 
 
 DEFAULT_CONFIG = {
-    'skin': 'django',
+    'skin': 'moonocolor',
     'toolbar': 'Full',
     'height': 291,
     'width': 835,

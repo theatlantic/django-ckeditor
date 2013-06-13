@@ -1,0 +1,1 @@
+﻿CKEDITOR.plugins.setLang("sourcedialog","it",{toolbar:"Codice Sorgente",title:"Codice Sorgente"});

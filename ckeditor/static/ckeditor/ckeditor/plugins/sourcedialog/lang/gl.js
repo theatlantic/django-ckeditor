@@ -1,0 +1,1 @@
+﻿CKEDITOR.plugins.setLang("sourcedialog","gl",{toolbar:"Código Fonte",title:"Código Fonte"});
