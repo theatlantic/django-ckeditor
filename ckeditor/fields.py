@@ -10,6 +10,7 @@ class RichTextField(models.TextField):
     def __init__(self, *args, **kwargs):
         self.config_name = kwargs.pop("config_name", "default")
         self.dynamic_resize = kwargs.pop("dynamic_resize", False)
+        self.extra_config = kwargs.pop('extra_config', {})
         super(RichTextField, self).__init__(*args, **kwargs)
 
     def formfield(self, **kwargs):
@@ -17,6 +18,7 @@ class RichTextField(models.TextField):
             'form_class': RichTextFormField,
             'config_name': self.config_name,
             'dynamic_resize': self.dynamic_resize,
+            'extra_config': self.extra_config,
         }
         defaults.update(kwargs) # Adds request if it's there too
         return super(RichTextField, self).formfield(**defaults)
@@ -26,8 +28,9 @@ class RichTextFormField(forms.fields.Field):
 
     def __init__(self, config_name='default', *args, **kwargs):
         self.dynamic_resize = kwargs.pop("dynamic_resize", False)
+        self.extra_config = kwargs.pop('extra_config', {})
         kwargs.update({
-            'widget': CKEditorWidget(config_name=config_name),
+            'widget': CKEditorWidget(config_name=config_name, config=self.extra_config),
         })
         self.request = kwargs.pop('request', None)
         super(RichTextFormField, self).__init__(*args, **kwargs)
