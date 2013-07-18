@@ -23,6 +23,8 @@ DEFAULT_CONFIG = {
     'filebrowserWindowHeight': 725,
     'filebrowserUploadUrl': lazy_reverse('ckeditor_upload'),
     'filebrowserBrowseUrl': lazy_reverse('ckeditor_browse'),
+    'disableNativeSpellChecker': False,
+    'allowedContent': True,
 }
 
 
