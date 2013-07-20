@@ -1,3 +1,6 @@
+import copy
+import collections
+
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.utils.functional import lazy
@@ -32,7 +35,11 @@ DEFAULT_CONFIG = {
 CKEDITOR_DEBUG = getattr(settings, 'CKEDITOR_DEBUG', False)
 MEDIA_ROOT = getattr(settings, 'CKEDITOR_MEDIA_ROOT', getattr(settings, 'MEDIA_ROOT', ''))
 
-CONFIGS = getattr(settings, 'CKEDITOR_CONFIGS', None)
+CONFIGS = getattr(settings, 'CKEDITOR_CONFIGS', {})
+
+if isinstance(CONFIGS, collections.Mapping):
+    CONFIGS = copy.deepcopy(CONFIGS)
+    CONFIGS['default'] = dict(DEFAULT_CONFIG, **CONFIGS.pop('default', {}))
 
 THUMBNAIL_SIZE = getattr(settings, 'CKEDITOR_THUMBNAIL_SIZE', (75, 75))
 JQUERY_OVERRIDE_VAL = getattr(settings, 'CKEDITOR_JQUERY_OVERRIDE_VAL', True)

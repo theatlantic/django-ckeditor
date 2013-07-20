@@ -10,7 +10,6 @@ from django.core.exceptions import ImproperlyConfigured
 from ckeditor import settings as ck_settings
 
 
-MISSING_KWARGS = 'missing-kwargs'
 UNDEFINED_CONF = 'undef-config'
 UNDEFINED_CONF_KEY = 'undef-config-setting'
 INVALID_CONF_TYPE = 'invalid-config-type'
@@ -18,8 +17,6 @@ INVALID_CONF_KEY_TYPE = 'invalid-config-setting-type'
 
 
 error_msgs = {
-    MISSING_KWARGS:        "{cls_name} requires either 'config_name' or"
-                           " 'config' keyword arguments",
     UNDEFINED_CONF:        "CKEDITOR_CONFIGS not defined in settings",
     UNDEFINED_CONF_KEY:    "No configuration named '{conf}' found in"
                            " CKEDITOR_CONFIGS setting.",
@@ -32,13 +29,8 @@ error_msgs = {
 }
 
 
-def validate_config(config_name=None, config=None, instance=None):
+def validate_config(config_name='default', config=None, instance=None):
     new_config = copy.deepcopy(ck_settings.DEFAULT_CONFIG)
-
-    # Try to get valid config from settings.
-    if config_name is None and config is None and instance:
-        raise TypeError(error_msgs[MISSING_KWARGS].format(
-                cls_name=instance.__class__.__name__))
 
     if config_name:
         if not ck_settings.CONFIGS:
