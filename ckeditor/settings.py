@@ -13,7 +13,7 @@ def url_reverse(pattern):
 lazy_reverse = lazy(reverse, str)
 
 
-TIMESTAMP = 'D6HM'
+TIMESTAMP = 'D6HZ'
 
 
 DEFAULT_CONFIG = {
