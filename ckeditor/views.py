@@ -49,6 +49,8 @@ def configs(request):
             merged_configs[config_name] = utils.validate_config(config_name)
 
     return render_to_response('ckeditor/configs.js', RequestContext(request, {
+        'debug': ck_settings.CKEDITOR_DEBUG,
+        'timestamp': ck_settings.TIMESTAMP,
         'merged_configs': utils.pretty_json_encode(merged_configs),
         'jquery_override_val': utils.json_encode(ck_settings.JQUERY_OVERRIDE_VAL),
     }), mimetype="application/x-javascript")
