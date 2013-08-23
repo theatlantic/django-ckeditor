@@ -6,18 +6,14 @@ from django.core.urlresolvers import reverse
 from django.utils.functional import lazy
 
 
-def url_reverse(pattern):
-	return reverse(pattern)
-
-
 lazy_reverse = lazy(reverse, str)
 
 
-TIMESTAMP = 'D72G'
+TIMESTAMP = 'D7JN'
 
 
 DEFAULT_CONFIG = {
-    'skin': 'moonocolor',
+    'skin': 'moono',
     'toolbar': 'Full',
     'height': 291,
     'width': 835,

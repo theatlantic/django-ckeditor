@@ -30,21 +30,16 @@ class CKEditorWidget(forms.Textarea):
         media_prefix = ck_settings.MEDIA_PREFIX
         if len(media_prefix) and media_prefix[-1] != '/':
             media_prefix += '/'
+
         source_dir = '%sckeditor/ckeditor' % media_prefix
-
         timestamp = ck_settings.TIMESTAMP
+        dev_suffix = "-dev" if ck_settings.CKEDITOR_DEBUG else ""
 
-        if ck_settings.CKEDITOR_DEBUG:
-            source_dir = "%s-dev" % source_dir
-
-        media = super(CKEditorWidget, self).media
-        media.add_js([
-            '%s/ckeditor.js?timestamp=%s' % (source_dir, timestamp),
+        return super(CKEditorWidget, self).media + forms.Media(js=(
+            '%s%s/ckeditor.js?timestamp=%s' % (source_dir, dev_suffix, timestamp),
             reverse('ckeditor_configs'),
-            '%s/core/adapters/jquery.js?timestamp=%s' % (source_dir, timestamp),
-            '%s/ckeditor_widget.js?timestamp=%s' % (source_dir, timestamp),
-        ])
-        return media
+            '%s/django/jquery_adapter.js?timestamp=%s' % (source_dir, timestamp),
+            '%s/django/widget.js?timestamp=%s' % (source_dir, timestamp)))
 
     def render(self, name, value, attrs=None):
         if value is None:

@@ -101,7 +101,9 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 			throw new Error("$.versioncompare needs at least one parameter.");
 		}
 		version2 = version2 || $.fn.jquery;
-		if (version1 == version2) {return 0;};
+		if (version1 == version2) {
+		    return 0;
+		}
 
 		var v1 = normalizeVersion(version1);
 		var v2 = normalizeVersion(version2);
@@ -244,12 +246,12 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 					editor.on( 'instanceReady', function( event )
 					{
 						var editor = event.editor;
-						setTimeout( function()
+						setTimeout( function instanceReadyCheck()
 						{
 							// Delay bit more if editor is still not ready.
 							if ( !editor.element )
 							{
-								setTimeout( arguments.callee, 100 );
+								setTimeout( instanceReadyCheck, 100 );
 								return;
 							}
 
@@ -318,12 +320,12 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 					CKEDITOR.on( 'instanceReady', function( event )
 					{
 						var editor = event.editor;
-						setTimeout( function()
+						setTimeout( function instanceReadyCheck()
 						{
 							// Delay bit more if editor is still not ready.
 							if ( !editor.element )
 							{
-								setTimeout( arguments.callee, 100 );
+								setTimeout( instanceReadyCheck, 100 );
 								return;
 							}
 
