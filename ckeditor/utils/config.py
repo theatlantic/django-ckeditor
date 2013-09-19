@@ -2,12 +2,14 @@ import copy
 import collections
 
 import json
+from json.encoder import (encode_basestring, encode_basestring_ascii,
+    FLOAT_REPR, INFINITY, _make_iterencode, c_make_encoder)
+
+from django.core.exceptions import ImproperlyConfigured
 from django.utils.encoding import force_unicode
 from django.utils.functional import Promise
 
-from django.core.exceptions import ImproperlyConfigured
-
-from ckeditor import settings as ck_settings
+from ckeditor import JSCode, settings as ck_settings
 
 
 UNDEFINED_CONF = 'undef-config'
@@ -59,6 +61,50 @@ def validate_config(config_name='default', config=None, instance=None):
 
 
 class LazyEncoder(json.JSONEncoder):
+
+    def iterencode(self, o, _one_shot=False):
+        markers = {} if self.check_circular else None
+        if self.ensure_ascii:
+            _encoder = encode_basestring_ascii
+        else:
+            _encoder = encode_basestring
+
+        def _encoder(o, _orig_encoder=_encoder, _encoding=self.encoding):
+            if isinstance(o, JSCode):
+                return o
+            if _encoding != 'utf-8' and isinstance(o, str):
+                o = o.decode(_encoding)
+            return _orig_encoder(o)
+
+        def floatstr(o, allow_nan=self.allow_nan,
+                _repr=FLOAT_REPR, _inf=INFINITY, _neginf=-INFINITY):
+            # Check for specials.  Note that this type of test is processor
+            # and/or platform-specific, so do tests which don't depend on the
+            # internals.
+            if o != o:
+                text = 'NaN'
+            elif o == _inf:
+                text = 'Infinity'
+            elif o == _neginf:
+                text = '-Infinity'
+            else:
+                return _repr(o)
+            if not allow_nan:
+                raise ValueError("Out of range float values are not JSON "
+                                 "compliant: %s" % repr(o))
+            return text
+
+        if _one_shot and c_make_encoder and not(self.indent or self.sort_keys):
+            _iterencode = c_make_encoder(markers, self.default, _encoder,
+                self.indent, self.key_separator, self.item_separator,
+                self.sort_keys, self.skipkeys, self.allow_nan)
+        else:
+            _iterencode = _make_iterencode(markers, self.default, _encoder,
+                self.indent, floatstr, self.key_separator,
+                self.item_separator, self.sort_keys, self.skipkeys, _one_shot)
+
+        return _iterencode(o, 0)
+
     def default(self, obj):
         if isinstance(obj, Promise):
             return force_unicode(obj)
