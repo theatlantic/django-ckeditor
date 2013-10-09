@@ -1,1 +1,1 @@
-﻿CKEDITOR.plugins.setLang("sourcedialog","ru",{toolbar:"Источник",title:"Источник"});
+﻿CKEDITOR.plugins.setLang("sourcedialog","ru",{toolbar:"Исходник",title:"Источник"});
