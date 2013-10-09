@@ -13,9 +13,6 @@ setup(
     dependency_links = [
         'http://dist.plone.org/thirdparty/',
     ],
-    install_requires = [
-        'PIL',
-    ],
     include_package_data=True,
     test_suite="setuptest.SetupTestSuite",
     tests_require=[
