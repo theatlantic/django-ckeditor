@@ -5,15 +5,15 @@ CKEditor 4 Changelog
 
 New Features:
 
-* [#10028](http://dev.ckeditor.com/ticket/10028): New option [`config.dialog_noConfirmCancel`](http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-dialog_noConfirmCancel).
+* [#10028](http://dev.ckeditor.com/ticket/10028): New [`config.dialog_noConfirmCancel`](http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-dialog_noConfirmCancel) configuration option that eliminates the need to confirm closing of a dialog window when the user changed any of its fields.
 
 Fixed Issues:
 
 * [#10612](http://dev.ckeditor.com/ticket/10612): Internet Explorer 11 compatibility issues.
-* [#10862](http://dev.ckeditor.com/ticket/10862): Placeholder plugin was rewritten as a widget in order to fix it.
-* [#10831](http://dev.ckeditor.com/ticket/10831): Image2: Merged `image2inline` and `image2block` into `image2` widget.
-* [#10835](http://dev.ckeditor.com/ticket/10835): Image2: Improved visibility of the resize handler.
-* [#10836](http://dev.ckeditor.com/ticket/10836): Image2: Preserve custom mouse cursor while resizing the image.
+* [#10862](http://dev.ckeditor.com/ticket/10862): [Placeholder](http://ckeditor.com/addon/placeholder) plugin was rewritten as a widget in order to fix it.
+* [#10831](http://dev.ckeditor.com/ticket/10831): [Enhanced Image](http://ckeditor.com/addon/image2): Merged `image2inline` and `image2block` into `image2` widget.
+* [#10835](http://dev.ckeditor.com/ticket/10835): [Enhanced Image](http://ckeditor.com/addon/image2): Improved visibility of the resize handle.
+* [#10836](http://dev.ckeditor.com/ticket/10836): [Enhanced Image](http://ckeditor.com/addon/image2): Preserve custom mouse cursor while resizing the image.
 * [#10881](http://dev.ckeditor.com/ticket/10881): Various improvements to *Enter* key behaviour in nested editables.
 
 ## CKEditor 4.3 Beta
@@ -43,13 +43,19 @@ New Features:
 
 Fixed Issues:
 
+* [#10308](http://dev.ckeditor.com/ticket/10308): Fixed: unspecified Error when deleting a row in Internet Explorer 10.
+* [#10945](http://dev.ckeditor.com/ticket/10945): Fixed: click with mouse inside editor does not show the caret in Chrome.
+* [#10912](http://dev.ckeditor.com/ticket/10912): Prevent default action when content of a non-editable link is clicked.
 * [#10913](http://dev.ckeditor.com/ticket/10913): Fixed CKEDITOR.plugins.addExternal not handling paths including file name specified.
 * [#10666](http://dev.ckeditor.com/ticket/10666): Fixed CKEDITOR.tools.isArray not working cross frame.
 * [#10910](http://dev.ckeditor.com/ticket/10910): Fixed error thrown on Internet Explorer 9 in Compatibility Mode.
 * [#10868](http://dev.ckeditor.com/ticket/10868): Prevent from Internet Explorer 8 crashing when applying a cite style.
 * [#10915](http://dev.ckeditor.com/ticket/10915): CSS filter in Kama skin pull request.
 * [#10914](http://dev.ckeditor.com/ticket/10914): Plugins indentlist and indentblock included into building config.
-* [#10812](http://dev.ckeditor.com/ticket/10812): Fixed range#createBookmark2 incorrectly normalizing offsets. This bug was causing many issues: [#10850](http://dev.ckeditor.com/ticket/10850), [#10847](http://dev.ckeditor.com/ticket/10847), [#10842](http://dev.ckeditor.com/ticket/10842).
+* [#10812](http://dev.ckeditor.com/ticket/10812): Fixed range#createBookmark2 incorrectly normalizing offsets. This bug was causing many issues: [#10850](http://dev.ckeditor.com/ticket/10850), [#10842](http://dev.ckeditor.com/ticket/10842).
+* [#10951](http://dev.ckeditor.com/ticket/10951): Reviewed and optimized the focus handling on panels (combo, menu-buttons, color buttons and context menu) to enhance accessibility. Fixed [#10705](http://dev.ckeditor.com/ticket/10705), [#10706](http://dev.ckeditor.com/ticket/10706) and [#10707](http://dev.ckeditor.com/ticket/10707).
+* [#10704](http://dev.ckeditor.com/ticket/10704): Fixed a JAWS issue with the Select Color dialog title not being announced.
+* [#10753](http://dev.ckeditor.com/ticket/10753): The floating toolbar on inline instances how have a dedicated accessibility label.
 
 ## CKEditor 4.2.1
 
