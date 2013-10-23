@@ -9,7 +9,7 @@ from django.utils.functional import lazy
 lazy_reverse = lazy(reverse, str)
 
 
-TIMESTAMP = 'D9BE'
+TIMESTAMP = 'D9BF'
 
 
 DEFAULT_CONFIG = {
