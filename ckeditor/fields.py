@@ -1,9 +1,11 @@
+import re
 from django.db import models
 from django import forms
 
 from ckeditor.widgets import CKEditorWidget
 from ckeditor.utils.image_resize import resize_images
 
+CONTROL_CHARACTERS_REGEX = re.compile(r'[\x00-\x08\x10\x0B\x0C\x0E-\x19\x7F]')
 
 class RichModelFieldMixin(object):
 
@@ -45,10 +47,10 @@ class RichTextFormField(forms.CharField):
 
     def to_python(self, value):
         value = super(RichTextFormField, self).to_python(value)
+        value = CONTROL_CHARACTERS_REGEX.sub('', value)
         if self.dynamic_resize:
             value = resize_images(value, request=self.request)
         return value
-
 
 try:
     from south.modelsinspector import add_introspection_rules
