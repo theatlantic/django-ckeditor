@@ -5,7 +5,7 @@ from django import forms
 from ckeditor.widgets import CKEditorWidget
 from ckeditor.utils.image_resize import resize_images
 
-CONTROL_CHARACTERS_REGEX = re.compile(r'[\x00-\x08\x10\x0B\x0C\x0E-\x19\x7F]')
+CONTROL_CHARACTERS_REGEX = re.compile(r'[\x00-\x08\x10\x0B\x0C\x0E-\x1F\x7F]')
 
 class RichModelFieldMixin(object):
 
