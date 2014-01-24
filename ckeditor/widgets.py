@@ -38,8 +38,8 @@ class CKEditorWidget(forms.Textarea):
         return super(CKEditorWidget, self).media + forms.Media(js=(
             '%s%s/ckeditor.js?timestamp=%s' % (source_dir, dev_suffix, timestamp),
             reverse('ckeditor_configs'),
-            '%s/django/jquery_adapter.js?timestamp=%s' % (source_dir, timestamp),
-            '%s/django/widget.js?timestamp=%s' % (source_dir, timestamp)))
+            '%sckeditor/django/jquery_adapter.js?timestamp=%s' % (media_prefix, timestamp),
+            '%sckeditor/django/widget.js?timestamp=%s' % (media_prefix, timestamp)))
 
     def render(self, name, value, attrs=None):
         if value is None:
