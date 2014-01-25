@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"af.js",
+"lineCount":1,
+"mappings":"AAKAA,QAAAC,QAAAC,QAAA,CAA0B,cAA1B,CAA0C,IAA1C,CAAgD,SACtC,MADsC,OAExC,MAFwC,CAAhD;",
+"sources":["af.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

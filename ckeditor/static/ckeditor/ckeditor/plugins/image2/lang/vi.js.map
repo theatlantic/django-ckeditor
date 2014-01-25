@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"vi.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,eADoC,WAE9B,iBAF8B,WAG9B,iBAH8B,SAIhC,mBAJgC,WAK9B,kBAL8B,MAMnC,oBANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,gBAT8B,SAUhC,0BAVgC,OAWlC,oBAXkC,WAY9B,SAZ8B,YAa7B,0BAb6B,CAA1C;",
+"sources":["vi.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

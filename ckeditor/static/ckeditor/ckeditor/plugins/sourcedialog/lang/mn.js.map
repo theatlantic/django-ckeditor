@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"mn.js",
+"lineCount":1,
+"mappings":"AAKAA,QAAAC,QAAAC,QAAA,CAA0B,cAA1B,CAA0C,IAA1C,CAAgD,SACtC,KADsC,OAExC,KAFwC,CAAhD;",
+"sources":["mn.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

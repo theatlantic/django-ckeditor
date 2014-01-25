@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"it.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,mBADoC,WAE9B,iBAF8B,WAG9B,iBAH8B,SAIhC,uBAJgC,WAK9B,iBAL8B,MAMnC,oBANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,sBAT8B,SAUhC,0BAVgC,OAWlC,oBAXkC,WAY9B,QAZ8B,YAa7B,4BAb6B,CAA1C;",
+"sources":["it.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

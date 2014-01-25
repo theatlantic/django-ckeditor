@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"mn.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,sBADoC,WAE9B,wBAF8B,WAG9B,iBAH8B,SAIhC,kBAJgC,WAK9B,cAL8B,MAMnC,OANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,oBAT8B,SAUhC,0BAVgC,OAWlC,OAXkC,WAY9B,gBAZ8B,YAa7B,iDAb6B,CAA1C;",
+"sources":["mn.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

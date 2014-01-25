@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"sq.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,UAA1B,CAAsC,IAAtC,CAA4C,OACpC,uBADoC,YAE/B,6BAF+B,SAGlC,eAHkC,WAIhC,gBAJgC,aAK9B,mBAL8B,CAA5C;",
+"sources":["sq.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

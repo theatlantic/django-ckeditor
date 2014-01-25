@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"nl.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,aAA1B,CAAyC,IAAzC,CAA+C,OACvC,2BADuC,SAErC,sBAFqC,MAGxC,kBAHwC,aAIjC,gGAJiC,UAKpC,aALoC,CAA/C;",
+"sources":["nl.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

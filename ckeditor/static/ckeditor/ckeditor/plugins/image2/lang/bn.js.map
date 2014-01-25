@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"bn.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,eADoC,WAE9B,0BAF8B,WAG9B,iBAH8B,SAIhC,WAJgC,WAK9B,cAL8B,MAMnC,iBANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,8BAT8B,SAUhC,0BAVgC,OAWlC,iBAXkC,WAY9B,OAZ8B,YAa7B,8BAb6B,CAA1C;",
+"sources":["bn.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

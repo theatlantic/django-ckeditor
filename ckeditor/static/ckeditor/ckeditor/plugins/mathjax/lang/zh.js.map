@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"zh.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,YADmC,QAElC,IAFkC,aAG7B,SAH6B,QAIlC,gDAJkC,UAKhC,UALgC,SAMjC,MANiC,UAOhC,IAPgC,CAA3C;",
+"sources":["zh.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"fo.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,sBADoC,WAE9B,oBAF8B,WAG9B,iBAH8B,SAIhC,kBAJgC,WAK9B,eAL8B,MAMnC,iBANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,cAT8B,SAUhC,0BAVgC,OAWlC,iBAXkC,WAY9B,oBAZ8B,YAa7B,uBAb6B,CAA1C;",
+"sources":["fo.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

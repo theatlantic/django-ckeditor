@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"sl.js",
+"lineCount":1,
+"mappings":"AAKAA,QAAAC,QAAAC,QAAA,CAA0B,cAA1B,CAA0C,IAA1C,CAAgD,SACtC,cADsC,OAExC,cAFwC,CAAhD;",
+"sources":["sl.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

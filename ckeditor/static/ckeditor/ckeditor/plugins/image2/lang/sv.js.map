@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"sv.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,iBADoC,WAE9B,oBAF8B,WAG9B,iBAH8B,SAIhC,iBAJgC,WAK9B,6BAL8B,MAMnC,gBANmC,UAO/B,MAP+B,iBAQxB,QARwB,WAS9B,mBAT8B,SAUhC,uCAVgC,OAWlC,gBAXkC,WAY9B,WAZ8B,YAa7B,yBAb6B,CAA1C;",
+"sources":["sv.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

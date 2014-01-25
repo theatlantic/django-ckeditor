@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"ku.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,cADoC,WAE9B,gBAF8B,WAG9B,iBAH8B,SAIhC,cAJgC,WAK9B,cAL8B,MAMnC,cANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,oBAT8B,SAUhC,0BAVgC,OAWlC,cAXkC,WAY9B,SAZ8B,YAa7B,4BAb6B,CAA1C;",
+"sources":["ku.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

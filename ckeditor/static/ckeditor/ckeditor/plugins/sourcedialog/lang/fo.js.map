@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"fo.js",
+"lineCount":1,
+"mappings":"AAKAA,QAAAC,QAAAC,QAAA,CAA0B,cAA1B,CAA0C,IAA1C,CAAgD,SACtC,OADsC,OAExC,OAFwC,CAAhD;",
+"sources":["fo.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

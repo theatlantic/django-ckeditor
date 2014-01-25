@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"fi.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,uBADoC,WAE9B,qBAF8B,WAG9B,oBAH8B,SAIhC,cAJgC,WAK9B,iBAL8B,MAMnC,oBANmC,UAO/B,MAP+B,iBAQxB,YARwB,WAS9B,mBAT8B,SAUhC,sCAVgC,OAWlC,oBAXkC,WAY9B,gBAZ8B,YAa7B,4BAb6B,CAA1C;",
+"sources":["fi.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

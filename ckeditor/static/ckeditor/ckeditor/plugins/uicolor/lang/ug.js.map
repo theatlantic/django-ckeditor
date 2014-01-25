@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"ug.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,kCADmC,SAEjC,sBAFiC,QAGlC,8CAHkC,YAI9B,2BAJ8B,CAA3C;",
+"sources":["ug.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

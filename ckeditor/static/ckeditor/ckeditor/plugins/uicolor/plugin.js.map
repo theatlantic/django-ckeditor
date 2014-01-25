@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"plugin.js",
+"lineCount":6,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,IAAA,CAAsB,SAAtB,CAAiC,UACtB,QADsB,MAE1B,6JAF0B,OAGzB,SAHyB,OAIzB,CAAA,CAJyB,MAK1BC,QAAQ,CAAEC,CAAF,CAAW,CACnBJ,QAAAK,IAAAC,UAAL,GAGAF,CAAAG,WAAA,CAAmB,SAAnB,CAAkC,IAAAP,QAAAQ,cAAA,CAAwB,SAAxB,CAAlC,CAYA,CAXAJ,CAAAK,GAAAC,UAWA,EAXuBN,CAAAK,GAAAC,UAAA,CAAqB,SAArB,CAAgC,OAC/CN,CAAAO,KAAAC,QAAAC,MAD+C,SAE7C,SAF6C,SAG7C,SAH6C,CAAhC,CAWvB,CANAb,QAAAc,OAAAZ,IAAA,CAAqB,SAArB,CAAgC,IAAAa,KAAhC,CAA4C,oBAA5C,CAMA;AAHAf,QAAAgB,aAAAC,KAAA,CAA4BjB,QAAAkB,OAAA,CAAiB,4BAAjB,CAA5B,CAGA,CAAAlB,QAAAmB,SAAAC,iBAAA,CAAoCpB,QAAAkB,OAAA,CAAiB,oCAAjB,CAApC,CAfA,CADwB,CALO,CAAjC;",
+"sources":["plugin.js"],
+"names":["CKEDITOR","plugins","add","init","editor","env","ie6Compat","addCommand","dialogCommand","ui","addButton","lang","uicolor","title","dialog","path","scriptLoader","load","getUrl","document","appendStyleSheet"]
+}

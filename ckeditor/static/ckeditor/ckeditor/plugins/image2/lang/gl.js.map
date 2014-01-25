@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"gl.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,mBADoC,WAE9B,oBAF8B,WAG9B,iBAH8B,SAIhC,sBAJgC,WAK9B,cAL8B,MAMnC,sBANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,iBAT8B,SAUhC,0BAVgC,OAWlC,sBAXkC,WAY9B,QAZ8B,YAa7B,8BAb6B,CAA1C;",
+"sources":["gl.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

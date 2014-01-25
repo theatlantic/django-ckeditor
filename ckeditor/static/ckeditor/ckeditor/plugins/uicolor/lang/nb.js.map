@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"nb.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,mCADmC,SAEjC,2BAFiC,QAGlC,4CAHkC,YAI9B,6BAJ8B,CAA3C;",
+"sources":["nb.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"el.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,UAA1B,CAAsC,IAAtC,CAA4C,OACpC,uBADoC,YAE/B,0BAF+B,SAGlC,gBAHkC,WAIhC,yBAJgC,aAK9B,iBAL8B,CAA5C;",
+"sources":["el.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

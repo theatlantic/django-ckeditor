@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"he.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,sBADmC,SAEjC,cAFiC,QAGlC,wCAHkC,YAI9B,2BAJ8B,CAA3C;",
+"sources":["he.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

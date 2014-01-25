@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"ru.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,wBADmC,SAEjC,iCAFiC,QAGlC,sCAHkC,YAI9B,iCAJ8B,CAA3C;",
+"sources":["ru.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

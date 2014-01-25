@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"fa.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,eADmC,QAElC,OAFkC,aAG7B,4BAH6B,QAIlC,gDAJkC,UAKhC,uBALgC,SAMjC,SANiC,UAOhC,OAPgC,CAA3C;",
+"sources":["fa.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

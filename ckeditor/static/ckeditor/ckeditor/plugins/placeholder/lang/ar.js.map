@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"ar.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,aAA1B,CAAyC,IAAzC,CAA+C,OACvC,cADuC,SAErC,YAFqC,MAGxC,kBAHwC,aAIjC,8FAJiC,UAKpC,aALoC,CAA/C;",
+"sources":["ar.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

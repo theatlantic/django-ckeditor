@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"si.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,aAA1B,CAAyC,IAAzC,CAA+C,OACvC,kBADuC,SAErC,8BAFqC,MAGxC,kBAHwC,aAIjC,8FAJiC,UAKpC,aALoC,CAA/C;",
+"sources":["si.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

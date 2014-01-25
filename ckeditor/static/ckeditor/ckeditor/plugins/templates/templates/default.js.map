@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"default.js",
+"lineCount":6,
+"mappings":"A;;;;AAMAA,QAAAC,aAAA,CAAuB,SAAvB,CAAkC,YAGrBD,QAAAE,OAAA,CAAiBF,QAAAG,QAAAC,QAAA,CAA0B,WAA1B,CAAjB,CAA2D,mBAA3D,CAHqB,WAMtB,CACV,OACO,iBADP,OAEO,eAFP,aAGa,+DAHb,MAIM,8IAJN,CADU,CAcV,OACO,kBADP,OAEO,eAFP,aAGa,2EAHb;KAIM,kQAJN,CAdU,CA0CV,OACO,gBADP,OAEO,eAFP,aAGa,qCAHb,MAIM,4ZAJN,CA1CU,CANsB,CAAlC;",
+"sources":["default.js"],
+"names":["CKEDITOR","addTemplates","getUrl","plugins","getPath"]
+}

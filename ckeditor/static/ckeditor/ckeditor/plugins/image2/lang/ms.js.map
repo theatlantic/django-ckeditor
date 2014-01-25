@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"ms.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,iBADoC,WAE9B,kBAF8B,WAG9B,iBAH8B,SAIhC,WAJgC,WAK9B,iBAL8B,MAMnC,gBANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,iBAT8B,SAUhC,0BAVgC,OAWlC,gBAXkC,WAY9B,WAZ8B,YAa7B,8BAb6B,CAA1C;",
+"sources":["ms.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

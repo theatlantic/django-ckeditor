@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"th.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,gBADoC,WAE9B,qDAF8B,WAG9B,iBAH8B,SAIhC,iBAJgC,WAK9B,mCAL8B,MAMnC,qBANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,sBAT8B,SAUhC,0BAVgC,OAWlC,qBAXkC,WAY9B,aAZ8B,YAa7B,8BAb6B,CAA1C;",
+"sources":["th.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

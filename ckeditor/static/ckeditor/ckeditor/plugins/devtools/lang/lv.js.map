@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"lv.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,UAA1B,CAAsC,IAAtC,CAA4C,OACpC,sBADoC,YAE/B,wBAF+B,SAGlC,kBAHkC,WAIhC,aAJgC,aAK9B,eAL8B,CAA5C;",
+"sources":["lv.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"no.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,kBADmC,QAElC,OAFkC,aAG7B,qBAH6B,QAIlC,gDAJkC,UAKhC,mBALgC,SAMjC,WANiC,UAOhC,OAPgC,CAA3C;",
+"sources":["no.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

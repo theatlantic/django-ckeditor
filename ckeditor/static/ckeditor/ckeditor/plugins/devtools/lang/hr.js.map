@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"hr.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,UAA1B,CAAsC,IAAtC,CAA4C,OACpC,sBADoC,YAE/B,0BAF+B,SAGlC,eAHkC,WAIhC,aAJgC,aAK9B,gBAL8B,CAA5C;",
+"sources":["hr.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

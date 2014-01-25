@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"hu.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,gBADoC,WAE9B,oBAF8B,WAG9B,kBAH8B,SAIhC,mBAJgC,WAK9B,kBAL8B,MAMnC,mBANmC,UAO/B,KAP+B,iBAQxB,SARwB,WAS9B,eAT8B,SAUhC,oCAVgC,OAWlC,mBAXkC,WAY9B,WAZ8B,YAa7B,uBAb6B,CAA1C;",
+"sources":["hu.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

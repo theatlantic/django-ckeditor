@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"plugin.js",
+"lineCount":6,
+"mappings":"A;;;;AASE,SAAQ,EAAG,CACZ,IAAIA,EAAoB,SACd,CAAA,CADc,MAEjBC,QAAQ,CAAEC,CAAF,CAAW,CACxB,IAAIC,EAAKD,CAAAE,SAAAC,cAAA,CAA+B,IAA/B,CACTH,EAAAI,cAAA,CAAsBH,CAAtB,CAFwB,CAFF,gBAOP,IAPO,iBAQN,IARM,CAcxBI,SAAAC,QAAAC,IAAA,CAHiBC,gBAGjB,CAAkC,MAC3B,2NAD2B,OAE1B,gBAF0B,OAG1B,CAAA,CAH0B,MAI3BC,QAAQ,CAAET,CAAF,CAAW,CACnBA,CAAAU,UAAL,GAGAV,CAAAW,WAAA,CAXeH,gBAWf;AAA+BV,CAA/B,CACA,CAAAE,CAAAY,GAAAC,UAAA,EAAuBb,CAAAY,GAAAC,UAAA,CAAqB,gBAArB,CAAuC,OACtDb,CAAAc,KAAAC,eAAAC,QADsD,SAZ/CR,gBAY+C,SAGpD,WAHoD,CAAvC,CAJvB,CADwB,CAJQ,CAAlC,CAfY,CAAX,CAAA;",
+"sources":["plugin.js"],
+"names":["horizontalruleCmd","exec","editor","hr","document","createElement","insertElement","CKEDITOR","plugins","add","pluginName","init","blockless","addCommand","ui","addButton","lang","horizontalrule","toolbar"]
+}

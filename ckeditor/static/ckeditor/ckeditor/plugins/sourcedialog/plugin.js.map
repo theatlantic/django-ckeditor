@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"plugin.js",
+"lineCount":6,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,IAAA,CAAsB,cAAtB,CAAsC,MAC/B,wNAD+B,OAE9B,+BAF8B,OAG9B,CAAA,CAH8B,MAK/BC,QAAQ,CAAEC,CAAF,CAAW,CAExBA,CAAAC,WAAA,CAAmB,cAAnB,CAAuC,IAAAL,QAAAM,cAAA,CAAwB,cAAxB,CAAvC,CAGAN,SAAAO,OAAAL,IAAA,CAAqB,cAArB,CAAqC,IAAAM,KAArC,CAAiD,yBAAjD,CAGKJ,EAAAK,GAAAC,UAAL,EACCN,CAAAK,GAAAC,UAAA,CAAqB,cAArB;AAAqC,OAC7BN,CAAAO,KAAAC,aAAAC,QAD6B,SAE3B,cAF2B,SAG3B,SAH2B,CAArC,CATuB,CALY,CAAtC;",
+"sources":["plugin.js"],
+"names":["CKEDITOR","plugins","add","init","editor","addCommand","dialogCommand","dialog","path","ui","addButton","lang","sourcedialog","toolbar"]
+}

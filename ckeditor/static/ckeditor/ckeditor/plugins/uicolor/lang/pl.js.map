@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"pl.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,yBADmC,SAEjC,iBAFiC,QAGlC,mDAHkC,YAI9B,gCAJ8B,CAA3C;",
+"sources":["pl.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

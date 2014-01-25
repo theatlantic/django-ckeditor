@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"cy.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,qBADmC,QAElC,MAFkC,aAG7B,2BAH6B,QAIlC,gDAJkC,UAKhC,iBALgC,SAMjC,YANiC,UAOhC,MAPgC,CAA3C;",
+"sources":["cy.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

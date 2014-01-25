@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"en-gb.js",
+"lineCount":3,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,UAA1B,CAAsC,OAAtC,CAA+C,SACrC,mBADqC,SAErC,kCAFqC,SAGrC,sBAHqC,SAIrC,wBAJqC,cAKhC,OALgC,WAMnC,kBANmC,WAOnC,UAPmC,WAQnC,4BARmC,WASnC,OATmC,WAUnC,UAVmC,WAWnC,QAXmC,cAYhC,8BAZgC,WAanC,SAbmC,WAcnC,iBAdmC,WAenC,kBAfmC,aAgBjC,QAhBiC,QAiBtC,QAjBsC;SAkBpC,YAlBoC,SAmBrC,uBAnBqC,cAoBhC,6BApBgC,OAqBvC,qBArBuC,QAsBtC,cAtBsC,cAuBhC,QAvBgC,YAwBlC,MAxBkC,aAyBjC,OAzBiC,WA0BnC,KA1BmC,MA2BxC,WA3BwC,YA4BlC,QA5BkC,eA6B/B,WA7B+B,iBA8B7B,sBA9B6B,cA+BhC,8CA/BgC,OAgCvC,UAhCuC,aAiCjC,4GAjCiC;MAkCvC,qBAlCuC,UAmCpC,aAnCoC,UAoCpC,4BApCoC,CAA/C;",
+"sources":["en-gb.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

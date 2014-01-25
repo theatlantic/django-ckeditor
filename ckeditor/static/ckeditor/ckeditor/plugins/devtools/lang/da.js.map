@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"da.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,UAA1B,CAAsC,IAAtC,CAA4C,OACpC,0BADoC,YAE/B,YAF+B,SAGlC,iBAHkC,WAIhC,eAJgC,aAK9B,iBAL8B,CAA5C;",
+"sources":["da.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

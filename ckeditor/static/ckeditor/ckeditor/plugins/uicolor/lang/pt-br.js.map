@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"pt-br.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,OAArC,CAA8C,OACtC,iBADsC,SAEpC,sBAFoC,QAGrC,uCAHqC,YAIjC,iCAJiC,CAA9C;",
+"sources":["pt-br.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

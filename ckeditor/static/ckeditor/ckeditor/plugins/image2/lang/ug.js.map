@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"ug.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,kBADoC,WAE9B,qBAF8B,WAG9B,iBAH8B,SAIhC,OAJgC,WAK9B,kBAL8B,MAMnC,eANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,cAT8B,SAUhC,0BAVgC,OAWlC,eAXkC,WAY9B,OAZ8B,YAa7B,mCAb6B,CAA1C;",
+"sources":["ug.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

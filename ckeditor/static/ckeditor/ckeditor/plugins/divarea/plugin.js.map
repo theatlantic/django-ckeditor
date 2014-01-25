@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"plugin.js",
+"lineCount":5,
+"mappings":"A;;;;AAUAA,QAAAC,QAAAC,IAAA,CAAsB,SAAtB,CAAiC,WACrBC,QAAQ,CAAEC,CAAF,CAAW,CAI7BA,CAAAC,QAAA,CAAgB,SAAhB,CAA2B,QAAQ,CAAEC,CAAF,CAAa,CAC/C,IAAIC,EAAeP,QAAAQ,IAAAC,QAAAC,eAAA,CAAqC,gEAArC,CAEAN,EAAAO,GAAAC,MAAAC,CAAiB,UAAjBA,CACnBC,OAAA,CAAqBP,CAArB,CAEAA,EAAA,CAAeH,CAAAW,SAAA,CAAiBR,CAAjB,CAEfA,EAAAS,OAAA,CAAsBhB,QAAAiB,MAAAC,SAAA,CAAyBX,CAAAS,OAAzB,CACrB,QAAQ,CAAEG,CAAF,CAAQ,CACf,MAAO,SAAQ,EAAG,CACjBA,CAAAC,MAAA,CAAW,IAAX,CAAiBC,SAAjB,CACA,KAAAC,OAAA,EAFiB,CADH,CADK,CAQtBlB,EAAAmB,QAAA,CAAgBnB,CAAAoB,QAAA,CAAgB,CAAhB,CAAhB,CAAqClB,CAArC,CACAF,EAAAqB,KAAA,CAAa,YAAb,CAjB+C,CAAhD,CAJ6B,CADE,CAAjC;",
+"sources":["plugin.js"],
+"names":["CKEDITOR","plugins","add","afterInit","editor","addMode","callback","editingBlock","dom","element","createFromHtml","ui","space","contentSpace","append","editable","detach","tools","override","org","apply","arguments","remove","setData","getData","fire"]
+}

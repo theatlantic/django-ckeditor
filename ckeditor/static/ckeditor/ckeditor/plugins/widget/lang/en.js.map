@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"en.js",
+"lineCount":5,
+"mappings":"A;;;;AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,MACjC,wBADiC,CAA1C;",
+"sources":["en.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

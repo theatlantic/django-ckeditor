@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"gl.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,2CADmC,SAEjC,sBAFiC,QAGlC,4CAHkC,YAI9B,iCAJ8B,CAA3C;",
+"sources":["gl.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

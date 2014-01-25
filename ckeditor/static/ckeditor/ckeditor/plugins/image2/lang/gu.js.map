@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"gu.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,kBADoC,WAE9B,mBAF8B,WAG9B,iBAH8B,SAIhC,kBAJgC,WAK9B,cAL8B,MAMnC,aANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,YAT8B,SAUhC,0BAVgC,OAWlC,aAXkC,WAY9B,OAZ8B,YAa7B,wBAb6B,CAA1C;",
+"sources":["gu.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

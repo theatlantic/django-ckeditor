@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"ca.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,iBADoC,WAE9B,sBAF8B,WAG9B,qBAH8B,SAIhC,yBAJgC,WAK9B,0BAL8B,MAMnC,yBANmC,UAO/B,QAP+B,iBAQxB,UARwB,WAS9B,kBAT8B,SAUhC,uCAVgC,OAWlC,yBAXkC,WAY9B,MAZ8B,YAa7B,4BAb6B,CAA1C;",
+"sources":["ca.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

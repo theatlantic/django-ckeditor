@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"bs.js",
+"lineCount":1,
+"mappings":"AAKAA,QAAAC,QAAAC,QAAA,CAA0B,cAA1B,CAA0C,IAA1C,CAAgD,SACtC,UADsC,OAExC,UAFwC,CAAhD;",
+"sources":["bs.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"ar.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,QAA1B,CAAoC,IAApC,CAA0C,KACpC,cADoC,WAE9B,eAF8B,WAG9B,iBAH8B,SAIhC,gBAJgC,WAK9B,aAL8B,MAMnC,cANmC,UAO/B,OAP+B,iBAQxB,SARwB,WAS9B,sBAT8B,SAUhC,0BAVgC,OAWlC,cAXkC,WAY9B,KAZ8B,YAa7B,yBAb6B,CAA1C;",
+"sources":["ar.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

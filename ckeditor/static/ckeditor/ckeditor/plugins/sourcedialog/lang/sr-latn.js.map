@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"sr-latn.js",
+"lineCount":1,
+"mappings":"AAKAA,QAAAC,QAAAC,QAAA,CAA0B,cAA1B,CAA0C,SAA1C,CAAqD,SAC3C,KAD2C,OAE7C,KAF6C,CAArD;",
+"sources":["sr-latn.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

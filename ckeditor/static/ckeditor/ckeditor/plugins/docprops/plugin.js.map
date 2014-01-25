@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"plugin.js",
+"lineCount":6,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,IAAA,CAAsB,UAAtB,CAAkC,UACvB,oBADuB,MAE3B,2NAF2B,OAG1B,uBAH0B,OAI1B,CAAA,CAJ0B,MAK3BC,QAAQ,CAAEC,CAAF,CAAW,CACxB,IAAIC,EAAU,IAAAL,QAAAM,cAAA,CAAwB,UAAxB,CAEdD,EAAAE,MAAA,CAAY,SAAWH,CAAAI,OAAAC,SAAX,CACZJ,EAAAK,eAAA,CAAqB,MACd,QACG,GADH,YAEO,KAFP,CADc,MAKd,YACO,eADP,CALc,CASrBL;CAAAM,gBAAA,CAAsB,MAEtBP,EAAAQ,WAAA,CAAmB,UAAnB,CAA+BP,CAA/B,CACAL,SAAAa,OAAAX,IAAA,CAAqB,UAArB,CAAiC,IAAAY,KAAjC,CAA6C,qBAA7C,CAEAV,EAAAW,GAAAC,UAAA,EAAuBZ,CAAAW,GAAAC,UAAA,CAAqB,UAArB,CAAiC,OAChDZ,CAAAa,KAAAC,SAAAC,MADgD,SAE9C,UAF8C,SAG9C,aAH8C,CAAjC,CAlBC,CALQ,CAAlC;",
+"sources":["plugin.js"],
+"names":["CKEDITOR","plugins","add","init","editor","cmd","dialogCommand","modes","config","fullPage","allowedContent","requiredContent","addCommand","dialog","path","ui","addButton","lang","docprops","label"]
+}

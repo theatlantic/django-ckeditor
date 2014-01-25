@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"lt.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,UAA1B,CAAsC,IAAtC,CAA4C,OACpC,sBADoC,YAE/B,2BAF+B,SAGlC,qBAHkC,WAIhC,aAJgC,aAK9B,gBAL8B,CAA5C;",
+"sources":["lt.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

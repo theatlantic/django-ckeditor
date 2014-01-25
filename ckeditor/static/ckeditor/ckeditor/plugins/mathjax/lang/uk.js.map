@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"uk.js",
+"lineCount":1,
+"mappings":"AAIAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,kBADmC,QAElC,YAFkC,aAG7B,uBAH6B,QAIlC,gDAJkC,UAKhC,sBALgC,SAMjC,iBANiC,UAOhC,YAPgC,CAA3C;",
+"sources":["uk.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

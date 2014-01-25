@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"ko.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,UAA1B,CAAsC,IAAtC,CAA4C,OACpC,UADoC,YAE/B,cAF+B,SAGlC,MAHkC,WAIhC,OAJgC,aAK9B,OAL8B,CAA5C;",
+"sources":["ko.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

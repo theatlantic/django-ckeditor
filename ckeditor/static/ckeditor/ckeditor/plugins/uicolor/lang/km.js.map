@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"km.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,SAA1B,CAAqC,IAArC,CAA2C,OACnC,iBADmC,SAEjC,kBAFiC,QAGlC,8DAHkC,YAI9B,yBAJ8B,CAA3C;",
+"sources":["km.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}

@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"ja.js",
+"lineCount":5,
+"mappings":"A;;;;AAKAA,QAAAC,QAAAC,QAAA,CAA0B,UAA1B,CAAsC,IAAtC,CAA4C,OACpC,SADoC,YAE/B,aAF+B,SAGlC,KAHkC,WAIhC,SAJgC,aAK9B,OAL8B,CAA5C;",
+"sources":["ja.js"],
+"names":["CKEDITOR","plugins","setLang"]
+}
