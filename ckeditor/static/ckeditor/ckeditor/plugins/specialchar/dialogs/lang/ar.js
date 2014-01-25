@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","ar",{euro:"رمز اليورو",lsquo:"علامة تنصيص علي اليسار",rsquo:"علامة تنصيص علي اليمين",ldquo:"علامة تنصيص مزدوجة علي اليسار",rdquo:"علامة تنصيص مزدوجة علي اليمين",ndash:"En dash –",mdash:"Em dash —",iexcl:"علامة تعجب مقلوبة",cent:"رمز سنتيم",pound:"رمز الاسترليني",curren:"رمز العملة",yen:"رمز الين الياباني",brvbar:"خط عمودي مكسور",sect:"رمز الفصيلة",uml:"Diaeresis",copy:"علامة حقوق الطبع",ordf:"Feminine ordinal indicator",laquo:"Left-pointing double angle quotation mark",
@@ -11,3 +11,4 @@ aring:"Latin small letter a with ring above",aelig:"Latin small letter æ",ccedi
 ntilde:"Latin small letter n with tilde",ograve:"Latin small letter o with grave accent",oacute:"Latin small letter o with acute accent",ocirc:"Latin small letter o with circumflex",otilde:"Latin small letter o with tilde",ouml:"Latin small letter o with diaeresis",divide:"Division sign",oslash:"Latin small letter o with stroke",ugrave:"Latin small letter u with grave accent",uacute:"Latin small letter u with acute accent",ucirc:"Latin small letter u with circumflex",uuml:"Latin small letter u with diaeresis",
 yacute:"Latin small letter y with acute accent",thorn:"Latin small letter thorn",yuml:"Latin small letter y with diaeresis",OElig:"Latin capital ligature OE",oelig:"Latin small ligature oe",372:"Latin capital letter W with circumflex",374:"Latin capital letter Y with circumflex",373:"Latin small letter w with circumflex",375:"Latin small letter y with circumflex",sbquo:"Single low-9 quotation mark",8219:"Single high-reversed-9 quotation mark",bdquo:"Double low-9 quotation mark",hellip:"Horizontal ellipsis",
 trade:"Trade mark sign",9658:"Black right-pointing pointer",bull:"Bullet",rarr:"Rightwards arrow",rArr:"Rightwards double arrow",hArr:"Left right double arrow",diams:"Black diamond suit",asymp:"Almost equal to"});
+//@ sourceMappingURL=ar.js.map

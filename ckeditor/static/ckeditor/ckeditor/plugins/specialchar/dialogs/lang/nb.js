@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","nb",{euro:"Eurosymbol",lsquo:"Venstre enkelt anførselstegn",rsquo:"Høyre enkelt anførselstegn",ldquo:"Venstre dobbelt anførselstegn",rdquo:"Høyre anførsesltegn",ndash:"Kort tankestrek",mdash:"Lang tankestrek",iexcl:"Omvendt utropstegn",cent:"Centsymbol",pound:"Pundsymbol",curren:"Valutategn",yen:"Yensymbol",brvbar:"Brutt loddrett strek",sect:"Paragraftegn",uml:"Tøddel",copy:"Copyrighttegn",ordf:"Feminin ordensindikator",laquo:"Venstre anførselstegn",not:"Negasjonstegn",
@@ -9,3 +9,4 @@ times:"Multiplikasjonstegn",Oslash:"Stor Ø",Ugrave:"Stor U med grav aksent",Uac
 ecirc:"Liten e med cirkumfleks",euml:"Liten e med tøddel",igrave:"Liten i med grav aksent",iacute:"Liten i med akutt aksent",icirc:"Liten i med cirkumfleks",iuml:"Liten i med tøddel",eth:"Liten edd/stungen d",ntilde:"Liten n med tilde",ograve:"Liten o med grav aksent",oacute:"Liten o med akutt aksent",ocirc:"Liten o med cirkumfleks",otilde:"Liten o med tilde",ouml:"Liten o med tøddel",divide:"Divisjonstegn",oslash:"Liten ø",ugrave:"Liten u med grav aksent",uacute:"Liten u med akutt aksent",ucirc:"Liten u med cirkumfleks",
 uuml:"Liten u med tøddel",yacute:"Liten y med akutt aksent",thorn:"Liten thorn",yuml:"Liten y med tøddel",OElig:"Stor ligatur av O og E",oelig:"Liten ligatur av o og e",372:"Stor W med cirkumfleks",374:"Stor Y med cirkumfleks",373:"Liten w med cirkumfleks",375:"Liten y med cirkumfleks",sbquo:"Enkelt lavt 9-anførselstegn",8219:"Enkelt høyt reversert 9-anførselstegn",bdquo:"Dobbelt lavt 9-anførselstegn",hellip:"Ellipse",trade:"Varemerkesymbol",9658:"Svart høyrevendt peker",bull:"Tykk interpunkt",rarr:"Høyrevendt pil",
 rArr:"Dobbel høyrevendt pil",hArr:"Dobbel venstrevendt pil",diams:"Svart ruter",asymp:"Omtrent likhetstegn"});
+//@ sourceMappingURL=nb.js.map

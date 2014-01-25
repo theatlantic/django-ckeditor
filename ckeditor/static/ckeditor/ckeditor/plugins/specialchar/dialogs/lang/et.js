@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","et",{euro:"Euromärk",lsquo:"Alustav ühekordne jutumärk",rsquo:"Lõpetav ühekordne jutumärk",ldquo:"Alustav kahekordne jutumärk",rdquo:"Lõpetav kahekordne jutumärk",ndash:"Enn-kriips",mdash:"Emm-kriips",iexcl:"Pööratud hüüumärk",cent:"Sendimärk",pound:"Naela märk",curren:"Valuutamärk",yen:"Jeeni märk",brvbar:"Katkestatud kriips",sect:"Lõigu märk",uml:"Täpid",copy:"Autoriõiguse märk",ordf:"Feminine ordinal indicator",laquo:"Left-pointing double angle quotation mark",
@@ -11,3 +11,4 @@ aelig:"Latin small letter æ",ccedil:"Latin small letter c with cedilla",egrave:
 ograve:"Latin small letter o with grave accent",oacute:"Latin small letter o with acute accent",ocirc:"Latin small letter o with circumflex",otilde:"Latin small letter o with tilde",ouml:"Latin small letter o with diaeresis",divide:"Jagamismärk",oslash:"Latin small letter o with stroke",ugrave:"Latin small letter u with grave accent",uacute:"Latin small letter u with acute accent",ucirc:"Latin small letter u with circumflex",uuml:"Latin small letter u with diaeresis",yacute:"Latin small letter y with acute accent",
 thorn:"Latin small letter thorn",yuml:"Latin small letter y with diaeresis",OElig:"Latin capital ligature OE",oelig:"Latin small ligature oe",372:"Latin capital letter W with circumflex",374:"Latin capital letter Y with circumflex",373:"Latin small letter w with circumflex",375:"Latin small letter y with circumflex",sbquo:"Single low-9 quotation mark",8219:"Single high-reversed-9 quotation mark",bdquo:"Double low-9 quotation mark",hellip:"Horizontal ellipsis",trade:"Kaubamärgi märk",9658:"Black right-pointing pointer",
 bull:"Kuul",rarr:"Nool paremale",rArr:"Topeltnool paremale",hArr:"Topeltnool vasakule",diams:"Black diamond suit",asymp:"Ligikaudu võrdne"});
+//@ sourceMappingURL=et.js.map

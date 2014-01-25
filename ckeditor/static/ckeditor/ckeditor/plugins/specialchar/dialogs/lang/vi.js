@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","vi",{euro:"Ký hiệu Euro",lsquo:"Dấu ngoặc đơn trái",rsquo:"Dấu ngoặc đơn phải",ldquo:"Dấu ngoặc đôi trái",rdquo:"Dấu ngoặc đôi phải",ndash:"Gạch ngang tiếng anh",mdash:"Gạch ngang Em",iexcl:"Chuyển đổi dấu chấm than",cent:"Ký tự tiền Mỹ",pound:"Ký tự tiền Anh",curren:"Ký tự tiền tệ",yen:"Ký tự tiền Yên Nhật",brvbar:"Thanh hỏng",sect:"Ký tự khu vực",uml:"Dấu tách đôi",copy:"Ký tự bản quyền",ordf:"Phần chỉ thị giống cái",laquo:"Chọn dấu ngoặc đôi trái",not:"Không có ký tự",
@@ -12,3 +12,4 @@ iacute:"Ký tự la-tinh viết thường i với dấu sắc",icirc:"Ký tự l
 divide:"Ký hiệu phép tính chia",oslash:"Ký tự la-tinh viết thường o với dấu ngã",ugrave:"Ký tự la-tinh viết thường u với dấu huyền",uacute:"Ký tự la-tinh viết thường u với dấu sắc",ucirc:"Ký tự la-tinh viết thường u với dấu mũ",uuml:"Ký tự la-tinh viết thường u với dấu hai chấm trên đầu",yacute:"Ký tự la-tinh viết thường y với dấu sắc",thorn:"Ký tự la-tinh viết thường của chữ thorn",yuml:"Ký tự la-tinh viết thường y với dấu hai chấm trên đầu",OElig:"Ký tự la-tinh viết hoa gạch nối OE",oelig:"Ký tự la-tinh viết thường gạch nối OE",
 372:"Ký tự la-tinh viết hoa W với dấu mũ",374:"Ký tự la-tinh viết hoa Y với dấu mũ",373:"Ký tự la-tinh viết thường w với dấu mũ",375:"Ký tự la-tinh viết thường y với dấu mũ",sbquo:"Dấu ngoặc đơn thấp số-9",8219:"Dấu ngoặc đơn đảo ngược số-9",bdquo:"Gấp đôi dấu ngoặc đơn số-9",hellip:"Tĩnh dược chiều ngang",trade:"Ký tự thương hiệu",9658:"Ký tự trỏ về hướng bên phải màu đen",bull:"Ký hiệu",rarr:"Mũi tên hướng bên phải",rArr:"Mũi tên hướng bên phải dạng đôi",hArr:"Mũi tên hướng bên trái dạng đôi",diams:"Ký hiệu hình thoi",
 asymp:"Gần bằng với"});
+//@ sourceMappingURL=vi.js.map

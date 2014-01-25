@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","sl",{euro:"Evro znak",lsquo:"Levi enojni narekovaj",rsquo:"Desni enojni narekovaj",ldquo:"Levi dvojni narekovaj",rdquo:"Desni dvojni narekovaj",ndash:"En pomišljaj",mdash:"Em pomišljaj",iexcl:"Obrnjen klicaj",cent:"Cent znak",pound:"Funt znak",curren:"Znak valute",yen:"Jen znak",brvbar:"Zlomljena črta",sect:"Znak oddelka",uml:"Diaeresis",copy:"Znak avtorskih pravic",ordf:"Ženski zaporedni kazalnik",laquo:"Levi obrnjen dvojni kotni narekovaj",not:"Ne znak",reg:"Registrirani znak",
@@ -10,3 +10,4 @@ Yacute:"Velika latinska črka Y z ostrivcem",THORN:"Velika latinska črka Thorn"
 ecirc:"Mala latinska črka e s strešico",euml:"Mala latinska črka e z diaeresis-om",igrave:"Mala latinska črka i s krativcem",iacute:"Mala latinska črka i z ostrivcem",icirc:"Mala latinska črka i s strešico",iuml:"Mala latinska črka i z diaeresis-om",eth:"Mala latinska črka eth",ntilde:"Mala latinska črka n s tildo",ograve:"Mala latinska črka o s krativcem",oacute:"Mala latinska črka o z ostrivcem",ocirc:"Mala latinska črka o s strešico",otilde:"Mala latinska črka o s tildo",ouml:"Mala latinska črka o z diaeresis-om",
 divide:"Znak za deljenje",oslash:"Mala prečrtana latinska črka o",ugrave:"Mala latinska črka u s krativcem",uacute:"Mala latinska črka u z ostrivcem",ucirc:"Mala latinska črka u s strešico",uuml:"Mala latinska črka u z diaeresis-om",yacute:"Mala latinska črka y z ostrivcem",thorn:"Mala latinska črka thorn",yuml:"Mala latinska črka y z diaeresis-om",OElig:"Velika latinska ligatura OE",oelig:"Mala latinska ligatura oe",372:"Velika latinska črka W s strešico",374:"Velika latinska črka Y s strešico",
 373:"Mala latinska črka w s strešico",375:"Mala latinska črka y s strešico",sbquo:"Enojni nizki-9 narekovaj",8219:"Enojni visoki-obrnjen-9 narekovaj",bdquo:"Dvojni nizki-9 narekovaj",hellip:"Horizontalni izpust",trade:"Znak blagovne znamke",9658:"Črni desno-usmerjen kazalec",bull:"Krogla",rarr:"Desno-usmerjena puščica",rArr:"Desno-usmerjena dvojna puščica",hArr:"Leva in desna dvojna puščica",diams:"Črna kara",asymp:"Skoraj enako"});
+//@ sourceMappingURL=sl.js.map

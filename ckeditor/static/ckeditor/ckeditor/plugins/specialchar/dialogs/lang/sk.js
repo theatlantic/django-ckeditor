@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","sk",{euro:"Znak eura",lsquo:"Ľavá jednoduchá úvodzovka",rsquo:"Pravá jednoduchá úvodzovka",ldquo:"Pravá dvojitá úvodzovka",rdquo:"Pravá dvojitá úvodzovka",ndash:"En pomlčka",mdash:"Em pomlčka",iexcl:"Obrátený výkričník",cent:"Znak centu",pound:"Znak libry",curren:"Znak meny",yen:"Znak jenu",brvbar:"Prerušená zvislá čiara",sect:"Znak odseku",uml:"Prehláska",copy:"Znak copyrightu",ordf:"Ženský indikátor rodu",laquo:"Znak dvojitých lomených úvodzoviek vľavo",not:"Logistický zápor",
@@ -11,3 +11,4 @@ aelig:"Malé písmeno latinky æ",ccedil:"Malé písmeno latinky c s chvostom v�
 oacute:"Malé písmeno latinky o s dĺžňom",ocirc:"Malé písmeno latinky o s mäkčeňom",otilde:"Malé písmeno latinky o s tildou",ouml:"Malé písmeno latinky o s dvoma bodkami",divide:"Znak delenia",oslash:"Malé písmeno latinky o preškrtnuté",ugrave:"Malé písmeno latinky u s accentom",uacute:"Malé písmeno latinky u s dĺžňom",ucirc:"Malé písmeno latinky u s mäkčeňom",uuml:"Malé písmeno latinky u s dvoma bodkami",yacute:"Malé písmeno latinky y s dĺžňom",thorn:"Malé písmeno latinky thorn",yuml:"Malé písmeno latinky y s dvoma bodkami",
 OElig:"Veľká ligatúra latinky OE",oelig:"Malá ligatúra latinky OE",372:"Veľké písmeno latinky W s mäkčeňom",374:"Veľké písmeno latinky Y s mäkčeňom",373:"Malé písmeno latinky w s mäkčeňom",375:"Malé písmeno latinky y s mäkčeňom",sbquo:"Dolná jednoduchá 9-úvodzovka",8219:"Horná jednoduchá otočená 9-úvodzovka",bdquo:"Dolná dvojitá 9-úvodzovka",hellip:"Trojbodkový úvod",trade:"Znak ibchodnej značky",9658:"Čierny ukazovateľ smerujúci vpravo",bull:"Kruh",rarr:"Šípka vpravo",rArr:"Dvojitá šipka vpravo",
 hArr:"Dvojitá šipka vľavo a vpravo",diams:"Čierne piky",asymp:"Skoro sa rovná"});
+//@ sourceMappingURL=sk.js.map

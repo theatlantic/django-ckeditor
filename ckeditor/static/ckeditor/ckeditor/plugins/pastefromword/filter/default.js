@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 (function(){function y(a){for(var a=a.toUpperCase(),c=z.length,b=0,f=0;f<c;++f)for(var d=z[f],e=d[1].length;a.substr(0,e)==d[1];a=a.substr(e))b+=d[0];return b}function A(a){for(var a=a.toUpperCase(),c=B.length,b=1,f=1;0<a.length;f*=c)b+=B.indexOf(a.charAt(a.length-1))*f,a=a.substr(0,a.length-1);return b}var C=CKEDITOR.htmlParser.fragment.prototype,o=CKEDITOR.htmlParser.element.prototype;C.onlyChild=o.onlyChild=function(){var a=this.children;return 1==a.length&&a[0]||null};o.removeAnyChildWithName=
@@ -29,3 +29,4 @@ c)a=r(c,a,[b])[b];else if(c!=b)return null;if(a&&!D.test(a))return[b,a]}return n
 "none"],o?[/font-?/]:null],s),width:function(a,c){if(c.name in b.$tableContent)return!1},border:function(a,c){if(c.name in b.$tableContent)return!1},"class":h,bgcolor:h,valign:s?h:function(a,b){b.addStyle("vertical-align",a);return!1}},comment:!CKEDITOR.env.ie?function(a,b){var c=a.match(/<img.*?>/),d=a.match(/^\[if !supportLists\]([\s\S]*?)\[endif\]$/);return d?(d=(c=d[1]||c&&"l.")&&c.match(/>(?:[(]?)([^\s]+?)([.)]?)</),i(d,c)):CKEDITOR.env.gecko&&c?(c=CKEDITOR.htmlParser.fragment.fromHtml(c[0]).children[0],
 (d=(d=(d=b.previous)&&d.value.match(/<v:imagedata[^>]*o:href=['"](.*?)['"]/))&&d[1])&&(c.attributes.src=d),c):!1}:h}}},G=function(){this.dataFilter=new CKEDITOR.htmlParser.filter};G.prototype={toHtml:function(a){var a=CKEDITOR.htmlParser.fragment.fromHtml(a),c=new CKEDITOR.htmlParser.basicWriter;a.writeHtml(c,this.dataFilter);return c.getHtml(!0)}};CKEDITOR.cleanWord=function(a,c){CKEDITOR.env.gecko&&(a=a.replace(/(<\!--\[if[^<]*?\])--\>([\S\s]*?)<\!--(\[endif\]--\>)/gi,"$1$2$3"));CKEDITOR.env.webkit&&
 (a=a.replace(/(class="MsoListParagraph[^>]+><\!--\[if !supportLists\]--\>)([^<]+<span[^<]+<\/span>)(<\!--\[endif\]--\>)/gi,"$1<span>$2</span>$3"));var b=new G,f=b.dataFilter;f.addRules(CKEDITOR.plugins.pastefromword.getRules(c,f));c.fire("beforeCleanWord",{filter:f});try{a=b.toHtml(a)}catch(d){alert(c.lang.pastefromword.error)}a=a.replace(/cke:.*?".*?"/g,"");a=a.replace(/style=""/g,"");return a=a.replace(/<span>/g,"")}})();
+//@ sourceMappingURL=default.js.map

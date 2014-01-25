@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.dialog.add("cellProperties",function(f){var g=f.lang.table,c=g.cell,d=f.lang.common,h=CKEDITOR.dialog.validate,j=/^(\d+(?:\.\d+)?)(px|%)$/,e={type:"html",html:"&nbsp;"},k="rtl"==f.lang.dir,i=f.plugins.colordialog;return{title:c.title,minWidth:CKEDITOR.env.ie&&CKEDITOR.env.quirks?450:410,minHeight:CKEDITOR.env.ie&&(CKEDITOR.env.ie7Compat||CKEDITOR.env.quirks)?230:220,contents:[{id:"info",label:c.title,accessKey:"I",elements:[{type:"hbox",widths:["40%","5%","40%"],children:[{type:"vbox",padding:0,
@@ -14,3 +14,4 @@ setup:function(a){(a=parseInt(a.getAttribute("colSpan"),10))&&1!=a&&this.setValu
 a.removeStyle("background-color");a.removeAttribute("bgColor")}},i?{type:"button",id:"bgColorChoose","class":"colorChooser",label:c.chooseColor,onLoad:function(){this.getElement().getParent().setStyle("vertical-align","bottom")},onClick:function(){f.getColorFromDialog(function(a){a&&this.getDialog().getContentElement("info","bgColor").setValue(a);this.focus()},this)}}:e]},e,{type:"hbox",padding:0,widths:["60%","40%"],children:[{type:"text",id:"borderColor",label:c.borderColor,"default":"",setup:function(a){var b=
 a.getAttribute("borderColor");this.setValue(a.getStyle("border-color")||b)},commit:function(a){this.getValue()?a.setStyle("border-color",this.getValue()):a.removeStyle("border-color");a.removeAttribute("borderColor")}},i?{type:"button",id:"borderColorChoose","class":"colorChooser",label:c.chooseColor,style:(k?"margin-right":"margin-left")+": 10px",onLoad:function(){this.getElement().getParent().setStyle("vertical-align","bottom")},onClick:function(){f.getColorFromDialog(function(a){a&&this.getDialog().getContentElement("info",
 "borderColor").setValue(a);this.focus()},this)}}:e]}]}]}]}],onShow:function(){this.cells=CKEDITOR.plugins.tabletools.getSelectedCells(this._.editor.getSelection());this.setupContent(this.cells[0])},onOk:function(){for(var a=this._.editor.getSelection(),b=a.createBookmarks(),c=this.cells,d=0;d<c.length;d++)this.commitContent(c[d]);this._.editor.forceNextSelectionCheck();a.selectBookmarks(b);this._.editor.selectionChange()}}});
+//@ sourceMappingURL=tableCell.js.map

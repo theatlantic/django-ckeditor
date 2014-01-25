@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","hu",{euro:"Euró jel",lsquo:"Bal szimpla idézőjel",rsquo:"Jobb szimpla idézőjel",ldquo:"Bal dupla idézőjel",rdquo:"Jobb dupla idézőjel",ndash:"Rövid gondolatjel",mdash:"Hosszú gondolatjel",iexcl:"Fordított felkiáltójel",cent:"Cent jel",pound:"Font jel",curren:"Valuta jel",yen:"Yen jel",brvbar:"Hosszú kettőspont",sect:"Paragrafus jel",uml:"Kettős hangzó jel",copy:"Szerzői jog jel",ordf:"Női sorrend mutatója",laquo:"Balra mutató duplanyíl",not:"Feltételes kötőjel",
@@ -10,3 +10,4 @@ agrave:"Latin kis a fordított ékezettel",aacute:"Latin kis a normál ékezette
 icirc:"Latin kis i hajtott ékezettel",iuml:"Latin kis i kettőspont ékezettel",eth:"Latin kis eth betű",ntilde:"Latin kis n hullámjellel",ograve:"Latin kis o fordított ékezettel",oacute:"Latin kis o normál ékezettel",ocirc:"Latin kis o hajtott ékezettel",otilde:"Latin kis o hullámjellel",ouml:"Latin kis o kettőspont ékezettel",divide:"Osztásjel",oslash:"Latin kis o betű áthúzással",ugrave:"Latin kis u fordított ékezettel",uacute:"Latin kis u normál ékezettel",ucirc:"Latin kis u hajtott ékezettel",
 uuml:"Latin kis u kettőspont ékezettel",yacute:"Latin kis y normál ékezettel",thorn:"Latin kis thorn jel",yuml:"Latin kis y kettőspont ékezettel",OElig:"Latin nagy OE-jel",oelig:"Latin kis oe-jel",372:"Latin nagy W hajtott ékezettel",374:"Latin nagy Y hajtott ékezettel",373:"Latin kis w hajtott ékezettel",375:"Latin kis y hajtott ékezettel",sbquo:"Nyitó nyomdai szimpla idézőjel",8219:"Záró nyomdai záró idézőjel",bdquo:"Nyitó nyomdai dupla idézőjel",hellip:"Három pont",trade:"Kereskedelmi védjegy jele",
 9658:"Jobbra mutató fekete mutató",bull:"Golyó",rarr:"Jobbra mutató nyíl",rArr:"Jobbra mutató duplanyíl",hArr:"Bal-jobb duplanyíl",diams:"Fekete gyémánt jel",asymp:"Majdnem egyenlő jel"});
+//@ sourceMappingURL=hu.js.map

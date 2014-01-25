@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.dialog.add("select",function(c){function h(a,b,e,d,c){a=f(a);d=d?d.createElement("OPTION"):document.createElement("OPTION");if(a&&d&&"option"==d.getName())CKEDITOR.env.ie?(isNaN(parseInt(c,10))?a.$.options.add(d.$):a.$.options.add(d.$,c),d.$.innerHTML=0<b.length?b:"",d.$.value=e):(null!==c&&c<a.getChildCount()?a.getChild(0>c?0:c).insertBeforeMe(d):a.append(d),d.setText(0<b.length?b:""),d.setValue(e));else return!1;return d}function m(a){for(var a=f(a),b=g(a),e=a.getChildren().count()-1;0<=
@@ -18,3 +18,4 @@ a){var e=b.getValue();h(this,e,e,this.getDialog().getParentEditor().document);"s
 onClick:function(){var a=this.getDialog(),b=a.getContentElement("info","cmbName"),c=a.getContentElement("info","cmbValue");j(b,1,a.getParentEditor().document);j(c,1,a.getParentEditor().document)}}]}]},{type:"hbox",widths:["40%","20%","40%"],children:[{type:"button",id:"btnSetValue",label:c.lang.forms.select.btnSetValue,title:c.lang.forms.select.btnSetValue,onClick:function(){var a=this.getDialog(),b=a.getContentElement("info","cmbValue");a.getContentElement("info","txtValue").setValue(b.getValue())}},
 {type:"button",id:"btnDelete",label:c.lang.forms.select.btnDelete,title:c.lang.forms.select.btnDelete,onClick:function(){var a=this.getDialog(),b=a.getContentElement("info","cmbName"),c=a.getContentElement("info","cmbValue"),d=a.getContentElement("info","txtOptName"),a=a.getContentElement("info","txtOptValue");m(b);m(c);d.setValue("");a.setValue("")}},{id:"chkMulti",type:"checkbox",label:c.lang.forms.select.chkMulti,"default":"",accessKey:"M",value:"checked",setup:function(a,b){"select"==a&&this.setValue(b.getAttribute("multiple"));
 CKEDITOR.env.webkit&&this.getElement().getParent().setStyle("vertical-align","middle")},commit:function(a){this.getValue()?a.setAttribute("multiple",this.getValue()):a.removeAttribute("multiple")}}]}]}]}});
+//@ sourceMappingURL=select.js.map

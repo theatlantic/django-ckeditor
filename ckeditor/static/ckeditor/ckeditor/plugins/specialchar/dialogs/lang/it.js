@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","it",{euro:"Simbolo Euro",lsquo:"Virgoletta singola sinistra",rsquo:"Virgoletta singola destra",ldquo:"Virgolette aperte",rdquo:"Virgolette chiuse",ndash:"Trattino",mdash:"Trattino lungo",iexcl:"Punto esclavamativo invertito",cent:"Simbolo Cent",pound:"Simbolo Sterlina",curren:"Simbolo Moneta",yen:"Simbolo Yen",brvbar:"Barra interrotta",sect:"Simbolo di sezione",uml:"Dieresi",copy:"Simbolo Copyright",ordf:"Indicatore ordinale femminile",laquo:"Virgolette basse aperte",
@@ -12,3 +12,4 @@ ecirc:"Lettera minuscola latina e con accento circonflesso",euml:"Lettera minusc
 ocirc:"Lettera minuscola latina o con accento circonflesso",otilde:"Lettera minuscola latina o con tilde",ouml:"Lettera minuscola latina o con dieresi",divide:"Simbolo di divisione",oslash:"Lettera minuscola latina o barrata",ugrave:"Lettera minuscola latina u con accento grave",uacute:"Lettera minuscola latina u con accento acuto",ucirc:"Lettera minuscola latina u con accento circonflesso",uuml:"Lettera minuscola latina u con dieresi",yacute:"Lettera minuscola latina y con accento acuto",thorn:"Lettera minuscola latina thorn",
 yuml:"Lettera minuscola latina y con dieresi",OElig:"Legatura maiuscola latina OE",oelig:"Legatura minuscola latina oe",372:"Lettera maiuscola latina W con accento circonflesso",374:"Lettera maiuscola latina Y con accento circonflesso",373:"Lettera minuscola latina w con accento circonflesso",375:"Lettera minuscola latina y con accento circonflesso",sbquo:"Singola virgoletta bassa low-9",8219:"Singola virgoletta bassa low-9 inversa",bdquo:"Doppia virgoletta bassa low-9",hellip:"Ellissi orizzontale",
 trade:"Simbolo TM",9658:"Puntatore nero rivolto verso destra",bull:"Punto",rarr:"Freccia verso destra",rArr:"Doppia freccia verso destra",hArr:"Doppia freccia sinistra destra",diams:"Simbolo nero diamante",asymp:"Quasi uguale a"});
+//@ sourceMappingURL=it.js.map

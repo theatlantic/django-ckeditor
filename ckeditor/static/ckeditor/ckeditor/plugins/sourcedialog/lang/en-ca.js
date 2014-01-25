@@ -1,1 +1,2 @@
 ﻿CKEDITOR.plugins.setLang("sourcedialog","en-ca",{toolbar:"Source",title:"Source"});
+//@ sourceMappingURL=en-ca.js.map

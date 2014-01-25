@@ -1,0 +1,2 @@
+﻿CKEDITOR.plugins.setLang("image2","sl",{alt:"Nadomestno besedilo",btnUpload:"Pošlji na strežnik",captioned:"Captioned image",infoTab:"Podatki o sliki",lockRatio:"Zakleni razmerje",menu:"Lastnosti slike",pathName:"image",pathNameCaption:"caption",resetSize:"Ponastavi velikost",resizer:"Click and drag to resize",title:"Lastnosti slike",uploadTab:"Naloži",urlMissing:"Manjka vir (URL) slike."});
+//@ sourceMappingURL=sl.js.map

@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","cy",{euro:"Arwydd yr Ewro",lsquo:"Dyfynnod chwith unigol",rsquo:"Dyfynnod dde unigol",ldquo:"Dyfynnod chwith dwbl",rdquo:"Dyfynnod dde dwbl",ndash:"Cysylltnod en",mdash:"Cysylltnod em",iexcl:"Ebychnod gwrthdro",cent:"Arwydd sent",pound:"Arwydd punt",curren:"Arwydd arian cyfred",yen:"Arwydd yen",brvbar:"Bar toriedig",sect:"Arwydd adran",uml:"Didolnod",copy:"Arwydd hawlfraint",ordf:"Dangosydd benywaidd",laquo:"Dyfynnod dwbl ar ongl i'r chwith",not:"Arwydd Nid",
@@ -12,3 +12,4 @@ euml:"Llythyren e fach Lladinaidd gyda didolnod",igrave:"Llythyren i fach Lladin
 otilde:"Llythyren o fach Lladinaidd gyda thild",ouml:"Llythyren o fach Lladinaidd gyda didolnod",divide:"Arwydd rhannu",oslash:"Llythyren o fach Lladinaidd gyda strôc",ugrave:"Llythyren u fach Lladinaidd gydag acen ddisgynedig",uacute:"Llythyren u fach Lladinaidd gydag acen ddyrchafedig",ucirc:"Llythyren u fach Lladinaidd gydag acen grom",uuml:"Llythyren u fach Lladinaidd gyda didolnod",yacute:"Llythyren y fach Lladinaidd gydag acen ddisgynedig",thorn:"Llythyren o fach Lladinaidd gyda strôc",yuml:"Llythyren y fach Lladinaidd gyda didolnod",
 OElig:"Priflythyren cwlwm OE Lladinaidd ",oelig:"Priflythyren cwlwm oe Lladinaidd ",372:"Priflythyren W gydag acen grom",374:"Priflythyren Y gydag acen grom",373:"Llythyren w fach gydag acen grom",375:"Llythyren y fach gydag acen grom",sbquo:"Dyfynnod sengl 9-isel",8219:"Dyfynnod sengl 9-uchel cildro",bdquo:"Dyfynnod dwbl 9-isel",hellip:"Coll geiriau llorweddol",trade:"Arwydd marc masnachol",9658:"Pwyntydd du i'r dde",bull:"Bwled",rarr:"Saeth i'r dde",rArr:"Saeth ddwbl i'r dde",hArr:"Saeth ddwbl i'r chwith",
 diams:"Siwt diemwnt du",asymp:"Bron yn hafal iddo"});
+//@ sourceMappingURL=cy.js.map

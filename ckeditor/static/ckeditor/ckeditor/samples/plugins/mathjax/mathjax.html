@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <!--
-Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.html or http://ckeditor.com/license
+Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or http://ckeditor.com/license
 -->
 <html>
 <head>
-	<title>Mathematical Formulas &mdash; CKEditor Sample</title>
 	<meta charset="utf-8">
+	<title>Mathematical Formulas &mdash; CKEditor Sample</title>
 	<script src="../../../ckeditor.js"></script>
 	<link href="../../../samples/sample.css" rel="stylesheet">
 	<meta name="ckeditor-sample-name" content="Mathematics plugin">
 	<meta name="ckeditor-sample-group" content="Plugins">
 	<meta name="ckeditor-sample-description" content="Create mathematical equations in TeX and display them in visual form.">
 	<meta name="ckeditor-sample-isnew" content="1">
-	<meta name="ckeditor-sample-isbeta" content="1">
 	<script>
 		CKEDITOR.disableAutoInline = true;
 	</script>
@@ -47,6 +46,9 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 	<strong>extraPlugins: 'mathjax'</strong>
 } );
 </pre>
+		<p id="ie8-warning">
+			Please note that this plugin is not compatible with Internet Explorer 8.
+		</p>
 	</div>
 
 	<textarea id="editor1" cols="10" rows="10">
@@ -61,6 +63,9 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 			height: 350
 		} );
 
+		if ( CKEDITOR.env.ie && CKEDITOR.env.version == 8 )
+			document.getElementById( 'ie8-warning' ).className = 'warning';
+
 	</script>
 
 	<div id="footer">
@@ -69,7 +74,7 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 			CKEditor - The text editor for the Internet - <a class="samples" href="http://ckeditor.com/">http://ckeditor.com</a>
 		</p>
 		<p id="copy">
-			Copyright &copy; 2003-2013, <a class="samples" href="http://cksource.com/">CKSource</a> - Frederico
+			Copyright &copy; 2003-2014, <a class="samples" href="http://cksource.com/">CKSource</a> - Frederico
 			Knabben. All rights reserved.
 		</p>
 	</div>

@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","sv",{euro:"Eurotecken",lsquo:"Enkelt vänster citattecken",rsquo:"Enkelt höger citattecken",ldquo:"Dubbelt vänster citattecken",rdquo:"Dubbelt höger citattecken",ndash:"Snedstreck",mdash:"Långt tankstreck",iexcl:"Inverterad utropstecken",cent:"Centtecken",pound:"Pundtecken",curren:"Valutatecken",yen:"Yentecken",brvbar:"Brutet lodrätt streck",sect:"Paragraftecken",uml:"Diaeresis",copy:"Upphovsrättstecken",ordf:"Feminit ordningstalsindikator",laquo:"Vänsterställt dubbelt vinkelcitationstecken",
@@ -9,3 +9,4 @@ Otilde:"Stort O med tilde",Ouml:"Stort O med diaeresis",times:"Multiplicera",Osl
 ccedil:"Litet c med cedilj",egrave:"Litet e med grav accent",eacute:"Litet e med akutaccent",ecirc:"Litet e med circumflex",euml:"Litet e med diaeresis",igrave:"Litet i med grav accent",iacute:"Litet i med akutaccent",icirc:"LItet i med circumflex",iuml:"Litet i med didaeresis",eth:"Litet eth",ntilde:"Litet n med tilde",ograve:"LItet o med grav accent",oacute:"LItet o med akutaccent",ocirc:"Litet o med circumflex",otilde:"LItet o med tilde",ouml:"Litet o med diaeresis",divide:"Division",oslash:"ø",
 ugrave:"Litet u med grav accent",uacute:"Litet u med akutaccent",ucirc:"LItet u med circumflex",uuml:"Litet u med diaeresis",yacute:"Litet y med akutaccent",thorn:"Litet thorn",yuml:"Litet y med diaeresis",OElig:"Stor ligatur av OE",oelig:"Liten ligatur av oe",372:"Stort W med circumflex",374:"Stort Y med circumflex",373:"Litet w med circumflex",375:"Litet y med circumflex",sbquo:"Enkelt lågt 9-citationstecken",8219:"Enkelt högt bakvänt 9-citationstecken",bdquo:"Dubbelt lågt 9-citationstecken",hellip:"Horisontellt uteslutningstecken",
 trade:"Varumärke",9658:"Svart högervänd pekare",bull:"Listpunkt",rarr:"Högerpil",rArr:"Dubbel högerpil",hArr:"Dubbel vänsterpil",diams:"Svart ruter",asymp:"Ungefär lika med"});
+//@ sourceMappingURL=sv.js.map

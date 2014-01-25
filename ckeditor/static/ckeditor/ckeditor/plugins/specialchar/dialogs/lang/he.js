@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","he",{euro:"יורו",lsquo:"סימן ציטוט יחיד שמאלי",rsquo:"סימן ציטוט יחיד ימני",ldquo:"סימן ציטוט כפול שמאלי",rdquo:"סימן ציטוט כפול ימני",ndash:"קו מפריד קצר",mdash:"קו מפריד ארוך",iexcl:"סימן קריאה הפוך",cent:"סנט",pound:"פאונד",curren:"מטבע",yen:"ין",brvbar:"קו שבור",sect:"סימן מקטע",uml:"שתי נקודות אופקיות (Diaeresis)",copy:"סימן זכויות יוצרים (Copyright)",ordf:"סימן אורדינאלי נקבי",laquo:"סימן ציטוט זווית כפולה לשמאל",not:"סימן שלילה מתמטי",reg:"סימן רשום",
@@ -10,3 +10,4 @@ Yacute:"Latin capital letter Y with acute accent",THORN:"אות לטינית Tho
 ecirc:"Latin small letter e with circumflex",euml:"Latin small letter e with diaeresis",igrave:"אות לטינית i עם גרש (Grave)",iacute:"Latin small letter i with acute accent",icirc:"Latin small letter i with circumflex",iuml:"Latin small letter i with diaeresis",eth:"אות לטינית eth קטנה",ntilde:"Latin small letter n with tilde",ograve:"אות לטינית o עם גרש (Grave)",oacute:"Latin small letter o with acute accent",ocirc:"Latin small letter o with circumflex",otilde:"Latin small letter o with tilde",ouml:"Latin small letter o with diaeresis",
 divide:"סימן חלוקה",oslash:"Latin small letter o with stroke",ugrave:"אות לטינית u עם גרש (Grave)",uacute:"Latin small letter u with acute accent",ucirc:"Latin small letter u with circumflex",uuml:"Latin small letter u with diaeresis",yacute:"Latin small letter y with acute accent",thorn:"אות לטינית thorn קטנה",yuml:"Latin small letter y with diaeresis",OElig:"Latin capital ligature OE",oelig:"Latin small ligature oe",372:"Latin capital letter W with circumflex",374:"Latin capital letter Y with circumflex",
 373:"Latin small letter w with circumflex",375:"Latin small letter y with circumflex",sbquo:"סימן ציטוט נמוך יחיד",8219:"סימן ציטוט",bdquo:"סימן ציטוט נמוך כפול",hellip:"שלוש נקודות",trade:"סימן טריידמארק",9658:"סמן שחור לצד ימין",bull:"תבליט (רשימה)",rarr:"חץ לימין",rArr:"חץ כפול לימין",hArr:"חץ כפול לימין ושמאל",diams:"יהלום מלא",asymp:"כמעט שווה"});
+//@ sourceMappingURL=he.js.map

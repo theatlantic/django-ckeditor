@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 (function(){var r=function(c,j){function r(){var a=arguments,b=this.getContentElement("advanced","txtdlgGenStyle");b&&b.commit.apply(b,a);this.foreach(function(b){b.commit&&"txtdlgGenStyle"!=b.id&&b.commit.apply(b,a)})}function i(a){if(!s){s=1;var b=this.getDialog(),d=b.imageElement;if(d){this.commit(f,d);for(var a=[].concat(a),e=a.length,c,g=0;g<e;g++)(c=b.getContentElement.apply(b,a[g].split(":")))&&c.setup(f,d)}s=0}}var f=1,k=/^\s*(\d+)((px)|\%)?\s*$/i,v=/(^\s*(\d+)((px)|\%)?\s*$)|^$/i,o=/^\d+px$/,
@@ -41,3 +41,4 @@ commit:function(a,b){a==f&&(this.getValue()||this.isChanged())&&b.setAttribute("
 "default":"",onChange:function(){g(this.getDialog())},setup:function(a,b){a==f&&this.setValue(b.getAttribute("title"))},commit:function(a,b){a==f?(this.getValue()||this.isChanged())&&b.setAttribute("title",this.getValue()):4==a?b.setAttribute("title",this.getValue()):8==a&&b.removeAttribute("title")}}]},{type:"text",id:"txtdlgGenStyle",requiredContent:"img{cke-xyz}",label:c.lang.common.cssStyle,validate:CKEDITOR.dialog.validate.inlineStyle(c.lang.common.invalidInlineStyle),"default":"",setup:function(a,
 b){if(a==f){var c=b.getAttribute("style");!c&&b.$.style.cssText&&(c=b.$.style.cssText);this.setValue(c);var e=b.$.style.height,c=b.$.style.width,e=(e?e:"").match(k),c=(c?c:"").match(k);this.attributesInStyle={height:!!e,width:!!c}}},onChange:function(){i.call(this,"info:cmbFloat info:cmbAlign info:txtVSpace info:txtHSpace info:txtBorder info:txtWidth info:txtHeight".split(" "));g(this)},commit:function(a,b){a==f&&(this.getValue()||this.isChanged())&&b.setAttribute("style",this.getValue())}}]}]}};
 CKEDITOR.dialog.add("image",function(c){return r(c,"image")});CKEDITOR.dialog.add("imagebutton",function(c){return r(c,"imagebutton")})})();
+//@ sourceMappingURL=image.js.map

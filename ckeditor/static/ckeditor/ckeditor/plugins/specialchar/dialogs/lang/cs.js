@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","cs",{euro:"Znak eura",lsquo:"Počáteční uvozovka jednoduchá",rsquo:"Koncová uvozovka jednoduchá",ldquo:"Počáteční uvozovka dvojitá",rdquo:"Koncová uvozovka dvojitá",ndash:"En pomlčka",mdash:"Em pomlčka",iexcl:"Obrácený vykřičník",cent:"Znak centu",pound:"Znak libry",curren:"Znak měny",yen:"Znak jenu",brvbar:"Přerušená svislá čára",sect:"Znak oddílu",uml:"Přehláska",copy:"Znak copyrightu",ordf:"Ženský indikátor rodu",laquo:"Znak dvojitých lomených uvozovek vlevo",
@@ -11,3 +11,4 @@ acirc:"Malé písmeno latinky a s vokáněm",atilde:"Malé písmeno latinky a s 
 icirc:"Malé písmeno latinky i s vokáněm",iuml:"Malé písmeno latinky i s dvěma tečkami",eth:"Malé písmeno latinky eth",ntilde:"Malé písmeno latinky n s tildou",ograve:"Malé písmeno latinky o s čárkou nad vlevo",oacute:"Malé písmeno latinky o s čárkou nad vpravo",ocirc:"Malé písmeno latinky o s vokáněm",otilde:"Malé písmeno latinky o s tildou",ouml:"Malé písmeno latinky o s dvěma tečkami",divide:"Znak dělení",oslash:"Malé písmeno latinky o přeškrtnuté",ugrave:"Malé písmeno latinky u s čárkou nad vlevo",
 uacute:"Malé písmeno latinky u s čárkou nad vpravo",ucirc:"Malé písmeno latinky u s vokáněm",uuml:"Malé písmeno latinky u s dvěma tečkami",yacute:"Malé písmeno latinky y s čárkou nad vpravo",thorn:"Malé písmeno latinky thorn",yuml:"Malé písmeno latinky y s dvěma tečkami",OElig:"Velká ligatura latinky OE",oelig:"Malá ligatura latinky OE",372:"Velké písmeno latinky W s vokáněm",374:"Velké písmeno latinky Y s vokáněm",373:"Malé písmeno latinky w s vokáněm",375:"Malé písmeno latinky y s vokáněm",sbquo:"Dolní 9 uvozovka jednoduchá",
 8219:"Horní obrácená 9 uvozovka jednoduchá",bdquo:"Dolní 9 uvozovka dvojitá",hellip:"Trojtečkový úvod",trade:"Obchodní značka",9658:"Černý ukazatel směřující vpravo",bull:"Kolečko",rarr:"Šipka vpravo",rArr:"Dvojitá šipka vpravo",hArr:"Dvojitá šipka vlevo a vpravo",diams:"Černé piky",asymp:"Téměř se rovná"});
+//@ sourceMappingURL=cs.js.map

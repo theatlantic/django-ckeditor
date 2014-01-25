@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","ca",{euro:"Símbol d'euro",lsquo:"Signe de cometa simple esquerra",rsquo:"Signe de cometa simple dreta",ldquo:"Signe de cometa doble esquerra",rdquo:"Signe de cometa doble dreta",ndash:"Guió",mdash:"Guió baix",iexcl:"Signe d'exclamació inversa",cent:"Símbol de percentatge",pound:"Símbol de lliura",curren:"Símbol de moneda",yen:"Símbol de Yen",brvbar:"Barra trencada",sect:"Símbol de secció",uml:"Dièresi",copy:"Símbol de Copyright",ordf:"Indicador ordinal femení",
@@ -12,3 +12,4 @@ igrave:"Lletra minúscula llatina i amb accent greu",iacute:"Lletra minúscula l
 divide:"Símbol de divisió",oslash:"Lletra minúscula llatina o amb barra",ugrave:"Lletra minúscula llatina u amb accent greu",uacute:"Lletra minúscula llatina u amb accent agut",ucirc:"Lletra minúscula llatina u amb circumflex",uuml:"Lletra minúscula llatina u amb dièresi",yacute:"Lletra minúscula llatina y amb accent agut",thorn:"Lletra minúscula llatina thorn",yuml:"Lletra minúscula llatina y amb dièresi",OElig:"Lligadura majúscula llatina OE",oelig:"Lligadura minúscula llatina oe",372:"Lletra majúscula llatina W amb circumflex",
 374:"Lletra majúscula llatina Y amb circumflex",373:"Lletra minúscula llatina w amb circumflex",375:"Lletra minúscula llatina y amb circumflex",sbquo:"Signe de cita simple baixa-9",8219:"Signe de cita simple alta-invertida-9",bdquo:"Signe de cita doble baixa-9",hellip:"Punts suspensius",trade:"Símbol de marca registrada",9658:"Punter negre apuntant cap a la dreta",bull:"Vinyeta",rarr:"Fletxa cap a la dreta",rArr:"Doble fletxa cap a la dreta",hArr:"Doble fletxa esquerra dreta",diams:"Vestit negre diamant",
 asymp:"Gairebé igual a"});
+//@ sourceMappingURL=ca.js.map

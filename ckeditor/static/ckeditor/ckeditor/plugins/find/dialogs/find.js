@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 (function(){function y(c){return c.type==CKEDITOR.NODE_TEXT&&0<c.getLength()&&(!o||!c.isReadOnly())}function s(c){return!(c.type==CKEDITOR.NODE_ELEMENT&&c.isBlockBoundary(CKEDITOR.tools.extend({},CKEDITOR.dtd.$empty,CKEDITOR.dtd.$nonEditable)))}var o,t=function(){return{textNode:this.textNode,offset:this.offset,character:this.textNode?this.textNode.getText().charAt(this.offset):null,hitMatchBoundary:this._.matchBoundary}},u=["find","replace"],p=[["txtFindFind","txtFindReplace"],["txtFindCaseChk",
@@ -22,3 +22,4 @@ a.getValueOf("replace","txtFindReplace"),a.getValueOf("replace","txtReplace"),a.
 isChanged:!1,label:f.matchWord},{type:"checkbox",id:"txtReplaceCyclic",isChanged:!1,"default":!0,label:f.matchCyclic}]}]}]}],onLoad:function(){var a=this,b,c=0;this.on("hide",function(){c=0});this.on("show",function(){c=1});this.selectPage=CKEDITOR.tools.override(this.selectPage,function(f){return function(e){f.call(a,e);var g=a._.tabs[e],i;i="find"===e?"txtFindWordChk":"txtReplaceWordChk";b=a.getContentElement(e,"find"===e?"txtFindFind":"txtFindReplace");a.getContentElement(e,i);g.initialized||(CKEDITOR.document.getById(b._.inputId),
 g.initialized=!0);if(c){var j,e="find"===e?1:0,g=1-e,k,h=p.length;for(k=0;k<h;k++)i=this.getContentElement(u[e],p[k][e]),j=this.getContentElement(u[g],p[k][g]),j.setValue(i.getValue())}}})},onShow:function(){e.searchRange=q();var a=this.getParentEditor().getSelection().getSelectedText(),b=this.getContentElement(g,"find"==g?"txtFindFind":"txtFindReplace");b.setValue(a);b.select();this.selectPage(g);this[("find"==g&&this._.editor.readOnly?"hide":"show")+"Page"]("replace")},onHide:function(){var a;e.matchRange&&
 e.matchRange.isMatched()&&(e.matchRange.removeHighlight(),c.focus(),(a=e.matchRange.toDomRange())&&c.getSelection().selectRanges([a]));delete e.matchRange},onFocus:function(){return"replace"==g?this.getContentElement("replace","txtFindReplace"):this.getContentElement("find","txtFindFind")}}};CKEDITOR.dialog.add("find",function(c){return n(c,"find")});CKEDITOR.dialog.add("replace",function(c){return n(c,"replace")})})();
+//@ sourceMappingURL=find.js.map

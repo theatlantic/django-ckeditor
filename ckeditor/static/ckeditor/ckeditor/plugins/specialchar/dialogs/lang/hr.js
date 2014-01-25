@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("specialchar","hr",{euro:"Euro znak",lsquo:"Lijevi jednostruki navodnik",rsquo:"Desni jednostruki navodnik",ldquo:"Lijevi dvostruki navodnik",rdquo:"Desni dvostruki navodnik",ndash:"En crtica",mdash:"Em crtica",iexcl:"Naopaki uskličnik",cent:"Cent znak",pound:"Funta znak",curren:"Znak valute",yen:"Yen znak",brvbar:"Potrgana prečka",sect:"Znak odjeljka",uml:"Prijeglasi",copy:"Copyright znak",ordf:"Feminine ordinal indicator",laquo:"Lijevi dvostruki uglati navodnik",not:"Not znak",
@@ -11,3 +11,4 @@ aelig:"Latin small letter æ",ccedil:"Latin small letter c with cedilla",egrave:
 ograve:"Latin small letter o with grave accent",oacute:"Latin small letter o with acute accent",ocirc:"Latin small letter o with circumflex",otilde:"Latin small letter o with tilde",ouml:"Latin small letter o with diaeresis",divide:"Division sign",oslash:"Latin small letter o with stroke",ugrave:"Latin small letter u with grave accent",uacute:"Latin small letter u with acute accent",ucirc:"Latin small letter u with circumflex",uuml:"Latin small letter u with diaeresis",yacute:"Latin small letter y with acute accent",
 thorn:"Latin small letter thorn",yuml:"Latin small letter y with diaeresis",OElig:"Latin capital ligature OE",oelig:"Latin small ligature oe",372:"Latin capital letter W with circumflex",374:"Latin capital letter Y with circumflex",373:"Latin small letter w with circumflex",375:"Latin small letter y with circumflex",sbquo:"Single low-9 quotation mark",8219:"Single high-reversed-9 quotation mark",bdquo:"Double low-9 quotation mark",hellip:"Horizontal ellipsis",trade:"Trade mark sign",9658:"Black right-pointing pointer",
 bull:"Bullet",rarr:"Rightwards arrow",rArr:"Rightwards double arrow",hArr:"Left right double arrow",diams:"Black diamond suit",asymp:"Almost equal to"});
+//@ sourceMappingURL=hr.js.map
