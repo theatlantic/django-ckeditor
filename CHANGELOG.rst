@@ -1,6 +1,41 @@
 Changelog
 =========
 
+4.3.2
+-----
+
+* Updated to CKEditor 4.3.2
+* Added source maps for the concatenated and minified javascript files
+* Fixed bug that caused parse errors in JSON.parse (thanks `blag <https://github.com/blag>`_)
+* Fixed ``django.conf.urls`` import for Django 1.5 (where it was deprecated) and Django 1.6
+  (where it was removed).
+
+4.3.0 beta
+----------
+
+* Updated to CKEditor 4.3.0 beta
+* Added form clean method that strips control characters from input
+
+4.1.2
+-----
+
+* Updated to CKEditor 4.1.2
+* Added ``RichCharField``, which is functionally the same as ``RichTextField``, but is a django ``CharField``, not a ``TextField``
+* Added ability to pass raw javascript into settings (e.g. javascript functions, conditional logic) with the ``JSCode`` class
+* Changed ckeditor-dev folder to use the ckeditor repository and isolated custom javascript to allow easier version updates.
+
+3.6.3
+-----
+
+* Forked from `shaunsephton <https://github.com/shaunsephton/django-ckeditor>`_
+* Updated to CKEditor 3.6.3
+* Automatic image resize functionality
+* Support Promise objects in ``CKEDITOR_CONFIG`` (thanks `timheap <https://github.com/timheap>`_)
+* Added ``CKEDITOR_DEBUG`` setting, which if set to ``True`` uses the unminified CKEditor javascript
+* Support for django-filebrowser's file browser and uploader
+* Added a ``config`` keyword argument to RichTextFields, which provides a way of defining or overriding
+  configuration directly on a RichTextField without requiring an edit to the ``CKEDITOR_CONFIGS`` setting.
+
 3.6.2
 -----
 
@@ -63,4 +98,3 @@ Changelog
 -----
 
 * Added CKEDITOR_UPLOAD_PREFIX setting. Thanks `chr15m <http://github.com/chr15m>`_ for the input.
-
