@@ -12,12 +12,15 @@ class ViewsTestCase(unittest.TestCase):
 
     def setUp(self):
         # Retain original settings.
-        TEST_MEDIA_ROOT = '/media/root/' # TODO: What is this?
+        TEST_MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
         self.test_settings = {
             'MEDIA_ROOT': TEST_MEDIA_ROOT,
-            'UPLOAD_PATH': os.path.join(TEST_MEDIA_ROOT, 'uploads'),
+            'UPLOAD_PATH': os.path.join(TEST_MEDIA_ROOT, 'test_uploads'),
             'MEDIA_URL': '/media/',
         }
+
+        ck_settings.ORIGINAL_MEDIA_ROOT = ck_settings.MEDIA_ROOT
+        ck_settings.MEDIA_ROOT = TEST_MEDIA_ROOT
 
         self.orig_settings = {}
         for k, v in self.test_settings.iteritems():
@@ -36,6 +39,8 @@ class ViewsTestCase(unittest.TestCase):
         # Reset original settings.
         for k, v in self.test_settings.iteritems():
             setattr(ck_settings, k, self.orig_settings[k])
+        ck_settings.MEDIA_ROOT = ck_settings.ORIGINAL_MEDIA_ROOT
+        
 
     def test_get_media_url(self):
         # If provided prefix URL with ck_settings.UPLOAD_PREFIX.
@@ -69,10 +74,8 @@ class ViewsTestCase(unittest.TestCase):
                 no_ext_path + '_thumb')
 
     def test_get_image_browse_urls(self):
-        ck_settings.MEDIA_ROOT = os.path.join(
-            os.path.dirname(__file__), '../', 'media')
-        ck_settings.UPLOAD_PATH = os.path.join(settings.MEDIA_ROOT, \
-                'test_uploads')
+        ck_settings.MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
+        ck_settings.UPLOAD_PATH = os.path.join(settings.MEDIA_ROOT, 'test_uploads')
         #ck_settings.RESTRICT_BY_USER = True
 
         # The test_uploads path contains subfolders, we should eventually reach
