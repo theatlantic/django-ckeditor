@@ -9,7 +9,7 @@ from django.utils.functional import lazy
 lazy_reverse = lazy(reverse, str)
 
 
-TIMESTAMP = 'E0ON'
+TIMESTAMP = getattr(settings, 'CKEDITOR_TIMESTAMP', 'E0ON')
 
 
 DEFAULT_CONFIG = {
