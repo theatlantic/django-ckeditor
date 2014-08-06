@@ -147,7 +147,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 			document.write('<scr' + 'ipt type="text/javascript" src="' + newSrc + '"></sc' + 'ript>');
 		} else {
 			CKEDITOR.jQueryObj = bestJQuery[0];
-			CKEDITOR.jQuery = bestJQuery[1].noConflict();
+			CKEDITOR.jQuery = bestJQuery[1];
 		}
 	}
 
