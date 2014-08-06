@@ -62,7 +62,14 @@
     }
 
     $(document).ready(function() {
-        $('.django-ckeditor-textarea').ckeditor();
+        $('.django-ckeditor-textarea').each(function(i, input) {
+            var $input = $(input);
+            var inputName = $input.attr('name') || '';
+            if (inputName.indexOf('__prefix__') > -1) {
+                return;
+            }
+            $input.ckeditor();
+        });
     });
 
 })();
