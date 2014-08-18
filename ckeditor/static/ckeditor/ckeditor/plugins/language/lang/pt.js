@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("language","pt",{button:"Definir Idioma",remove:"Remover Idioma"});
-//@ sourceMappingURL=pt.js.map

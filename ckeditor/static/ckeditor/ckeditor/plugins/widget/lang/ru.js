@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("widget","ru",{move:"Нажмите и перетащите"});
-//@ sourceMappingURL=ru.js.map

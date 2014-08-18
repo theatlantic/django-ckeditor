@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("codesnippet","ug",{button:"كود پارچىسى قىستۇرۇش",codeContents:"Code content",emptySnippetError:"A code snippet cannot be empty.",language:"Language",title:"Code snippet"});
-//@ sourceMappingURL=ug.js.map

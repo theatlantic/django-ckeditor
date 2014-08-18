@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("uicolor","ru",{title:"Выбор цвета интерфейса",preview:"Предпросмотр в реальном времени",config:"Вставьте эту строку в файл config.js",predefined:"Предопределенные цветовые схемы"});
-//@ sourceMappingURL=ru.js.map

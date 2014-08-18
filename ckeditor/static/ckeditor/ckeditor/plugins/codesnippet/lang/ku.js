@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("codesnippet","ku",{button:"تیتکی کۆد دابنێ",codeContents:"Code content",emptySnippetError:"A code snippet cannot be empty.",language:"Language",title:"Code snippet"});
-//@ sourceMappingURL=ku.js.map

@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("codesnippet","lt",{button:"Įterpkite kodo gabaliuką",codeContents:"Code content",emptySnippetError:"A code snippet cannot be empty.",language:"Language",title:"Code snippet"});
-//@ sourceMappingURL=lt.js.map

@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("language","eo",{button:"Instali lingvon",remove:"Forigi lingvon"});
-//@ sourceMappingURL=eo.js.map

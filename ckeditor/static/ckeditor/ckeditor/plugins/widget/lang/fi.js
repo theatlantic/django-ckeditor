@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("widget","fi",{move:"Siirrä klikkaamalla ja raahaamalla"});
-//@ sourceMappingURL=fi.js.map

@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("codesnippet","nb",{button:"Sett inn kodesnutt",codeContents:"Kodeinnhold",emptySnippetError:"En kodesnutt kan ikke være tom.",language:"Språk",title:"Kodesnutt"});
-//@ sourceMappingURL=nb.js.map

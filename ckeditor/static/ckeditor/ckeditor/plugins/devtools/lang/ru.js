@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("devtools","ru",{title:"Информация об элементе",dialogName:"Имя окна диалога",tabName:"Имя вкладки",elementId:"ID элемента",elementType:"Тип элемента"});
-//@ sourceMappingURL=ru.js.map

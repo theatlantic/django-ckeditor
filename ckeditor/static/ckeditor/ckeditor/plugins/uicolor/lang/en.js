@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("uicolor","en",{title:"UI Color Picker",preview:"Live preview",config:"Paste this string into your config.js file",predefined:"Predefined color sets"});
-//@ sourceMappingURL=en.js.map

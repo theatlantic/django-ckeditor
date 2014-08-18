@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("uicolor","uk",{title:"Color Picker Інтерфейс",preview:"Перегляд наживо",config:"Вставте цей рядок у файл config.js",predefined:"Стандартний набір кольорів"});
-//@ sourceMappingURL=uk.js.map

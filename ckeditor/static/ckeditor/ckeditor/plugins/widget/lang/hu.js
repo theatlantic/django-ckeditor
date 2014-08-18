@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("widget","hu",{move:"Kattints és húzd a mozgatáshoz"});
-//@ sourceMappingURL=hu.js.map

@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("devtools","cs",{title:"Informace o prvku",dialogName:"Název dialogového okna",tabName:"Název karty",elementId:"ID prvku",elementType:"Typ prvku"});
-//@ sourceMappingURL=cs.js.map

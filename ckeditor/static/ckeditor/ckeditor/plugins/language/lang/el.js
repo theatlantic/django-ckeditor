@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("language","el",{button:"Θέση γλώσσας",remove:"Αφαίρεση γλώσσας"});
-//@ sourceMappingURL=el.js.map

@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("language","hu",{button:"Nyelv beállítása",remove:"Nyelv eltávolítása"});
-//@ sourceMappingURL=hu.js.map

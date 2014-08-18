@@ -1,4 +1,8 @@
-__version_info__ = (4, 4, 1)
-__version__ = '.'.join(map(str, __version_info__))
+import pkg_resources
+
+try:
+    __version__ = pkg_resources.get_distribution('django-ckeditor').version
+except pkg_resources.DistributionNotFound:
+    __version__ = None
 
 from .json_types import JSCode

@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("codesnippet","pl",{button:"Wstaw fragment kodu",codeContents:"Treść kodu",emptySnippetError:"Kod nie może być pusty.",language:"Język",title:"Fragment kodu"});
-//@ sourceMappingURL=pl.js.map

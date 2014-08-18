@@ -3,4 +3,3 @@
  For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("codesnippet","tt",{button:"Код өзеген өстәү",codeContents:"Код эчтәлеге",emptySnippetError:"Код өзеге буш булмаска тиеш",language:"Тел",title:"Код өзеге"});
-//@ sourceMappingURL=tt.js.map
