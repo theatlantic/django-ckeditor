@@ -1,3 +1,4 @@
+import django
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -48,12 +49,18 @@ def configs(request):
         for config_name, config in ck_settings.CONFIGS.iteritems():
             merged_configs[config_name] = utils.validate_config(config_name)
 
+    render_kwargs = {}
+    if django.VERSION > (1, 7):
+        render_kwargs['content_type'] = 'application/x-javascript'
+    else:
+        render_kwargs['mimetype'] = 'application/x-javascript'
+
     return render_to_response('ckeditor/configs.js', RequestContext(request, {
         'debug': ck_settings.CKEDITOR_DEBUG,
         'timestamp': ck_settings.TIMESTAMP,
         'merged_configs': utils.pretty_json_encode(merged_configs),
         'jquery_override_val': utils.json_encode(ck_settings.JQUERY_OVERRIDE_VAL),
-    }), mimetype="application/x-javascript")
+    }), **render_kwargs)
 
 
 @csrf_exempt
