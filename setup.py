@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-ckeditor',
-    version='4.4.3',
+    version='4.4.7',
     description='Django admin CKEditor integration.',
     long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Shaun Sephton',
