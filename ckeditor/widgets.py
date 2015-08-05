@@ -4,7 +4,10 @@ from django.utils.safestring import mark_safe
 from django.utils.encoding import force_unicode
 from django.utils.html import conditional_escape
 
-from django.forms.util import flatatt
+try:
+    from django.forms.utils import flatatt
+except ImportError:
+    from django.forms.util import flatatt
 
 from . import settings as ck_settings, utils
 
