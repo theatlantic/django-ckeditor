@@ -1,7 +1,6 @@
 import django
 from django.http import HttpResponse
-from django.shortcuts import render_to_response
-from django.template import RequestContext
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from . import utils
@@ -38,9 +37,9 @@ def upload(request):
 
 
 def browse(request):
-    return render_to_response('browse.html', RequestContext(request, {
+    return render(request, 'browse.html', {
         'images': utils.get_image_browse_urls(request.user),
-    }))
+    })
 
 
 def configs(request):
@@ -55,12 +54,12 @@ def configs(request):
     else:
         render_kwargs['mimetype'] = 'application/x-javascript'
 
-    return render_to_response('ckeditor/configs.js', RequestContext(request, {
+    return render(request, 'ckeditor/configs.js', dict({
         'debug': ck_settings.CKEDITOR_DEBUG,
         'timestamp': ck_settings.TIMESTAMP,
         'merged_configs': utils.pretty_json_encode(merged_configs),
         'jquery_override_val': utils.json_encode(ck_settings.JQUERY_OVERRIDE_VAL),
-    }), **render_kwargs)
+    }, **render_kwargs))
 
 
 @csrf_exempt
