@@ -1,4 +1,5 @@
 import django
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -7,6 +8,7 @@ from . import utils
 from . import settings as ck_settings
 
 
+@login_required
 @csrf_exempt
 def upload(request):
     """
@@ -36,12 +38,14 @@ def upload(request):
     </script>""" % (request.GET['CKEditorFuncNum'], url))
 
 
+@login_required
 def browse(request):
     return render(request, 'browse.html', {
         'images': utils.get_image_browse_urls(request.user),
     })
 
 
+@login_required
 def configs(request):
     merged_configs = {}
     if ck_settings.CONFIGS is not None:
@@ -62,6 +66,7 @@ def configs(request):
     }, **render_kwargs))
 
 
+@login_required
 @csrf_exempt
 def fb_upload(request):
     """
