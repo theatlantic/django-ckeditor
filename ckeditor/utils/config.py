@@ -120,7 +120,7 @@ class LazyEncoder(json.JSONEncoder):
 
     def default(self, obj):
         if isinstance(obj, Promise):
-            return force_unicode(obj)
+            return obj._proxy____cast()
         return super(LazyEncoder, self).default(obj)
 
 
