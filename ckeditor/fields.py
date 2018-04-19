@@ -5,7 +5,7 @@ from django import forms
 from ckeditor.widgets import CKEditorWidget
 from ckeditor.utils.image_resize import resize_images
 
-CONTROL_CHARACTERS_REGEX = re.compile(r'[\x00-\x08\x10\x0B\x0C\x0E-\x1F\x7F]')
+CONTROL_CHARACTERS_REGEX = re.compile(r'[\x00-\x08\x10\x0B\x0C\x0E-\x1F\x7F]', re.U)
 
 class RichModelFieldMixin(object):
 
@@ -47,6 +47,9 @@ class RichTextFormField(forms.CharField):
 
     def to_python(self, value):
         value = super(RichTextFormField, self).to_python(value)
+        if value is None:
+            return value
+        
         value = CONTROL_CHARACTERS_REGEX.sub('', value)
         if self.dynamic_resize:
             value = resize_images(value, request=self.request)
