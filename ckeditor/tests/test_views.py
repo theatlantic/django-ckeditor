@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import os
 import unittest
 from datetime import datetime
@@ -6,6 +7,7 @@ from django.conf import settings
 
 from ckeditor import utils
 from ckeditor import settings as ck_settings
+from django.utils import six
 
 
 class ViewsTestCase(unittest.TestCase):
@@ -17,13 +19,14 @@ class ViewsTestCase(unittest.TestCase):
             'MEDIA_ROOT': TEST_MEDIA_ROOT,
             'UPLOAD_PATH': os.path.join(TEST_MEDIA_ROOT, 'test_uploads'),
             'MEDIA_URL': '/media/',
+            'RESTRICT_BY_USER': None,
         }
 
         ck_settings.ORIGINAL_MEDIA_ROOT = ck_settings.MEDIA_ROOT
         ck_settings.MEDIA_ROOT = TEST_MEDIA_ROOT
 
         self.orig_settings = {}
-        for k, v in self.test_settings.iteritems():
+        for k, v in six.iteritems(self.test_settings):
             self.orig_settings[k] = v
             setattr(ck_settings, k, v)
 
@@ -37,10 +40,10 @@ class ViewsTestCase(unittest.TestCase):
 
     def tearDown(self):
         # Reset original settings.
-        for k, v in self.test_settings.iteritems():
+        for k, v in six.iteritems(self.test_settings):
             setattr(ck_settings, k, self.orig_settings[k])
         ck_settings.MEDIA_ROOT = ck_settings.ORIGINAL_MEDIA_ROOT
-        
+
 
     def test_get_media_url(self):
         # If provided prefix URL with ck_settings.UPLOAD_PREFIX.
@@ -52,8 +55,8 @@ class ViewsTestCase(unittest.TestCase):
         # back to MEDIA_URL with the difference of MEDIA_ROOT and the
         # uploaded resource's full path and filename appended.
         ck_settings.UPLOAD_PREFIX = None
-        no_prefix_url = '/media/uploads/arbitrary/path/and/filename.ext'
-        self.failUnless(utils.get_media_url(self.test_path) == no_prefix_url)
+        no_prefix_url = '/test_uploads/arbitrary/path/and/filename.ext'
+        self.assertEqual(utils.get_media_url(self.test_path), no_prefix_url)
 
         # Resulting URL should never include '//' outside of schema.
         ck_settings.UPLOAD_PREFIX = 'https://test.com//media////ckuploads/'
@@ -75,7 +78,7 @@ class ViewsTestCase(unittest.TestCase):
 
     def test_get_image_browse_urls(self):
         ck_settings.MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
-        ck_settings.UPLOAD_PATH = os.path.join(settings.MEDIA_ROOT, 'test_uploads')
+        ck_settings.UPLOAD_PATH = os.path.join(self.test_settings['MEDIA_ROOT'], 'test_uploads')
         #ck_settings.RESTRICT_BY_USER = True
 
         # The test_uploads path contains subfolders, we should eventually reach

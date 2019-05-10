@@ -1,6 +1,6 @@
+from __future__ import absolute_import
 import os
 import sys
-import urlparse
 import re
 import hashlib
 import logging
@@ -10,8 +10,12 @@ from PIL import Image, ImageFile
 
 from django.conf import settings
 from django.contrib import messages
+from django.utils import six
+from django.utils.six.moves import urllib
+
 from ckeditor import settings as ck_settings
 from .common import get_media_url
+from functools import reduce
 
 
 ImageFile.MAXBLOCKS = 10000000
@@ -25,7 +29,7 @@ def match_or_none(string, rx):
 
     @param string: String to match against
     @type  string: basestring
-    
+
     @param rx: compiled regular expression
 
     @return: number or None
@@ -54,11 +58,11 @@ def get_dimensions(img):
     """
     styles = img.attrib.get('style')
 
-    width = match_or_none(styles, width_rx) or img.attrib.get('width') 
-    if isinstance(width, basestring):
+    width = match_or_none(styles, width_rx) or img.attrib.get('width')
+    if isinstance(width, six.string_types):
         width = int(width)
-    height = match_or_none(styles, height_rx) or img.attrib.get('height') 
-    if isinstance(height, basestring):
+    height = match_or_none(styles, height_rx) or img.attrib.get('height')
+    if isinstance(height, six.string_types):
         height= int(height)
     return width, height
 
@@ -72,7 +76,7 @@ def get_local_path(url):
     @return: Local path of the url
     @rtype:  basestring
     """
-    url = urlparse.unquote(url)
+    url = urllib.parse.unquote(url)
     local_path = settings.STATIC_ROOT + os.path.normpath(url[len(settings.STATIC_URL):])
     return local_path
 
@@ -82,24 +86,24 @@ hexhash = lambda s: hashlib.md5(buffer(s)).hexdigest()
 def new_rendered_path(orig_path, width, height, ext=None):
     """
     Builds a new rendered path based on the original path, width, and height.
-    It takes a hash of the original path to prevent users from accidentally 
+    It takes a hash of the original path to prevent users from accidentally
     (or purposely) overwritting other's rendered thumbnails.
 
-    This isn't perfect: we are assuming that the original file's conents never 
+    This isn't perfect: we are assuming that the original file's conents never
     changes, which is the django default.  We could make this function more
     robust by hashing the file everytime we save but that has the obvious
     disadvantage of having to hash the file everytime.  YMMV.
-    
+
     @param orig_path: Path to the original image.
     @type  orig_path: "/path/to/file"
-    
+
     @param width: Desired width of the rendered image.
     @type  width: int or None
-    
+
     @param height: Desired height of the rendered image.
     @type  height: int or None
 
-    @param ext: Desired extension of the new image.  If None, uses 
+    @param ext: Desired extension of the new image.  If None, uses
                 the original extension.
     @type  ext: basestring or None
 
@@ -128,10 +132,10 @@ def is_rendered(path, width, height):
 
     @param path: path to check
     @type  path: u"/path/to/image"
-    
+
     @param width: Desired width
     @type  width: int
-    
+
     @param height: Desired height
     @type  height: int
 
@@ -149,13 +153,13 @@ def transcode_to_jpeg(image, path, width, height):
 
     @param image: Opened image to transcode to jpeg.
     @type  image: PIL.Image
-    
+
     @param path: Path to the opened image.
     @type  path: u"/path/to/image"
-    
+
     @param width: Desired width of the transcoded image.
     @type  width: int
-    
+
     @param height: Desired height of the transcoded image.
     @type  height: int
 
@@ -185,10 +189,10 @@ def re_render(path, width, height):
 
     @param path: Path to the original image
     @type  path: "/path/to/image"
-    
+
     @param width: Desired width
     @type  width: int or None
-    
+
     @param height: Desired height
     @type  height: int or None
 
@@ -201,7 +205,7 @@ def re_render(path, width, height):
     except IOError:
         # Probably doesn't exist or isn't an image
         return path
-    # We have to call image.load first due to a PIL 1.1.7 bug 
+    # We have to call image.load first due to a PIL 1.1.7 bug
     image.load()
 
     if image.format == 'PNG' and ck_settings.PNG_TO_JPEG:
@@ -209,7 +213,7 @@ def re_render(path, width, height):
         # check that our entire alpha channel is set to full opaque
         if image.mode == 'RGB' or image.split()[-1].histogram()[-1] == pixels:
             return transcode_to_jpeg(image, path, width, height)
-            
+
     if image.size <= (width, height):
         return path
     if width is None or height is None:
@@ -287,7 +291,7 @@ def resize_images(post_content, request=None):
                         y=height,
                     )
                 messages.add_message(request, messages.WARNING, msg)
-            
+
             continue  # Nevermind for now
 
         # If we haven't changed the image, move along.
@@ -306,10 +310,10 @@ def resize_images(post_content, request=None):
 def swap_in_originals(content):
     if 'data-original' not in content:
         return content
-    
+
     tree = get_html_tree(content)
     for img in tree.xpath('//img[@data-original]'):
         img.attrib['src'] = img.attrib['data-original']
         del img.attrib['data-original']
-    
+
     return render_html_tree(tree)

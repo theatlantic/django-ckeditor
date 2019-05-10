@@ -1,13 +1,15 @@
+from __future__ import absolute_import
 import os
 import mock
-from unittest2 import TestCase
+from unittest import TestCase
 from ckeditor.utils import re_render
 from PIL.Image import Image
 
+
 class TestReRender(TestCase):
 
-    @classmethod
-    def setup_class(self):
+    def setUp(self):
+        super(TestReRender, self).setUp()
         self.static_path = os.path.join(os.path.dirname(__file__), 'static')
 
     @mock.patch.object(Image, 'save')
