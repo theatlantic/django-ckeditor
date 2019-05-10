@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from setuptools import setup, find_packages
 
 
@@ -14,7 +15,7 @@ setup(
         'http://dist.plone.org/thirdparty/',
     ],
     include_package_data=True,
-    test_suite="setuptest.SetupTestSuite",
+    test_suite="setuptest.setuptest.SetupTestSuite",
     tests_require=[
         'django-setuptest>=0.0.6',
     ],

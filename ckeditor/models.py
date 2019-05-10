@@ -1,6 +1,7 @@
 """
 Validation logic, to be run on initialization of django models
 """
+from __future__ import absolute_import
 import os
 
 from django.conf import settings
