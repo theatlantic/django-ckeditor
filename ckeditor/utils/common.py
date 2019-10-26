@@ -27,7 +27,7 @@ def get_media_url(path):
     return urllib.parse.urlunparse(url_parts)
 
 
-re_spaces = re.compile(ur"\s+")
+re_spaces = re.compile(r"\s+")
 
 
 def combine_css_classes(*classes_args):
