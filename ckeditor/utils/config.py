@@ -4,7 +4,7 @@ import collections
 
 import json
 import json.encoder
-from json.encoder import encode_basestring, encode_basestring_ascii, FLOAT_REPR
+from json.encoder import encode_basestring, encode_basestring_ascii
 try:
     from json.encoder import _make_iterencode, c_make_encoder
 except ImportError:
@@ -12,7 +12,6 @@ except ImportError:
     _make_iterencode = c_make_encoder = None
 
 from django.core.exceptions import ImproperlyConfigured
-from django.utils.encoding import force_unicode
 from django.utils.functional import Promise
 
 from ckeditor import JSCode, settings as ck_settings
@@ -82,7 +81,7 @@ class LazyEncoder(json.JSONEncoder):
                 o = o.decode(_encoding)
             return _orig_encoder(o)
 
-        def floatstr(o, allow_nan=self.allow_nan, _repr=FLOAT_REPR, **kwargs):
+        def floatstr(o, allow_nan=self.allow_nan, _repr=float.__repr__, **kwargs):
             defaults = {}
             if hasattr(json.encoder, 'INFINITY'):
                 defaults = {
