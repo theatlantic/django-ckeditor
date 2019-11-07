@@ -3,13 +3,13 @@ import copy
 import collections
 
 import json
-import json.encoder
-from json.encoder import encode_basestring, encode_basestring_ascii
-try:
-    from json.encoder import _make_iterencode, c_make_encoder
-except ImportError:
-    # python 2.6
-    _make_iterencode = c_make_encoder = None
+from json.encoder import (
+    encode_basestring,
+    encode_basestring_ascii,
+    _make_iterencode,
+    c_make_encoder,
+    INFINITY
+)
 
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.functional import Promise
@@ -74,21 +74,19 @@ class LazyEncoder(json.JSONEncoder):
         else:
             _encoder = encode_basestring
 
-        def _encoder(o, _orig_encoder=_encoder, _encoding=self.encoding):
+        def _encoder(o, _orig_encoder=_encoder, _encoding=getattr(self, 'encoding', None)):
             if isinstance(o, JSCode):
                 return o
-            if _encoding != 'utf-8' and isinstance(o, str):
+            if _encoding and _encoding != 'utf-8' and isinstance(o, str):
                 o = o.decode(_encoding)
             return _orig_encoder(o)
 
         def floatstr(o, allow_nan=self.allow_nan, _repr=float.__repr__, **kwargs):
-            defaults = {}
-            if hasattr(json.encoder, 'INFINITY'):
-                defaults = {
-                    '_inf': json.encoder.INFINITY,
-                    '_neginf': -json.encoder.INFINITY,
-                }
-            kwargs.update(defaults)
+            kwargs.update({
+                '_inf': json.encoder.INFINITY,
+                '_neginf': -json.encoder.INFINITY,
+            })
+
             # Check for specials.  Note that this type of test is processor
             # and/or platform-specific, so do tests which don't depend on the
             # internals.
@@ -101,8 +99,7 @@ class LazyEncoder(json.JSONEncoder):
             else:
                 return _repr(o)
             if not allow_nan:
-                raise ValueError("Out of range float values are not JSON "
-                                 "compliant: %s" % repr(o))
+                raise ValueError("Out of range float values are not JSON compliant: {!r}".format(o))
             return text
 
         if _one_shot and c_make_encoder and not(self.indent or self.sort_keys):

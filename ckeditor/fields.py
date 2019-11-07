@@ -55,11 +55,3 @@ class RichTextFormField(forms.CharField):
         if self.dynamic_resize:
             value = resize_images(value, request=self.request)
         return value
-
-try:
-    from south.modelsinspector import add_introspection_rules
-except ImportError:
-    pass
-else:
-    add_introspection_rules([], ["^ckeditor\.fields\.RichCharField"])
-    add_introspection_rules([], ["^ckeditor\.fields\.RichTextField"])
