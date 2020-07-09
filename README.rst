@@ -8,6 +8,24 @@ Provides a ``RichTextField`` and ``CKEditorWidget`` utilizing CKEditor with imag
 .. contents:: Contents
     :depth: 5
 
+Testing
+-------
+
+Easiest::
+
+    python3 -m venv venv
+    . venv/bin/activate
+    pip install tox
+    tox
+
+Other::
+
+    python3 -m venv venv
+    . venv/bin/activate
+    python -m pip install "lxml==4.5.0" "mock==3.0.5" "Pillow==6.2.1" "Django>=2.0,<2.1"
+    python setup.py test
+
+
 Installation
 ------------
 
