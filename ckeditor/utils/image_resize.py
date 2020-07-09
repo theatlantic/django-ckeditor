@@ -80,6 +80,13 @@ def get_local_path(url):
     local_path = settings.STATIC_ROOT + os.path.normpath(url[len(settings.STATIC_URL):])
     return local_path
 
+try:
+    buffer
+except NameError:
+    # Python 3
+    from django.utils.encoding import force_bytes
+    buffer = lambda s: memoryview(force_bytes(s))
+
 # `buffer` is needed since hashlib apparently isn't unicode safe
 hexhash = lambda s: hashlib.md5(buffer(s)).hexdigest()
 

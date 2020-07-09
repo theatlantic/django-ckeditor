@@ -7,3 +7,9 @@
 /eggs/
 /parts/
 /ckeditor.db
+.coverage
+coverage.xml
+.python-version
+venv/
+pep8.txt
+*.eggs/
