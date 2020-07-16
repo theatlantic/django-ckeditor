@@ -2,8 +2,8 @@ from __future__ import absolute_import
 import sys
 import re
 
-from django.utils import six
-from django.utils.six.moves import urllib
+import six
+from six.moves import urllib
 from django.conf import settings
 
 from ckeditor import settings as ck_settings

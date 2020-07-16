@@ -3,11 +3,11 @@ import os
 import unittest
 from datetime import datetime
 
+import six
 from django.conf import settings
 
 from ckeditor import utils
 from ckeditor import settings as ck_settings
-from django.utils import six
 
 
 class ViewsTestCase(unittest.TestCase):

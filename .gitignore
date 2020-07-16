@@ -13,3 +13,5 @@ coverage.xml
 venv/
 pep8.txt
 *.eggs/
+build/
+dist/

@@ -5,13 +5,14 @@ import re
 import hashlib
 import logging
 
+import six
+from six.moves import urllib
+
 from lxml import html
 from PIL import Image, ImageFile
 
 from django.conf import settings
 from django.contrib import messages
-from django.utils import six
-from django.utils.six.moves import urllib
 
 from ckeditor import settings as ck_settings
 from .common import get_media_url

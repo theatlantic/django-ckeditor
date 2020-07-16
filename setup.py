@@ -14,11 +14,10 @@ setup(
     dependency_links = [
         'http://dist.plone.org/thirdparty/',
     ],
+    install_requires=['six'],
     include_package_data=True,
-    test_suite="setuptest.setuptest.SetupTestSuite",
-    tests_require=[
-        'django-setuptest>=0.0.6',
-    ],
+    test_suite="runtests.SetupTestSuite",
+    tests_require=['pep8', 'coverage'],
     classifiers=[
         "Programming Language :: Python",
         "License :: OSI Approved :: BSD License",

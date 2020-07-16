@@ -1,10 +1,10 @@
 from __future__ import absolute_import
+import six
 import django
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from django.utils import six
 
 from . import utils
 from . import settings as ck_settings
