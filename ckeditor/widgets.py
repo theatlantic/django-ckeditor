@@ -45,7 +45,7 @@ class CKEditorWidget(forms.Textarea):
             '%sckeditor/django/jquery_adapter.js?timestamp=%s' % (media_prefix, timestamp),
             '%sckeditor/django/widget.js?timestamp=%s' % (media_prefix, timestamp)))
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, **kwargs):
         if value is None:
             value = ''
         value = utils.swap_in_originals(value)
