@@ -1,10 +1,8 @@
-from __future__ import absolute_import
 import django
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from django.utils import six
 
 from . import utils
 from . import settings as ck_settings
@@ -51,7 +49,7 @@ def browse(request):
 def configs(request):
     merged_configs = {}
     if ck_settings.CONFIGS is not None:
-        for config_name, config in six.iteritems(ck_settings.CONFIGS):
+        for config_name, config in ck_settings.CONFIGS.items():
             merged_configs[config_name] = utils.validate_config(config_name)
 
     render_kwargs = {}

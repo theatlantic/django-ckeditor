@@ -1,9 +1,8 @@
-from __future__ import absolute_import
+import os
 import sys
 import re
 
-from django.utils import six
-from django.utils.six.moves import urllib
+import urllib
 from django.conf import settings
 
 from ckeditor import settings as ck_settings
@@ -16,7 +15,7 @@ def get_media_url(path):
     if ck_settings.UPLOAD_PREFIX:
         url = ck_settings.UPLOAD_PREFIX + path.replace(ck_settings.UPLOAD_PATH, '')
     else:
-        url = settings.MEDIA_URL + path.replace(ck_settings.MEDIA_ROOT, '')
+        url = os.path.join(settings.MEDIA_URL, path.replace(ck_settings.MEDIA_ROOT, ''))
 
     # Remove multiple forward-slashes from the path portion of the url.
     # Break url into a list.
@@ -41,7 +40,7 @@ def combine_css_classes(*classes_args):
             })
     new_classes = set([])
     for arg_pos, classes in enumerate(classes_args):
-        if isinstance(classes, six.string_types):
+        if isinstance(classes, str):
             classes = set(re_spaces.split(classes.strip()))
         else:
             try:

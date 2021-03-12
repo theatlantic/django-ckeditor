@@ -3,6 +3,7 @@ import os
 import sys
 import re
 import hashlib
+import urllib
 import logging
 
 from lxml import html
@@ -10,8 +11,6 @@ from PIL import Image, ImageFile
 
 from django.conf import settings
 from django.contrib import messages
-from django.utils import six
-from django.utils.six.moves import urllib
 
 from ckeditor import settings as ck_settings
 from .common import get_media_url
@@ -59,10 +58,10 @@ def get_dimensions(img):
     styles = img.attrib.get('style')
 
     width = match_or_none(styles, width_rx) or img.attrib.get('width')
-    if isinstance(width, six.string_types):
+    if isinstance(width, str):
         width = int(width)
     height = match_or_none(styles, height_rx) or img.attrib.get('height')
-    if isinstance(height, six.string_types):
+    if isinstance(height, str):
         height= int(height)
     return width, height
 

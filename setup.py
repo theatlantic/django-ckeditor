@@ -11,14 +11,8 @@ setup(
     author_email='shaunsephton@gmail.com',
     url='http://github.com/shaunsephton/django-ckeditor',
     packages = find_packages(exclude=['project',]),
-    dependency_links = [
-        'http://dist.plone.org/thirdparty/',
-    ],
+    dependency_links = ['https://dist.plone.org/thirdparty/'],
     include_package_data=True,
-    test_suite="setuptest.setuptest.SetupTestSuite",
-    tests_require=[
-        'django-setuptest>=0.0.6',
-    ],
     classifiers=[
         "Programming Language :: Python",
         "License :: OSI Approved :: BSD License",
