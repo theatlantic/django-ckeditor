@@ -22,8 +22,8 @@ Other::
 
     python3 -m venv venv
     . venv/bin/activate
-    python -m pip install "lxml==4.5.0" "mock==3.0.5" "Pillow==6.2.1" "Django>=2.0,<2.1"
-    python setup.py test
+    python -m pip install "lxml==4.5.0" "mock==3.0.5" "Pillow==6.2.1" "Django>=2.2,<4.0" pytest pytest-django
+    pytest
 
 
 Installation

@@ -1,6 +1,5 @@
-from __future__ import absolute_import
 import copy
-import collections
+import collections.abc
 
 from django.conf import settings
 from django.urls import reverse
@@ -34,7 +33,7 @@ MEDIA_ROOT = getattr(settings, 'CKEDITOR_MEDIA_ROOT', getattr(settings, 'MEDIA_R
 
 CONFIGS = getattr(settings, 'CKEDITOR_CONFIGS', {})
 
-if isinstance(CONFIGS, collections.Mapping):
+if isinstance(CONFIGS, collections.abc.Mapping):
     CONFIGS = copy.deepcopy(CONFIGS)
     CONFIGS['default'] = dict(DEFAULT_CONFIG, **CONFIGS.pop('default', {}))
 
