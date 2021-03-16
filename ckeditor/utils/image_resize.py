@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import os
 import sys
 import re
@@ -16,10 +15,10 @@ from ckeditor import settings as ck_settings
 from .common import get_media_url
 from functools import reduce
 
-
 ImageFile.MAXBLOCKS = 10000000
 
 logger = logging.getLogger(__name__)
+
 
 def match_or_none(string, rx):
     """

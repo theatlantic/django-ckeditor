@@ -1,9 +1,8 @@
-from __future__ import absolute_import
 try:
-    from django.conf.urls import url
+    from django.urls import re_path as url
 except ImportError:
-    # Django <= 1.3
-    from django.conf.urls.defaults import url
+    # Django <= 1.11
+    from django.conf.urls import url
 
 import ckeditor.views
 

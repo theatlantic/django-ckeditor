@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import re
 from django.db import models
 from django import forms
