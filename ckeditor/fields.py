@@ -26,7 +26,8 @@ class RichModelFieldMixin(object):
         return super(RichModelFieldMixin, self).formfield(**defaults)
 
 
-class RichCharField(RichModelFieldMixin, models.CharField):
+class RichCharFieldd(RichModelFieldMixin, models.CharField):
+    print("THIS IS A TESTTTTT")
     pass
 
 
