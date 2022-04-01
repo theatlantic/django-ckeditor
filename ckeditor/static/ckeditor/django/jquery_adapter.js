@@ -239,7 +239,12 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 					$element.data( '_ckeditorInstanceLock', true );
 
 					// Set instance reference in element's data.
-					editor = CKEDITOR.replace( element, config );
+					if (config.inline) {
+						editor = CKEDITOR.inline( element, config );
+					} else {
+						editor = CKEDITOR.replace( element, config );
+					}
+
 					$element.data( 'ckeditorInstance', editor );
 
 					// Register callback.
