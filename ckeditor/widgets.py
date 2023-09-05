@@ -1,7 +1,7 @@
 from django import forms
 from django.urls import reverse
 from django.utils.safestring import mark_safe
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.html import conditional_escape
 from django.forms.utils import flatatt
 
@@ -56,5 +56,5 @@ class CKEditorWidget(forms.Textarea):
 
         return mark_safe(u'<textarea%(attrs)s>%(value)s</textarea>' % {
             'attrs': flatatt(dict(attrs, name=name)),
-            'value': conditional_escape(force_text(value)),
+            'value': conditional_escape(force_str(value)),
         })
