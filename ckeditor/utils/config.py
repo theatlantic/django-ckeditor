@@ -1,5 +1,5 @@
 import copy
-import collections
+import collections.abc
 
 import json
 from json.encoder import (
@@ -27,10 +27,10 @@ error_msgs = {
     UNDEFINED_CONF_KEY:    "No configuration named '{conf}' found in"
                            " CKEDITOR_CONFIGS setting.",
     INVALID_CONF_TYPE:     "CKEDITOR_CONFIGS setting must be an instance"
-                           " of collections.Mapping (e.g. dict), instead "
+                           " of collections.abc.Mapping (e.g. dict), instead "
                            " found {type}",
     INVALID_CONF_KEY_TYPE: "CKEDITOR_CONFIGS['{conf}'] setting must be an"
-                           " instance of collections.Mapping (e.g. dict),"
+                           " instance of collections.abc.Mapping (e.g. dict),"
                            " instead found {type}",
 }
 
@@ -41,7 +41,7 @@ def validate_config(config_name='default', config=None, instance=None):
     if config_name:
         if not ck_settings.CONFIGS:
             raise ImproperlyConfigured(error_msgs[UNDEFINED_CONF])
-        if not isinstance(ck_settings.CONFIGS, collections.Mapping):
+        if not isinstance(ck_settings.CONFIGS, collections.abc.Mapping):
             raise ImproperlyConfigured(error_msgs[INVALID_CONF_TYPE].format(
                     type=type(ck_settings.CONFIGS).__name__))
 
@@ -51,7 +51,7 @@ def validate_config(config_name='default', config=None, instance=None):
             raise ImproperlyConfigured(
                 error_msgs[UNDEFINED_CONF_KEY].format(conf=config_name))
 
-        if not isinstance(named_config, collections.Mapping):
+        if not isinstance(named_config, collections.abc.Mapping):
             raise ImproperlyConfigured(
                 error_msgs[INVALID_CONF_KEY_TYPE].format(
                     conf=config_name,
