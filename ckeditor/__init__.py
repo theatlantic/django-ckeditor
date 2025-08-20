@@ -1,8 +1,5 @@
-import pkg_resources
-
-try:
-    __version__ = pkg_resources.get_distribution('django-ckeditor').version
-except pkg_resources.DistributionNotFound:
-    __version__ = None
-
 from .json_types import JSCode
+
+__all__ = ("JSCode",)
+
+__version__ = "4.5.7"
